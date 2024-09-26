@@ -5,7 +5,16 @@ const products = [
         description: "Comfortable cotton socks",
         price: 10.00,
         image: "images/product-01.jpg",
+        image: "images/product-01.jpg",
+        image1: "images/product-01.jpg",
+        image2: "images/post-1.jpg",
+        image3: "images/product-01.jpg",
+        color: "unique",
+        detailPage: "product-detail.html",
+        colors : ["Red", "Blue", "Green"], // Example color options
+        sizes : ["S", "M", "L"],
         detailPage: "product-detail.html"
+
     },
     {
         id: 2,
@@ -77,3 +86,61 @@ if (productContainer) {
     console.error("Product container not found!");
     messageContainer.innerHTML = "<p style='color: red;'>Error: Product container not found.</p>";
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listener for "Quick View" button
+    document.querySelectorAll('.js-show-modal1').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+
+            // Get product ID from the clicked button's data attributes
+            const productId = this.getAttribute('data-id');
+            const product = products.find(p => p.id == productId); // Find the product in the array
+
+            if (product) {
+                // Update modal content
+                document.querySelector(".js-name-detail").textContent = product.name;
+                document.querySelector(".mtext-106.cl2").textContent = `$${product.price.toFixed(2)}`;
+                document.querySelector(".stext-102.cl3").textContent = product.description;
+
+                const imageElements = document.querySelectorAll(".slick3 .item-slick3");
+                const images = [product.image, product.image1, product.image2, product.image3];  // Images array
+
+                imageElements.forEach((element, index) => {
+                    const imgTag = element.querySelector("img");
+                    const anchorTag = element.querySelector("a");
+                
+                    // Check if the image exists
+                    if (images[index]) {
+                        imgTag.src = images[index];  // Update the image source
+                        anchorTag.href = images[index];  // Update the href for the expand button
+                    } else {
+                        // Use the index to create the selector for the number attribute
+                        const numberToRemove = index + 1;  // Assuming number starts from 1
+                        const selection = `.item-slick3[number="${numberToRemove}"]`;
+                        const elementToRemove = document.querySelector(selection);
+                
+                        // Remove the element if it exists
+                        if (elementToRemove) {
+                            elementToRemove.remove();
+                        }
+                    }
+                });
+                
+
+                document.querySelector(".slick3").innerHTML = galleryHTML;
+
+                // Update color options
+                const colorSelect = document.querySelector("#colorSelect");
+                colorSelect.innerHTML = product.colors.map(color => `<option>${color}</option>`).join('');
+
+                // Update size options
+                const sizeSelect = document.querySelector("#sizeSelect");
+                sizeSelect.innerHTML = product.sizes.map(size => `<option>Size ${size}</option>`).join('');
+
+                // Show the modal (assuming there's a function or class to show it)
+                document.querySelector('.js-modal1').classList.add('show-modal');
+            }
+        });
+    });
+});
