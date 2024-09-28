@@ -412,9 +412,11 @@ function updateCartNotification() {
 
     // Find the basket icon element by ID
     const basketIcon = document.getElementById('basket-icon');
-
+    const laptopbasketIcon = document.getElementById('laptop-basket-icon');
     // Update the data-notify attribute with the total number of products
     basketIcon.setAttribute('data-notify', totalProducts);
+    laptopbasketIcon.setAttribute('data-notify', totalProducts);
+
 }
 
 // Function to get the total cost of all products in the cart
@@ -459,6 +461,22 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Add click event listener to the basket icon
     const basketIcon = document.getElementById('basket-icon');
+    
+    if (basketIcon) {
+        basketIcon.addEventListener('click', function() {
+            // Generate the cart list when the basket icon is clicked
+            generateCartList();
+
+        });
+    } else {
+        console.error('Basket icon not found');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listener to the basket icon
+    const basketIcon = document.getElementById('laptop-basket-icon');
     
     if (basketIcon) {
         basketIcon.addEventListener('click', function() {
