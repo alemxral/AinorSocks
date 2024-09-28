@@ -20,6 +20,8 @@ const products = [
         id: 2,
         name: "Esprit Ruffle Shirt",
         description: "Stylish and comfortable",
+        image1: "images/product-01.jpg",
+     
         price: 16.64,
         image: "images/product-02.jpg",
         detailPage: "product-detail.html"
@@ -245,3 +247,155 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listener for "Add to Cart" button
+    document.querySelectorAll('.js-addcart-detail').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default button action
+
+            // Get product details from button's data attributes
+            const productId = this.getAttribute('data-id');
+            const productName = this.getAttribute('data-name');
+            const productPrice = parseFloat(this.getAttribute('data-price'));
+
+            // Get selected color
+            const colorSelect = document.getElementById('colorSelect');
+            const selectedColor = colorSelect ? colorSelect.value : '';
+
+            // Get selected size
+            const sizeSelect = document.getElementById('sizeSelect');
+            const selectedSize = sizeSelect ? sizeSelect.value : '';
+
+            // Get selected amount
+            const amountInput = document.querySelector('.num-product');
+            const selectedAmount = amountInput ? parseInt(amountInput.value) : 1;
+            
+
+            // Reuse the addToCart function to handle adding the product to the cart
+            addToCart(productId, selectedColor, selectedSize, selectedAmount);
+
+            // After adding, log the updated cart and total products
+            console.log("Total number of products in the cart:", getTotalProductsInCart());
+            logAllProductIdsInCart();
+            getTotalCartCost()
+        });
+    });
+});
+
+
+
+
+// Get current cart from localStorage or initialize it if not present
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Function to get the cart from localStorage (to be reused)
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+// Function to save the cart to localStorage (to be reused)
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Add product to cart logic (from your previous code)
+function addToCart(productId, selectedColor, selectedSize, selectedAmount) {
+    let cart = getCart(); // Reuse the getCart function
+
+    // Check if product already exists in the cart (by ID, color, and size)
+    const existingProductIndex = cart.findIndex(item => item.id === productId && item.color === selectedColor && item.size === selectedSize);
+
+    if (existingProductIndex > -1) {
+        // Update quantity of existing product in the cart
+        cart[existingProductIndex].amount += selectedAmount;
+    } else {
+        // Create the new product object
+        const cartItem = {
+            id: productId,
+            color: selectedColor,
+            size: selectedSize,
+            amount: selectedAmount
+        };
+
+        // Add new product to the cart
+        cart.push(cartItem);
+    }
+
+    // Save the updated cart to localStorage
+    saveCart(cart);
+    updateCartNotification()
+}
+
+// Function to get the total number of products in the cart
+function getTotalProductsInCart() {
+    const cart = getCart();
+    let totalAmount = 0;
+
+    // Sum up the amounts of all products
+    cart.forEach(product => {
+        totalAmount += product.amount;
+    });
+
+    return totalAmount;
+}
+
+// Function to log all product IDs in the cart to the console
+function logAllProductIdsInCart() {
+    const cart = getCart();
+    console.log("Products in the cart:");
+
+    // Log the ID of each product
+    cart.forEach(product => {
+        console.log("Product ID:", product.id);
+    });
+}
+
+
+function updateCartNotification() {
+    // Get total number of products in the cart
+    const totalProducts = getTotalProductsInCart();
+
+    // Find the basket icon element by ID
+    const basketIcon = document.getElementById('basket-icon');
+
+    // Update the data-notify attribute with the total number of products
+    basketIcon.setAttribute('data-notify', totalProducts);
+}
+
+
+
+function getTotalCartCost() {
+    // Get current cart from localStorage or initialize it if not present
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Calculate the total cost by summing the price * amount for each product
+    const totalCost = cart.reduce((total, item) => {
+        return total + (item.price * item.amount);
+    }, 0); // Initial total is 0
+
+    console.log("Total cost d of the cart:", totalCost); 
+
+    return totalCost.toFixed(2); 
+     
+    
+}
+
+
+
+// // Example usage:
+// // Adding a product to the cart
+// document.querySelector('.js-addcart-detail').addEventListener('click', function() {
+//     const productId = this.getAttribute('data-id');
+//     const selectedColor = document.querySelector('#colorSelect').value;
+//     const selectedSize = document.querySelector('#sizeSelect').value;
+//     const selectedAmount = parseInt(document.querySelector('.num-product').value);
+
+//     addToCart(productId, selectedColor, selectedSize, selectedAmount);
+
+//     // Display total products in the cart
+//     console.log("Total number of products in the cart:", getTotalProductsInCart());
+
+//     // Log all product IDs in the cart
+//     logAllProductIdsInCart();
+// });
