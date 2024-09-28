@@ -1,3 +1,9 @@
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartNotification();
+  });
+
+
 const products = [
     {
         id: 1,
@@ -516,5 +522,7 @@ function generateCartList() {
   if (headerCartTotalElement) {
     // Option 1: Modify existing content
     headerCartTotalElement.textContent = `Total: $${totalCost}`;}
+
+   
 
 }
