@@ -447,3 +447,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Existing code...
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listener to the basket icon
+    const basketIcon = document.getElementById('basket-icon');
+    
+    if (basketIcon) {
+        basketIcon.addEventListener('click', function() {
+            // Generate the cart list when the basket icon is clicked
+            generateCartList();
+
+        });
+    } else {
+        console.error('Basket icon not found');
+    }
+});
+
+// Function to generate the cart list
+function generateCartList() {
+    const cartItems = getCart(); // Assuming getCart() returns an array of product objects
+    const cartListElement = document.querySelector('.header-cart-wrapitem'); // Select the UL element
+
+    // Clear any existing items in the list
+    cartListElement.innerHTML = ''; // Clear existing list items
+
+    // Loop through the cart items and create list items
+    cartItems.forEach(item => {
+        // Find the product in the array
+        const product = products.find(p => p.id == item.id);
+        console.log("Product object was found by ID:", product);
+
+        if (!product) {
+            console.error("Product not found");
+            return; // Exit if product not found
+        }
+
+        const listItem = document.createElement('li');
+        listItem.className = 'header-cart-item flex-w flex-t m-b-12';
+
+        listItem.innerHTML = `
+            <div class="header-cart-item-img">
+                <img src="${product.image}" alt="IMG">
+            </div>
+
+            <div class="header-cart-item-txt p-t-8">
+                <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                    ${product.name}
+                </a>
+
+                <span class="header-cart-item-info">
+                   ${item.size} - ${item.color} - Price: ${item.amount} x $${product.price.toFixed(2)}
+                </span>
+            </div>
+        `;
+
+        // Insert the list item into the cart list
+        cartListElement.insertAdjacentElement('beforeend', listItem);
+    });
+
+    // Calculate the total cost and create a total element
+  // Calculate the total cost
+  const totalCost = getTotalCartCost(); // Get the total cost from the function
+
+  const headerCartTotalElement = document.querySelector('.header-cart-total.w-full.p-tb-40');
+
+  if (headerCartTotalElement) {
+    // Option 1: Modify existing content
+    headerCartTotalElement.textContent = `Total: $${totalCost}`;}
+
+}
