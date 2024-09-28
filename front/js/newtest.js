@@ -107,9 +107,26 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.querySelector(".js-name-detail").textContent = product.name;
                         document.querySelector(".mtext-106.cl2").textContent = `$${product.price.toFixed(2)}`;
                         document.querySelector(".stext-102.cl3").textContent = product.description;
+
+                        const bottomElement = document.querySelector('.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail');
+
+                        if (bottomElement) {
+                          bottomElement.setAttribute('data-id', productId); // Example: setting a data attribute
+                          const checkId = bottomElement.getAttribute('data-id');
+                          console.log('Product ID:', checkId);
+                        } else {
+                          console.error('Bottom element not found');
+                        }
+
+
+
+
                     } catch (err) {
                         console.error("Error updating modal content: ", err);
                     }
+
+
+                    
 
                     // Update color options
                     try {
@@ -254,10 +271,16 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent default button action
 
-            // Get product details from button's data attributes
+            // Get product ID from button's data attributes
             const productId = this.getAttribute('data-id');
-            const productName = this.getAttribute('data-name');
-            const productPrice = parseFloat(this.getAttribute('data-price'));
+
+            // Find the product in the products array to get price and other details
+            const product = products.find(p => p.id === productId);
+
+            if (!product) {
+                console.error("Product not found");
+                return; // Exit if product not found
+            }
 
             // Get selected color
             const colorSelect = document.getElementById('colorSelect');
@@ -270,7 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get selected amount
             const amountInput = document.querySelector('.num-product');
             const selectedAmount = amountInput ? parseInt(amountInput.value) : 1;
-            
 
             // Reuse the addToCart function to handle adding the product to the cart
             addToCart(productId, selectedColor, selectedSize, selectedAmount);
@@ -278,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // After adding, log the updated cart and total products
             console.log("Total number of products in the cart:", getTotalProductsInCart());
             logAllProductIdsInCart();
-            getTotalCartCost()
+            getTotalCartCost();
         });
     });
 });
@@ -299,23 +321,27 @@ function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Add product to cart logic (from your previous code)
+// Add product to cart logic
 function addToCart(productId, selectedColor, selectedSize, selectedAmount) {
     let cart = getCart(); // Reuse the getCart function
 
-    // Check if product already exists in the cart (by ID, color, and size)
+    // Get product price from the button (ensure it's parsed as a float)
+    const productPrice = parseFloat(document.querySelector(`.js-addcart-detail[data-id="${productId}"]`).getAttribute('data-price'));
+
+    // Check if product already exists in the cart
     const existingProductIndex = cart.findIndex(item => item.id === productId && item.color === selectedColor && item.size === selectedSize);
 
     if (existingProductIndex > -1) {
         // Update quantity of existing product in the cart
         cart[existingProductIndex].amount += selectedAmount;
     } else {
-        // Create the new product object
+        // Create the new product object, including the price
         const cartItem = {
             id: productId,
             color: selectedColor,
             size: selectedSize,
-            amount: selectedAmount
+            amount: selectedAmount,
+            price: productPrice // Ensure price is included as a number
         };
 
         // Add new product to the cart
@@ -324,7 +350,19 @@ function addToCart(productId, selectedColor, selectedSize, selectedAmount) {
 
     // Save the updated cart to localStorage
     saveCart(cart);
-    updateCartNotification()
+    updateCartNotification();
+}
+
+
+// Function to display the cart in a variable table format
+function displayCart() {
+    const cart = getCart();
+    console.log("Current Cart:");
+    
+    // Log each item in the cart in a table-like format
+    cart.forEach(item => {
+        console.log(`ID: ${item.id}, Amount: ${item.amount}, Color: ${item.color}, Size: ${item.size}, Price: ${item.price.toFixed(2)}`);
+    });
 }
 
 // Function to get the total number of products in the cart
@@ -351,7 +389,7 @@ function logAllProductIdsInCart() {
     });
 }
 
-
+// Function to update the cart notification (i.e., number of items in cart)
 function updateCartNotification() {
     // Get total number of products in the cart
     const totalProducts = getTotalProductsInCart();
@@ -363,39 +401,35 @@ function updateCartNotification() {
     basketIcon.setAttribute('data-notify', totalProducts);
 }
 
-
-
+// Function to get the total cost of all products in the cart
 function getTotalCartCost() {
-    // Get current cart from localStorage or initialize it if not present
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = getCart();
     
     // Calculate the total cost by summing the price * amount for each product
     const totalCost = cart.reduce((total, item) => {
         return total + (item.price * item.amount);
     }, 0); // Initial total is 0
 
-    console.log("Total cost d of the cart:", totalCost); 
+    console.log("Total cost of the cart:", totalCost); 
 
     return totalCost.toFixed(2); 
-     
-    
 }
 
 
+// Clear cart function (as defined above)
+function clearCart() {
+    localStorage.removeItem('cart');
+    cart = [];
+    updateCartNotification();
+    console.log("Cart has been cleared.");
+}
 
-// // Example usage:
-// // Adding a product to the cart
-// document.querySelector('.js-addcart-detail').addEventListener('click', function() {
-//     const productId = this.getAttribute('data-id');
-//     const selectedColor = document.querySelector('#colorSelect').value;
-//     const selectedSize = document.querySelector('#sizeSelect').value;
-//     const selectedAmount = parseInt(document.querySelector('.num-product').value);
+// Example usage: Attaching the clear cart function to a button click
+document.addEventListener('DOMContentLoaded', function() {
+    // Clear cart button event listener
+    document.querySelector(".p-t-18").addEventListener('click', function() {
+        clearCart();
+    });
 
-//     addToCart(productId, selectedColor, selectedSize, selectedAmount);
-
-//     // Display total products in the cart
-//     console.log("Total number of products in the cart:", getTotalProductsInCart());
-
-//     // Log all product IDs in the cart
-//     logAllProductIdsInCart();
-// });
+    // Existing code...
+});
