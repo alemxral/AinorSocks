@@ -1,40 +1,26 @@
 import { sql } from "@vercel/postgres";
 
-export default async function Cart({ params }) {
+export default async function App() {
   try {
-    // Query to select all records from the CARTS table for the given user
-    const { rows } = await sql`SELECT * FROM CARTS WHERE user_id = ${params.user}`;
+    // Attempt to run a simple query to test the connection
+    await sql`SELECT 1`;
 
-    // Connection success message
-    console.debug("Successfully connected to the database!");
-
-    // Check if any rows are returned
-    if (rows.length === 0) {
-      return (
-        <div>
-          <h1>Your Cart</h1>
-          <p>No items in the cart.</p>
-          <p>Database connection is successful!</p>
-        </div>
-      );
-    }
-
-    // Render the cart items
+    // If the connection is successful, show a success message on the page
     return (
       <div>
-        <h1>Your Cart</h1>
-        {rows.map((row) => (
-          <div key={row.id}>
-            <p>
-              Item ID: {row.id} - Quantity: {row.quantity}
-            </p>
-          </div>
-        ))}
-        <p>Database connection is successful!</p>
+        <h1>Connection Successful!</h1>
+        <p>The app has successfully connected to the database.</p>
       </div>
     );
   } catch (error) {
-    console.error("Error fetching cart items:", error);
-    return <div>Error fetching cart items. Please try again later.</div>;
+    console.error("Database connection error:", error);
+
+    // If there's an error, show an error message on the page
+    return (
+      <div>
+        <h1>Connection Failed</h1>
+        <p>There was an error connecting to the database. Please try again later.</p>
+      </div>
+    );
   }
 }
