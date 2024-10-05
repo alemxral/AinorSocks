@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AINOR SOCKS SVG Animation</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: hsl(200, 70%, 11%);
+      background-size: .12em 100%;
+      font-size: 16em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .text--line {
+      font-size: .5em;
+    }
+
+    @keyframes stroke-offset {
+      50% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 35%;
+      }
+    }
+
+    .text-copy {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 7% 35%;
+      stroke-width: 3px;
+      animation: stroke-offset 9s infinite linear;
+    }
+
+    symbol {
+      font-size: 5em;
+    }
+
+    symbol#s-text,
+    symbol#i-text,
+    symbol#n-text,
+    symbol#o-text,
+    symbol#r-text,
+    symbol#socks-s-text,
+    symbol#o-socks-text,
+    symbol#c-socks-text,
+    symbol#k-socks-text,
+    symbol#s-final-text {
+      text-anchor: middle;
+    }
+
+    use {
+      animation: stroke-offset 9s infinite linear;
+    }
+
+    symbol text {
+      fill: url(#GPattern);
+    }
+  </style>
+</head>
+<body>
+
+<svg viewBox="0 0 1320 300">
+  <defs>
+    <pattern id="GPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <animateTransform attributeType="xml" attributeName="patternTransform" type="rotate" from="35" to="395" begin="0" dur="160s" repeatCount="indefinite"></animateTransform>
+      <circle cx="10" cy="10" r="10" stroke="none" fill="yellow">
+        <animate attributeName="r" type="xml" from="1" to="1" values="1; 10; 1" begin="0s" dur="2s" repeatCount="indefinite"></animate>
+      </circle>
+    </pattern>
+  </defs>
+
+  <!-- Symbol for each letter in AINOR SOCKS -->
+  <symbol id="s-text">
+    <text text-anchor="middle" x="20%" y="50%" dy=".35em">A</text>
+  </symbol>
+  <symbol id="i-text">
+    <text text-anchor="middle" x="30%" y="50%" dy=".35em">I</text>
+  </symbol>
+  <symbol id="n-text">
+    <text text-anchor="middle" x="40%" y="50%" dy=".35em">N</text>
+  </symbol>
+  <symbol id="o-text">
+    <text text-anchor="middle" x="50%" y="50%" dy=".35em">O</text>
+  </symbol>
+  <symbol id="r-text">
+    <text text-anchor="middle" x="60%" y="50%" dy=".35em">R</text>
+  </symbol>
+  <symbol id="socks-s-text">
+    <text text-anchor="middle" x="75%" y="50%" dy=".35em">S</text>
+  </symbol>
+  <symbol id="o-socks-text">
+    <text text-anchor="middle" x="80%" y="50%" dy=".35em">O</text>
+  </symbol>
+  <symbol id="c-socks-text">
+    <text text-anchor="middle" x="85%" y="50%" dy=".35em">C</text>
+  </symbol>
+  <symbol id="k-socks-text">
+    <text text-anchor="middle" x="90%" y="50%" dy=".35em">K</text>
+  </symbol>
+  <symbol id="s-final-text">
+    <text text-anchor="middle" x="95%" y="50%" dy=".35em">S</text>
+  </symbol>
+
+  <!-- Use elements for displaying AINOR SOCKS -->
+  <use xlink:href="#s-text"></use>
+  <use xlink:href="#i-text"></use>
+  <use xlink:href="#n-text"></use>
+  <use xlink:href="#o-text"></use>
+  <use xlink:href="#r-text"></use>
+  <use xlink:href="#socks-s-text"></use>
+  <use xlink:href="#o-socks-text"></use>
+  <use xlink:href="#c-socks-text"></use>
+  <use xlink:href="#k-socks-text"></use>
+  <use xlink:href="#s-final-text"></use>
+</svg>
+
+</body>
+</html>
