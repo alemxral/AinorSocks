@@ -446,15 +446,7 @@ function clearCart() {
     console.log("Cart has been cleared.");
 }
 
-// Example usage: Attaching the clear cart function to a button click
-document.addEventListener('DOMContentLoaded', function() {
-    // Clear cart button event listener
-    document.querySelector(".p-t-18").addEventListener('click', function() {
-        clearCart();
-    });
 
-    // Existing code...
-});
 
 
 
@@ -662,12 +654,6 @@ function attachEventListeners() {
 
 
 
-function updateCartItem(productId, newAmount) {
-    console.log(`Product ${productId} quantity updated to ${newAmount}`);
-    // Update the cart item quantity in your cart array and refresh the total cost
-    // You can also update the total cost after updating the item quantity here
-}
-
 
 // Call the function to generate the table when the page loads
 document.addEventListener('DOMContentLoaded', generateCartTable);
@@ -683,10 +669,102 @@ function updateSubtotal() {
 }
 
 
+// Function to handle cart updates
+function handleUpdateCartClick() {
+    console.log("Update Cart button clicked");
 
-// Example of updateCartItem function, here to keep track of quantity updates
-function updateCartItem(productId, newAmount) {
-    console.log(`Product ${productId} quantity updated to ${newAmount}`);
-    // Additional logic to update cart data can go here
+    // Get the updated cart items from the UI
+    const updatedCartItems = getUpdatedCartItems(); 
+    console.log("Updated cart items from UI:", updatedCartItems);
+
+    // Get the current cart items from localStorage or state
+    let currentCart = getCart(); // Assuming getCart() retrieves the cart from local storage or state
+    console.log("Current cart items from storage:", currentCart);
+
+    // Update the quantities in the current cart based on the updated cart
+    updatedCartItems.forEach((updatedItem, index) => {
+        if (currentCart[index].id === updatedItem.id && currentCart[index].size === updatedItem.size) {
+            console.log(`Updating item with ID ${updatedItem.id} and size ${updatedItem.size} to new amount: ${updatedItem.amount}`);
+            currentCart[index].amount = updatedItem.amount; // Update the amount of the corresponding item
+        } else {
+            console.log(`No match found for item with ID ${updatedItem.id} and size ${updatedItem.size}`);
+        }
+    });
+
+    // Save the updated cart back to localStorage
+    console.log("Saving updated cart to localStorage:", currentCart);
+    saveCart(currentCart);
+
+    // Optionally, you can call a function to update the display/UI with the new cart data
+    updateCartNotification();
+    console.log("Cart notification updated");
+
+    // Log updated product IDs and quantities
+    logAllProductIdsInCart();
+
+    updateSubtotal(); 
+    generateCartList();
+    updateCartNotification();
+
+    location.reload(); // Refresh the page to reflect changes
+
+
+
+
+}
+
+function getUpdatedCartAmounts() {
+    const cart = getCart(); // Get the current cart from localStorage or any storage
+    const cartTableRows = document.querySelectorAll('tr[id^="row-"]'); // Select rows that have an ID starting with "row-"
+
+    console.log("Number of cart rows found:", cartTableRows.length);
+
+    // Update the amount of items in the cart based on the table rows
+    cartTableRows.forEach((row) => {
+        const rowId = row.id; // Get the unique row ID, e.g., "row-0", "row-1"
+        const productId = row.querySelector('.num-product').name.split('-')[2]; // Extract product ID from input name
+        const size = row.querySelectorAll('td')[3].textContent.trim(); // Extract size from the 4th column
+        const color = row.querySelectorAll('td')[4].textContent.trim(); // Extract color from the 5th column
+        const newAmount = parseInt(row.querySelector('.num-product').value); // Get the updated amount from input
+
+        console.log(`Row ${rowId}: Updating product ID ${productId} with size ${size} and color ${color} to new amount: ${newAmount}`);
+
+        // Find the corresponding item in the cart and update its amount
+        const cartItem = cart.find(item => item.id === productId && item.size === size && item.color === color);
+
+        if (cartItem) {
+            cartItem.amount = newAmount; // Update the amount
+            console.log(`Updated cart item:`, cartItem);
+        } else {
+            console.error(`Item with ID ${productId}, size ${size}, and color ${color} not found in the cart!`);
+        }
+    });
+
+    saveCart(cart); // Save the updated cart back to storage
+    console.log("Cart updated successfully");
+}
+
+
+
+// Function to log all product IDs and quantities in the cart (for debugging purposes)
+function logAllProductIdsInCart() {
+    const cart = getCart(); // Retrieve the current cart items
+    console.log("Logging current cart items:");
+
+    cart.forEach(item => {
+        console.log(`Product ID: ${item.id}, Quantity: ${item.amount}, Size: ${item.size}, Price: €${item.price}`);
+    });
+}
+
+// Add event listener to the "Update Cart" button
+const updateCartButton = document.querySelector('.flex-c-m.stext-101.cl2.size-119.bg8.bor13.hov-btn3.p-lr-15.trans-04.pointer.m-tb-10');
+
+if (updateCartButton) {
+    updateCartButton.addEventListener('click', () => {
+        console.log("Update Cart button clicked");
+        getUpdatedCartAmounts(); // Call the function to update the cart amounts
+    });
+} else {
+    console.error("Update Cart button not found!");
 }
 
