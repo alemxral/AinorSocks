@@ -835,7 +835,7 @@ const shippingRates = {
 };
 
 // Function to calculate the total based on selected country
-function updateTotalCost() {
+function updateTotals() {
     const countrySelect = document.getElementById('country-select');
     const selectedCountry = countrySelect.value;
 
@@ -860,28 +860,23 @@ function updateTotalCost() {
 
     // Log the total
     console.log("Total Cost:", total.toFixed(2));
-
+    console.log("fINISH");
     // Update the shipping and total amounts in the HTML
     document.getElementById('shipping-amount').textContent = `$${shippingCost.toFixed(2)}`;
     document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
 }
 
-// // Add event listener for when the country selection changes
-// const countrySelectElement = document.getElementById('country-select');
-// if (countrySelectElement) {
-//     countrySelectElement.addEventListener('change', updateTotalCost);
-// } else {
-//     console.error("Country select element not found");
-// }
 
-// Add event listener for clicking the "Update Totals" button
-const updateButton = document.querySelector('.flex-c-m.stext-101');
-if (updateButton) {
-    updateButton.addEventListener('click', updateTotalCost);
-} else {
-    console.error("Update button not found");
-}
+
+// Add event listener for when the "Update Totals" button is clicked
+document.getElementById('update-totals-btn').addEventListener('click', () => {
+    console.log("Update Totals button clicked.");
+    updateTotals(); // Call the function directly here
+});
+
+
 
 // Initial total update when the page loads
-document.addEventListener('DOMContentLoaded', updateTotalCost);
+document.addEventListener('DOMContentLoaded', updateTotals);
+
 
