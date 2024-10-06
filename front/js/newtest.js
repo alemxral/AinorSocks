@@ -537,18 +537,19 @@ function generateCartList() {
 
 }
 
+// Update your generateCartTable function to include the double-click listener
 function generateCartTable() {
     const cartItems = getCart(); // Assuming getCart() returns an array of product objects
     const cartTable = document.querySelector('.table-shopping-cart'); // Select the table element
 
     // Clear any existing rows in the table, except for the header
-    cartTable.innerHTML = ` 
+    cartTable.innerHTML = `
         <tr class="table_head">
             <th class="column-1">Product</th>
             <th class="column-2"></th>
             <th class="column-3">Price</th>
             <th class="column-3">Size</th>
-             <th class="column-3">Color</th>
+            <th class="column-3">Color</th>
             <th class="column-5">Quantity</th>
             <th class="column-6">Total</th>
         </tr>
@@ -569,7 +570,7 @@ function generateCartTable() {
 
         tableRow.innerHTML = `
             <td class="column-1">
-                <div class="how-itemcart1">
+                <div class="how-itemcart1" ondblclick="removeItemFromCart('${rowId}')">
                     <img src="${product.image}" alt="IMG">
                 </div>
             </td>
@@ -604,9 +605,30 @@ function generateCartTable() {
     if (cartTotalElement) {
         cartTotalElement.textContent = `Total: $${totalCost.toFixed(2)}`;
     }
-
-    updateSubtotal();
 }
+
+// Function to remove item from the cart based on row ID
+function removeItemFromCart(rowId) {
+    const cart = getCart(); // Get the current cart
+    const rowIndex = parseInt(rowId.split('-')[1]); // Extract the index from the row ID
+
+    console.log(`Removing item from cart at row index: ${rowIndex}`);
+
+    // Remove the item from the cart
+    cart.splice(rowIndex, 1);
+
+    // Save the updated cart back to storage
+    saveCart(cart);
+    
+    // Regenerate the cart table to reflect the changes
+    generateCartTable();
+    logAllProductIdsInCart();
+    updateSubtotal(); 
+    updateCartNotification();
+
+
+}
+
 
 
 function attachEventListeners() { 
@@ -706,7 +728,7 @@ function handleUpdateCartClick() {
     generateCartList();
     updateCartNotification();
 
-    location.reload(); // Refresh the page to reflect changes
+   
 
 
 
@@ -763,6 +785,11 @@ if (updateCartButton) {
     updateCartButton.addEventListener('click', () => {
         console.log("Update Cart button clicked");
         getUpdatedCartAmounts(); // Call the function to update the cart amounts
+        updateSubtotal(); 
+        generateCartList();
+        updateCartNotification();
+
+
     });
 } else {
     console.error("Update Cart button not found!");
