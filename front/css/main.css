@@ -736,7 +736,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   text-align: left;  /* Center the text within its box */
 }
 
-
+.wrap-header-mobile .logo-mobile .logo-text:hover {
+  color: #fff;  /* Change text color to white on hover */
+}
 
 
 
