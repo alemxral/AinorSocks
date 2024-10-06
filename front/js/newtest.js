@@ -556,6 +556,7 @@ function generateCartTable() {
             <th class="column-2"></th>
             <th class="column-3">Price</th>
             <th class="column-3">Size</th>
+             <th class="column-3">Color</th>
             <th class="column-5">Quantity</th>
             <th class="column-6">Total</th>
         </tr>
@@ -583,6 +584,7 @@ function generateCartTable() {
             <td class="column-2">${product.name}</td>
             <td class="column-3">€${product.price.toFixed(2)}</td>
             <td class="column-3">${item.size}</td>
+            <td class="column-3">${item.color}</td>
             <td class="column-5">
                 <div class="wrap-num-product flex-w m-l-auto m-r-0">
                     <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -632,7 +634,7 @@ function attachEventListeners() {
 
                 // Update the product total price
                 const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
-                totalElement.textContent = `€${(productPrice * input.value)}`;
+                totalElement.textContent = `€${(productPrice * input.value).toFixed(2)}`;
                 
                 updateSubtotal(); // Update the subtotal whenever quantity changes
             }
@@ -650,7 +652,7 @@ function attachEventListeners() {
 
             // Update the product total price
             const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
-            totalElement.textContent = `€${(productPrice * input.value)}`;
+            totalElement.textContent = `€${(productPrice * input.value).toFixed(2)}`;
 
             updateSubtotal(); // Update the subtotal whenever quantity changes
         });
