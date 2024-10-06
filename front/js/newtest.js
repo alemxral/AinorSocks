@@ -535,7 +535,7 @@ function generateCartList() {
 
   if (headerCartTotalElement) {
     // Option 1: Modify existing content
-    headerCartTotalElement.textContent = `Total: $${totalCost}`;}
+    headerCartTotalElement.textContent = `Total: €${totalCost}`;}
 
    
 
