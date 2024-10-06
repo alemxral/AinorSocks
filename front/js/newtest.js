@@ -545,13 +545,12 @@ function generateCartList() {
 
 }
 
-
 function generateCartTable() {
     const cartItems = getCart(); // Assuming getCart() returns an array of product objects
     const cartTable = document.querySelector('.table-shopping-cart'); // Select the table element
 
     // Clear any existing rows in the table, except for the header
-    cartTable.innerHTML = `
+    cartTable.innerHTML = ` 
         <tr class="table_head">
             <th class="column-1">Product</th>
             <th class="column-2"></th>
@@ -563,7 +562,7 @@ function generateCartTable() {
     `;
 
     // Loop through the cart items and create table rows
-    cartItems.forEach(item => {
+    cartItems.forEach((item, index) => {
         const product = products.find(p => p.id == item.id);
 
         if (!product) {
@@ -572,7 +571,8 @@ function generateCartTable() {
         }
 
         const tableRow = document.createElement('tr');
-        tableRow.className = 'table_row';
+        const rowId = `row-${index}`; // Unique ID based on row number
+        tableRow.id = rowId; // Assign a unique ID to the row based on its index
 
         tableRow.innerHTML = `
             <td class="column-1">
@@ -581,7 +581,7 @@ function generateCartTable() {
                 </div>
             </td>
             <td class="column-2">${product.name}</td>
-            <td class="column-3">$${product.price.toFixed(2)}</td>
+            <td class="column-3">€${product.price.toFixed(2)}</td>
             <td class="column-3">${item.size}</td>
             <td class="column-5">
                 <div class="wrap-num-product flex-w m-l-auto m-r-0">
@@ -594,7 +594,7 @@ function generateCartTable() {
                     </div>
                 </div>
             </td>
-            <td class="column-6">$${(product.price * item.amount).toFixed(2)}</td>
+            <td class="column-6" id="total-${rowId}" data-price="${product.price}">€${(product.price * item.amount).toFixed(2)}</td>
         `;
 
         cartTable.insertAdjacentElement('beforeend', tableRow);
@@ -610,9 +610,12 @@ function generateCartTable() {
     if (cartTotalElement) {
         cartTotalElement.textContent = `Total: $${totalCost.toFixed(2)}`;
     }
+
+    updateSubtotal();
 }
 
-function attachEventListeners() {
+
+function attachEventListeners() { 
     // Select all the increment and decrement buttons
     const btnNumProductDown = document.querySelectorAll('.btn-num-product-down');
     const btnNumProductUp = document.querySelectorAll('.btn-num-product-up');
@@ -620,10 +623,18 @@ function attachEventListeners() {
     btnNumProductDown.forEach(button => {
         button.addEventListener('click', function() {
             const input = button.nextElementSibling; // Get the input next to this button
+            const rowId = button.closest('tr').id; // Get the unique row ID
+            const totalElement = document.querySelector(`#total-${rowId}`); // Find the total element for this row
+            
             let value = parseInt(input.value);
             if (value > 1) {
                 input.value = value - 1;
-                updateCartItem(input.name, input.value);
+
+                // Update the product total price
+                const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
+                totalElement.textContent = `€${(productPrice * input.value)}`;
+                
+                updateSubtotal(); // Update the subtotal whenever quantity changes
             }
         });
     });
@@ -631,12 +642,23 @@ function attachEventListeners() {
     btnNumProductUp.forEach(button => {
         button.addEventListener('click', function() {
             const input = button.previousElementSibling; // Get the input before this button
+            const rowId = button.closest('tr').id; // Get the unique row ID
+            const totalElement = document.querySelector(`#total-${rowId}`); // Find the total element for this row
+            
             let value = parseInt(input.value);
             input.value = value + 1;
-            updateCartItem(input.name, input.value);
+
+            // Update the product total price
+            const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
+            totalElement.textContent = `€${(productPrice * input.value)}`;
+
+            updateSubtotal(); // Update the subtotal whenever quantity changes
         });
     });
 }
+
+
+
 
 function updateCartItem(productId, newAmount) {
     console.log(`Product ${productId} quantity updated to ${newAmount}`);
@@ -648,4 +670,21 @@ function updateCartItem(productId, newAmount) {
 // Call the function to generate the table when the page loads
 document.addEventListener('DOMContentLoaded', generateCartTable);
 
+
+// Function to update the subtotal in the cart
+function updateSubtotal() {
+    const subtotalElement = document.querySelector('#subtotal-amount'); // Select the element showing the subtotal
+    const subtotal = getTotalCartCost(); // Get the updated total cost from the function
+
+    // Update the content of the subtotal element
+    subtotalElement.textContent = `€${subtotal}`;
+}
+
+
+
+// Example of updateCartItem function, here to keep track of quantity updates
+function updateCartItem(productId, newAmount) {
+    console.log(`Product ${productId} quantity updated to ${newAmount}`);
+    // Additional logic to update cart data can go here
+}
 

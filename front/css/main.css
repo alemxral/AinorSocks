@@ -1908,12 +1908,15 @@ input.num-product::-webkit-inner-spin-button {
   overflow: auto;
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
+  margin-right: 10px;
+
 }
 
 .table-shopping-cart {
   border-collapse: collapse;
   width: 100%;
   min-width: 680px;
+
 }
 
 .table-shopping-cart tr {
@@ -1937,9 +1940,21 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .table-shopping-cart .column-4 {
-  width: 145px;
+  width: 145x;
   text-align: right;
+ 
+  
 }
+
+.table-shopping-cart .column-6 {
+  width: 14x;
+  text-align: right;
+
+  padding-right: 50px;
+}
+
+
+
 
 .table-shopping-cart .column-5 {
   width: 172px;
