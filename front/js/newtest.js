@@ -544,3 +544,108 @@ function generateCartList() {
    
 
 }
+
+
+function generateCartTable() {
+    const cartItems = getCart(); // Assuming getCart() returns an array of product objects
+    const cartTable = document.querySelector('.table-shopping-cart'); // Select the table element
+
+    // Clear any existing rows in the table, except for the header
+    cartTable.innerHTML = `
+        <tr class="table_head">
+            <th class="column-1">Product</th>
+            <th class="column-2"></th>
+            <th class="column-3">Price</th>
+            <th class="column-3">Size</th>
+            <th class="column-5">Quantity</th>
+            <th class="column-6">Total</th>
+        </tr>
+    `;
+
+    // Loop through the cart items and create table rows
+    cartItems.forEach(item => {
+        const product = products.find(p => p.id == item.id);
+
+        if (!product) {
+            console.error("Product not found");
+            return;
+        }
+
+        const tableRow = document.createElement('tr');
+        tableRow.className = 'table_row';
+
+        tableRow.innerHTML = `
+            <td class="column-1">
+                <div class="how-itemcart1">
+                    <img src="${product.image}" alt="IMG">
+                </div>
+            </td>
+            <td class="column-2">${product.name}</td>
+            <td class="column-3">$${product.price.toFixed(2)}</td>
+            <td class="column-3">${item.size}</td>
+            <td class="column-5">
+                <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                    <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                        <i class="fs-16 zmdi zmdi-minus"></i>
+                    </div>
+                    <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product-${product.id}" value="${item.amount}">
+                    <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                        <i class="fs-16 zmdi zmdi-plus"></i>
+                    </div>
+                </div>
+            </td>
+            <td class="column-6">$${(product.price * item.amount).toFixed(2)}</td>
+        `;
+
+        cartTable.insertAdjacentElement('beforeend', tableRow);
+    });
+
+    // Re-attach the event listeners for the increment and decrement buttons
+    attachEventListeners();
+
+    // Update the total cost
+    const totalCost = getTotalCartCost();
+    const cartTotalElement = document.querySelector('.cart-total');
+
+    if (cartTotalElement) {
+        cartTotalElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+    }
+}
+
+function attachEventListeners() {
+    // Select all the increment and decrement buttons
+    const btnNumProductDown = document.querySelectorAll('.btn-num-product-down');
+    const btnNumProductUp = document.querySelectorAll('.btn-num-product-up');
+
+    btnNumProductDown.forEach(button => {
+        button.addEventListener('click', function() {
+            const input = button.nextElementSibling; // Get the input next to this button
+            let value = parseInt(input.value);
+            if (value > 1) {
+                input.value = value - 1;
+                updateCartItem(input.name, input.value);
+            }
+        });
+    });
+
+    btnNumProductUp.forEach(button => {
+        button.addEventListener('click', function() {
+            const input = button.previousElementSibling; // Get the input before this button
+            let value = parseInt(input.value);
+            input.value = value + 1;
+            updateCartItem(input.name, input.value);
+        });
+    });
+}
+
+function updateCartItem(productId, newAmount) {
+    console.log(`Product ${productId} quantity updated to ${newAmount}`);
+    // Update the cart item quantity in your cart array and refresh the total cost
+    // You can also update the total cost after updating the item quantity here
+}
+
+
+// Call the function to generate the table when the page loads
+document.addEventListener('DOMContentLoaded', generateCartTable);
+
+
