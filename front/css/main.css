@@ -376,7 +376,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     font-weight: bold; /* Make text bold */
     font-family: 'Arial', sans-serif; /* Choose a font family */
     background-color: transparent; /* Dark background for better contrast */
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
     display: flex;
     white-space: nowrap; /* Prevents text from wrapping */
    
