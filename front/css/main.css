@@ -332,6 +332,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 
 
+
 .logo-text {
   font-size: 38px; /* Adjust font size */
   color: #ffd000; /* Text color */
@@ -342,9 +343,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   padding-right: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   display: flex;
-  white-space: nowrap; /* Prevents text from wrapping */
-  overflow: hidden; /* Optional: hides overflow */
-  text-overflow: ellipsis; /* Optional: shows ellipsis if the text is too long */
+  flex-wrap: wrap; 
+
 }
 
 
@@ -354,8 +354,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   .logo {
       height: 100%; /* Set height to 100% for mobile */
    
-      margin: 0%;
-      padding: 0%;
+      
       background-color: #000000; /* Dark background for better contrast */
       display: -webkit-box;
       display: -webkit-flex;
@@ -376,10 +375,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     color: #ffd000; /* Text color */
     font-weight: bold; /* Make text bold */
     font-family: 'Arial', sans-serif; /* Choose a font family */
-    background-color: #000000; /* Dark background for better contrast */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    margin: 0%;
-    padding: 0%;
+    background-color: #ffffff; /* Dark background for better contrast */
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    white-space: nowrap; /* Prevents text from wrapping */
+    
   
   }
 
@@ -547,7 +547,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .wrap-icon-header {
   flex-grow: 1;
- 
 }
 
 .icon-header-item {
@@ -578,19 +577,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-.wrap-header-mobile {
-  box-sizing: border-box;
-  flex-grow: unset;
-  background-color: #000000;
-  margin: 0%;
-  padding: 0%;
-  width: 100%;
-}
-
-
 .wrap-header-mobile .wrap-icon-header {
   flex-grow: unset;
- 
 }
 
 
