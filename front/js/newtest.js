@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const products = [
     {
         id: 1,
-        name: "Sock Alejandro",
+        name: "Socks Alejandro",
         description: "Comfortable cotton socks",
         price: 10.00,
         image: "images/product-01.jpg",
@@ -28,15 +28,36 @@ const products = [
     },
     {
         id: 2,
-        name: "Esprit Ruffle Shirt",
-        description: "Stylish and comfortable",
+        name: "Socks B",
+        description: "Comfortable cotton socks",
+        price: 18.00,
+        image: "images/product-01.jpg",
+        image: "images/product-01.jpg",
         image1: "images/product-01.jpg",
-     
-        price: 16.64,
-        image: "images/product-02.jpg",
+        image2: "images/post-1.jpg",
+        image3: "images/product-01.jpg",
+        color: "unique",
+        detailPage: "product-detail.html",
+        colors : ["Red", "Blux", "Green"], // Example color options
+        sizes : ["S", "M", "L"],
         detailPage: "product-detail.html"
     },
-    // Add more products...
+    {
+        id: 3,
+        name: "Socks C",
+        description: "Comfortable cotton socks",
+        price: 14.00,
+        image: "images/product-01.jpg",
+        image: "images/product-01.jpg",
+        image1: "images/product-01.jpg",
+        image2: "images/post-1.jpg",
+        image3: "images/product-01.jpg",
+        color: "unique",
+        detailPage: "product-detail.html",
+        colors : ["Red", "Blux", "Green"], // Example color options
+        sizes : ["S", "M", "L"],
+        detailPage: "product-detail.html"
+    },
 ];
 
 // Select the container where products will be inserted
@@ -681,8 +702,11 @@ function attachEventListeners() {
 
 
 
-// Call the function to generate the table when the page loads
-document.addEventListener('DOMContentLoaded', generateCartTable);
+document.addEventListener('DOMContentLoaded', function() {
+    generateCartTable();
+    updateSubtotal();
+});
+
 
 
 // Function to update the subtotal in the cart
@@ -798,4 +822,66 @@ if (updateCartButton) {
 } else {
     console.error("Update Cart button not found!");
 }
+
+// Dummy shipping costs based on country
+const shippingRates = {
+    "France": 5,
+    "Luxembourg": 7,
+    "Spain": 6,
+    "Belgium": 8,
+    "Portugal": 10,
+    "Italy": 9,
+  
+};
+
+// Function to calculate the total based on selected country
+function updateTotalCost() {
+    const countrySelect = document.getElementById('country-select');
+    const selectedCountry = countrySelect.value;
+
+    // Log the selected country
+    console.log("Selected Country:", selectedCountry);
+
+    // Set shipping cost to zero if no country is selected
+    let shippingCost = 0; // Default shipping cost
+    if (selectedCountry && selectedCountry !== "Select a country...") {
+        shippingCost = shippingRates[selectedCountry] || shippingRates["Other"]; // Get shipping cost for the selected country
+    }
+
+    // Log the shipping cost
+    console.log("Shipping Cost:", shippingCost);
+
+    const subtotal = parseFloat(getTotalCartCost()) || 0;  // Ensure subtotal is treated as a number
+
+    // Log the subtotal
+    console.log("Subtotal:", subtotal.toFixed(2));
+
+    const total = subtotal + shippingCost;  // Calculate total cost
+
+    // Log the total
+    console.log("Total Cost:", total.toFixed(2));
+
+    // Update the shipping and total amounts in the HTML
+    document.getElementById('shipping-amount').textContent = `$${shippingCost.toFixed(2)}`;
+    document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
+}
+
+// // Add event listener for when the country selection changes
+// const countrySelectElement = document.getElementById('country-select');
+// if (countrySelectElement) {
+//     countrySelectElement.addEventListener('change', updateTotalCost);
+// } else {
+//     console.error("Country select element not found");
+// }
+
+// Add event listener for clicking the "Update Totals" button
+const updateButton = document.querySelector('.flex-c-m.stext-101');
+if (updateButton) {
+    updateButton.addEventListener('click', updateTotalCost);
+} else {
+    console.error("Update button not found");
+}
+
+// Initial total update when the page loads
+document.addEventListener('DOMContentLoaded', updateTotalCost);
 
