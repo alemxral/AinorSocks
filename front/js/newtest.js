@@ -1,4 +1,8 @@
 
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
 document.addEventListener('DOMContentLoaded', function() {
     updateCartNotification();
   });
@@ -795,3 +799,4 @@ if (updateCartButton) {
     console.error("Update Cart button not found!");
 }
 
+});
