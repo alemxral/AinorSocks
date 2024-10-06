@@ -695,8 +695,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  height: 70px;
-  background-color: #fff;
+  height: 90px;
+  background-color: #ffd000;
   padding: 15px;
   display: none;
 
@@ -709,30 +709,34 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ Logo mobile ]*/
+/* Logo mobile */
 .logo-mobile {
-  display: block;
-  position: relative;
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
   box-sizing: border-box;
-  height: 100%;
-  flex-grow: 1;
-  background-color: #ffd000;
- 
+  
+  height: 100%;  /* Ensure it takes the full height */
+  width: 100%;  /* Optional: make it a square based on height */
+  
+  background-color: #000000;  /* Yellow background */
+  position: relative;  /* For any future positioning needs */
 }
 
+/* Logo text */
 .wrap-header-mobile .logo-mobile .logo-text {
-  font-size: 38px;  /* Adjust the font size */
+  font-size: 58px auto;  /* Adjust the font size */
   font-weight: bold;  /* Make the text bold */
   
-  display: flex;
-  color: #ffd000;
+  color: #ffd000;  /* Text color */
+  background-color: #000;  /* Black background */
 
-  padding-left: 5px;
-  padding-right: 5px;
-  background-color: rgb(0, 0, 0);
-
-  display: flex;
-  flex-wrap: wrap; 
+  
+  display: inline-block;  /* Wrap the text inside a box */
+  text-align: left;  /* Center the text within its box */
 }
+
+
 
 
 
