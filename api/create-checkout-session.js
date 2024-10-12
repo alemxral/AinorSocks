@@ -2,8 +2,9 @@ const stripe = require('stripe')('sk_live_51Q4OeLJTZouawikoCzYNR0HyyjRX4ujIiQm34
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
+        const { amount } = req.body; // Get the amount from the request body
+
         try {
-            // Hardcoded data for testing
             const session = await stripe.checkout.sessions.create({
                 payment_method_types: ['card'],
                 line_items: [
@@ -11,9 +12,9 @@ export default async function handler(req, res) {
                         price_data: {
                             currency: 'eur', // Set the currency to EUR
                             product_data: {
-                                name: 'polla', // Hardcoded product name for testing
+                                name: 'Polla', // Add your product name here
                             },
-                            unit_amount: 1000, // Hardcoded amount: 10 EUR (1000 cents)
+                            unit_amount: amount * 100, // Convert amount to cents
                         },
                         quantity: 1,
                     },
@@ -33,6 +34,7 @@ export default async function handler(req, res) {
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
+
 
 
 

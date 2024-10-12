@@ -887,7 +887,6 @@ const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('checkout-button').addEventListener('click', async () => {
         const totalAmount = getTotalCartCost(); // Ensure this function returns the correct total amount
-        const priceId = 'prod_R15qHDmtIv6eHo'; // Use your actual Price ID or totalAmount as needed
 
         // Call your API endpoint to create a checkout session
         const response = await fetch('/api/create-checkout-session', {
@@ -895,7 +894,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ priceId: priceId }), // Pass total amount here if not using Price ID
+            body: JSON.stringify({ amount: totalAmount }), // Pass the total amount here
         });
 
         const session = await response.json();
@@ -909,6 +908,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 
