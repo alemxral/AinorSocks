@@ -875,14 +875,12 @@ document.getElementById('update-totals-btn').addEventListener('click', () => {
 });
 
 
-
 // Initial total update when the page loads
 document.addEventListener('DOMContentLoaded', updateTotals);
 
 // This function will be triggered when the button is clicked
 document.getElementById('checkout-button').addEventListener('click', async () => {
-    // Make sure to replace 'your-price-id-here' with your actual Price ID from Stripe
-    const priceId = 'your-price-id-here'; // Replace with your Price ID
+    const priceId = 'prod_R15qHDmtIv6eHo'; // Use the default product ID for testing
 
     // Call your API endpoint to create a checkout session
     const response = await fetch('/api/create-checkout-session', {
@@ -890,17 +888,23 @@ document.getElementById('checkout-button').addEventListener('click', async () =>
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ priceId: priceId }),
+        body: JSON.stringify({ priceId: priceId }), // Send the Price ID
     });
 
     const session = await response.json();
 
     // Redirect to Stripe Checkout
-    if (session.id) {
-        window.location.href = `https://checkout.stripe.com/pay/${session.id}`;
+    if (response.ok && session.id) {
+        const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+        if (result.error) {
+            console.error('Error redirecting to Checkout:', result.error);
+            alert('Error occurred while processing your payment. Please try again.');
+        }
     } else {
         console.error('Error creating checkout session:', session.error);
         alert('Error occurred while processing your payment. Please try again.');
     }
 });
+
 
