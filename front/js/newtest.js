@@ -890,18 +890,22 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutButton.addEventListener('click', async (event) => {
         event.preventDefault();
 
-        const totalAmount = getTotalCartCost(); // Make sure this returns the correct total amount
-        
+        let totalAmount = getTotalCartCost(); // This should return the amount as 20.00, for example
+
+        // Convert the total amount to the smallest currency unit (e.g., cents)
+        totalAmount = Math.round(totalAmount * 100);
+        console.log('Amount format',totalAmount)
+
         try {
             // Log the request being sent
-            console.log('Sending POST request to /api/create-checkout-session with total amount:', totalAmount);
+            console.log('Sending POST request to /api/create-checkout-session with total amount in cents:', totalAmount);
 
             const response = await fetch('/api/create-checkout-session', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ amount: totalAmount }), // Pass the total amount here
+                body: JSON.stringify({ amount: totalAmount }), // Pass the amount in cents here
             });
 
             // Log the full response from the API
