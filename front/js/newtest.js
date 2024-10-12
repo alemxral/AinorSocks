@@ -909,6 +909,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Check if the session URL is valid
             if (session.url) {
+                // Log the session URL to the console before redirecting
+                console.log('Redirecting to Stripe Checkout:', session.url);
+
                 // Redirect to the Stripe checkout session URL
                 window.location.href = session.url;
             } else {
@@ -921,6 +924,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 
