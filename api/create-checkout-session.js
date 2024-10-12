@@ -12,7 +12,7 @@ export default async function handler(req, res) {
                         price_data: {
                             currency: 'eur', // Set the currency to EUR
                             product_data: {
-                                name: 'Polla', // Add your product name here
+                                name: 'Polla12', // Add your product name here
                             },
                             unit_amount: amount * 100, // Convert amount to cents
                         },
