@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')('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');
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -34,6 +34,7 @@ export default async function handler(req, res) {
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
+
 
 
 
