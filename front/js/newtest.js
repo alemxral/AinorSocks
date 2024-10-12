@@ -885,18 +885,17 @@ const stripePublicKey = 'pk_live_51Q4OeLJTZouawikopf9FHiiRcaDqmfuFdW2zNnlYfQuLVM
 const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Get the checkout button element
     const checkoutButton = document.getElementById('checkout-button');
     
     checkoutButton.addEventListener('click', async (event) => {
-        // Prevent the default form submission or button behavior
         event.preventDefault();
 
-        // Get the total amount for the checkout
-        const totalAmount = getTotalCartCost(); // Make sure this returns the total cart cost as a number
-
-        // Call your API endpoint to create a checkout session
+        const totalAmount = getTotalCartCost(); // Make sure this returns the correct total amount
+        
         try {
+            // Log the request being sent
+            console.log('Sending POST request to /api/create-checkout-session with total amount:', totalAmount);
+
             const response = await fetch('/api/create-checkout-session', {
                 method: 'POST',
                 headers: {
@@ -905,17 +904,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ amount: totalAmount }), // Pass the total amount here
             });
 
+            // Log the full response from the API
+            console.log('Response from /api/create-checkout-session:', response);
+
             const session = await response.json();
+            
+            // Log the session object received
+            console.log('Session object:', session);
 
-            // Check if the session URL is valid
+            // Check if session URL is available for redirection
             if (session.url) {
-                // Log the session URL to the console before redirecting
                 console.log('Redirecting to Stripe Checkout:', session.url);
-
-                // Redirect to the Stripe checkout session URL
                 window.location.href = session.url;
             } else {
-                console.error('Error creating checkout session:', session.error);
+                console.error('Error creating checkout session:', session.error || 'Unknown error');
                 alert('Error occurred while processing your payment. Please try again.');
             }
         } catch (error) {
@@ -924,14 +926,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
