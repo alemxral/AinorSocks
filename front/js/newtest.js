@@ -881,7 +881,8 @@ document.addEventListener('DOMContentLoaded', updateTotals);
 // Frontend JavaScript code
 document.addEventListener('DOMContentLoaded', updateTotals);
 
-const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY); // Ensure this is set up
+// Initialize Stripe with the public key from the HTML
+const stripe = Stripe(window.stripePublicKey);
 
 document.getElementById('checkout-button').addEventListener('click', async () => {
     const totalAmount = getTotalCartCost(); // Ensure this function returns the correct total amount
@@ -906,6 +907,8 @@ document.getElementById('checkout-button').addEventListener('click', async () =>
         alert('Error occurred while processing your payment. Please try again.');
     }
 });
+
+
 
 
 
