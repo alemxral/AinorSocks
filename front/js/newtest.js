@@ -875,8 +875,7 @@ document.getElementById('update-totals-btn').addEventListener('click', () => {
 });
 
 
-// Initial total update when the page loads
-document.addEventListener('DOMContentLoaded', updateTotals);
+
 
 // Frontend JavaScript code
 document.addEventListener('DOMContentLoaded', updateTotals);
