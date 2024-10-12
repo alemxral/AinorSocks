@@ -1,12 +1,8 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-    console.log('Received a request to create a checkout session'); // Log when the endpoint is hit
-
     if (req.method === 'POST') {
         const { amount } = req.body; // Get the amount from the request body
-
-        console.log(`Creating a checkout session for amount: $${amount / 100}`); // Log the amount being processed
 
         try {
             const session = await stripe.checkout.sessions.create({
@@ -14,9 +10,9 @@ export default async function handler(req, res) {
                 line_items: [
                     {
                         price_data: {
-                            currency: 'usd',
+                            currency: 'eur', // Set the currency to EUR
                             product_data: {
-                                name: 'Custom Amount Payment',
+                                name: 'Your Product Name', // Add your product name here
                             },
                             unit_amount: amount * 100, // Amount in cents
                         },
@@ -30,7 +26,7 @@ export default async function handler(req, res) {
 
             res.status(200).json({ id: session.id });
         } catch (err) {
-            console.error('Error creating checkout session:', err);
+            console.error('Error creating checkout session:', err); // Log the error to the console
             res.status(500).json({ error: err.message });
         }
     } else {
@@ -38,5 +34,7 @@ export default async function handler(req, res) {
         res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
+
+
 
 
