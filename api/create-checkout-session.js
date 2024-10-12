@@ -11,7 +11,7 @@ export default async function handler(req, res) {
                         price_data: {
                             currency: 'eur', // Set the currency to EUR
                             product_data: {
-                                name: 'Test Product', // Hardcoded product name for testing
+                                name: 'polla', // Hardcoded product name for testing
                             },
                             unit_amount: 1000, // Hardcoded amount: 10 EUR (1000 cents)
                         },
