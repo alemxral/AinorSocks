@@ -881,32 +881,36 @@ document.addEventListener('DOMContentLoaded', updateTotals);
 // Frontend JavaScript code
 document.addEventListener('DOMContentLoaded', updateTotals);
 
-// Initialize Stripe with the public key from the HTML
-const stripe = Stripe(window.stripePublicKey);
+// Define your Stripe public key here
+const stripePublicKey = 'pk_live_51Q4OeLJTZouawikopf9FHiiRcaDqmfuFdW2zNnlYfQuLVMX1wLzKwv2OxXWenyIYwpR3WuhWqEnF9XNpcoPHSvMo00D7HNU3sa'; // Replace with your actual publishable key
+const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
 
-document.getElementById('checkout-button').addEventListener('click', async () => {
-    const totalAmount = getTotalCartCost(); // Ensure this function returns the correct total amount
-    const priceId = 'prod_R15qHDmtIv6eHo'; // Use your actual Price ID or totalAmount as needed
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('checkout-button').addEventListener('click', async () => {
+        const totalAmount = getTotalCartCost(); // Ensure this function returns the correct total amount
+        const priceId = 'prod_R15qHDmtIv6eHo'; // Use your actual Price ID or totalAmount as needed
 
-    // Call your API endpoint to create a checkout session
-    const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ priceId: priceId }), // Pass total amount here if not using Price ID
+        // Call your API endpoint to create a checkout session
+        const response = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ priceId: priceId }), // Pass total amount here if not using Price ID
+        });
+
+        const session = await response.json();
+
+        // Redirect to Stripe Checkout
+        if (session.id) {
+            window.location.href = session.url; // Use session.url for redirection
+        } else {
+            console.error('Error creating checkout session:', session.error);
+            alert('Error occurred while processing your payment. Please try again.');
+        }
     });
-
-    const session = await response.json();
-
-    // Redirect to Stripe Checkout
-    if (session.id) {
-        window.location.href = session.url; // Use session.url for redirection
-    } else {
-        console.error('Error creating checkout session:', session.error);
-        alert('Error occurred while processing your payment. Please try again.');
-    }
 });
+
 
 
 
