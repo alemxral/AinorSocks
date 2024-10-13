@@ -876,94 +876,6 @@ document.getElementById('update-totals-btn').addEventListener('click', () => {
 
 
 
-
-// Frontend JavaScript code
-document.addEventListener('DOMContentLoaded', updateTotals);
-
-// Replace with your actual publishable key
-const stripePublicKey = 'pk_live_51Q4OeLJTZouawikopf9FHiiRcaDqmfuFdW2zNnlYfQuLVMX1wLzKwv2OxXWenyIYwpR3WuhWqEnF9XNpcoPHSvMo00D7HNU3sa';
-const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
-
-
-const countryCodeMap = {
-    'France': 'FR',
-    'Luxembourg': 'LU',
-    'Spain': 'ES',
-    'Belgium': 'BE',
-    'Portugal': 'PT',
-    'Italy': 'IT'
-};
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const checkoutButton = document.getElementById('checkout-button');
-    const countrySelect = document.getElementById('country-select'); // Add reference to the country select box
-
-    checkoutButton.addEventListener('click', async (event) => {
-        event.preventDefault();
-
-        let totalAmount = calculateTotalWithShipping(); // This should return the amount as 20.00, for example
-
-        // Convert the total amount to the smallest currency unit (e.g., cents)
-        totalAmount = Math.round(totalAmount * 100);
-        console.log('Amount format:', totalAmount);
-
-        // Get the selected shipping country
-        const selectedCountry = countrySelect.value;
-
-        // Get the cart items (assuming you have a function getCart() that returns the cart array)
-        const cart = getCart(); // This function should return an array of cart items (id, amount, size, price)
-
-        // Check if the country is selected
-        if (!selectedCountry || selectedCountry === "Select a country...") {
-            alert('Please select a shipping country.');
-            return;
-        }
-
-        try {
-            // Log the request being sent
-            console.log('Sending POST request to /api/create-checkout-session with total amount in cents:', totalAmount, 'and country:', selectedCountry);
-            logAllProductIdsInCart(); // Log cart items for debugging
-
-            const response = await fetch('/api/create-checkout-session', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    amount: totalAmount, // Pass the amount in cents here
-                    country: selectedCountry, // Pass the selected shipping country
-                    cart: cart // Pass the cart items
-                }),
-            });
-
-            // Log the full response from the API
-            console.log('Response from /api/create-checkout-session:', response);
-
-            const session = await response.json();
-
-            // Log the session object received
-            console.log('Session object:', session);
-
-            // Check if session URL is available for redirection
-            if (session.url) {
-                console.log('Redirecting to Stripe Checkout:', session.url);
-                window.location.href = session.url;
-            } else {
-                console.error('Error creating checkout session:', session.error || 'Unknown error');
-                alert('Error occurred while processing your payment. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error while calling Stripe API:', error);
-            alert('An error occurred. Please try again.');
-        }
-    });
-});
-
-
-
 function calculateTotalWithShipping() {
     const countrySelect = document.getElementById('country-select');
     const selectedCountry = countrySelect.value;
@@ -985,4 +897,79 @@ function calculateTotalWithShipping() {
     // Return the total as a formatted string
     return total.toFixed(2);
 }
+
+
+
+
+
+// Frontend JavaScript code
+document.addEventListener('DOMContentLoaded', updateTotals);
+
+// Replace with your actual publishable key
+const stripePublicKey = 'pk_live_51Q4OeLJTZouawikopf9FHiiRcaDqmfuFdW2zNnlYfQuLVMX1wLzKwv2OxXWenyIYwpR3WuhWqEnF9XNpcoPHSvMo00D7HNU3sa';
+const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
+
+
+const countryCodeMap = {
+    'France': 'FR',
+    'Luxembourg': 'LU',
+    'Spain': 'ES',
+    'Belgium': 'BE',
+    'Portugal': 'PT',
+    'Italy': 'IT'
+};
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const checkoutButton = document.getElementById('checkout-button');
+    const countrySelect = document.getElementById('country-select');
+
+    checkoutButton.addEventListener('click', async (event) => {
+        event.preventDefault();
+
+        let totalAmount = calculateTotalWithShipping(); // Calculate the total amount
+
+        // Convert the total amount to the smallest currency unit (e.g., cents)
+        totalAmount = Math.round(totalAmount * 100);
+
+        // Get the selected country name
+        const selectedCountryName = countrySelect.value;
+
+        // Check if the country has a valid country code
+        const selectedCountryCode = countryCodeMap[selectedCountryName];
+
+        // Get the cart items
+        const cart = getCart(); 
+
+        if (!selectedCountryCode) {
+            alert('Please select a valid shipping country.');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/create-checkout-session', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    amount: totalAmount, 
+                    country: selectedCountryCode, // Pass the country code instead of name
+                    cart: cart 
+                }),
+            });
+
+            const session = await response.json();
+            if (session.url) {
+                window.location.href = session.url;
+            } else {
+                alert('Error occurred during checkout.');
+            }
+        } catch (error) {
+            console.error('Error during checkout:', error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+});
 
