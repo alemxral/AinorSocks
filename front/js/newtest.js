@@ -886,33 +886,51 @@ const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
 
 document.addEventListener('DOMContentLoaded', () => {
     const checkoutButton = document.getElementById('checkout-button');
-    
+    const countrySelect = document.getElementById('country-select'); // Add reference to the country select box
+
     checkoutButton.addEventListener('click', async (event) => {
         event.preventDefault();
 
-        let totalAmount =  calculateTotalWithShipping(); // This should return the amount as 20.00, for example
+        let totalAmount = calculateTotalWithShipping(); // This should return the amount as 20.00, for example
 
         // Convert the total amount to the smallest currency unit (e.g., cents)
         totalAmount = Math.round(totalAmount * 100);
-        console.log('Amount format',totalAmount)
+        console.log('Amount format:', totalAmount);
+
+        // Get the selected shipping country
+        const selectedCountry = countrySelect.value;
+
+        // Get the cart items (assuming you have a function getCart() that returns the cart array)
+        const cart = getCart(); // This function should return an array of cart items (id, amount, size, price)
+
+        // Check if the country is selected
+        if (!selectedCountry || selectedCountry === "Select a country...") {
+            alert('Please select a shipping country.');
+            return;
+        }
 
         try {
             // Log the request being sent
-            console.log('Sending POST request to /api/create-checkout-session with total amount in cents:', totalAmount);
+            console.log('Sending POST request to /api/create-checkout-session with total amount in cents:', totalAmount, 'and country:', selectedCountry);
+            logAllProductIdsInCart(); // Log cart items for debugging
 
             const response = await fetch('/api/create-checkout-session', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ amount: totalAmount }), // Pass the amount in cents here
+                body: JSON.stringify({ 
+                    amount: totalAmount, // Pass the amount in cents here
+                    country: selectedCountry, // Pass the selected shipping country
+                    cart: cart // Pass the cart items
+                }),
             });
 
             // Log the full response from the API
             console.log('Response from /api/create-checkout-session:', response);
 
             const session = await response.json();
-            
+
             // Log the session object received
             console.log('Session object:', session);
 
