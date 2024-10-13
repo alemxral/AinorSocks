@@ -503,6 +503,19 @@ function clearCart() {
 
 
 
+// Check if the current page is success.html
+if (window.location.pathname.endsWith('success.html')) {
+    // Update subtotal and total amounts using the existing functions
+  
+    const total = calculateTotalWithShipping();
+
+  
+    document.getElementById('total-amount').innerText = `€${total.toFixed(2)}`;
+
+    clearCart(); // Execute the clearCart function
+}
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
