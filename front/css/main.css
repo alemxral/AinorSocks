@@ -369,6 +369,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   .logo-text {
       font-size: 26px; /* Reduce font size for big phones */
   }
+
+  /* Adjusting the right margin for the logo */
+  .logo {
+      margin-right: 55px; /* Reduce margin-right for big phones */
+  }
 }
 
 /*------------------------------------------------------------------
@@ -386,9 +391,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   .logo-text {
       font-size: 20px; /* Reduce font size further for small phones */
   }
+
+  /* Adjusting the right margin for the logo */
+  .logo {
+      margin-right: 45px; /* Further reduce margin-right for small phones */
+  }
 }
-
-
 /*------------------------------------------------------------------
 [ Menu ]*/
 
