@@ -890,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutButton.addEventListener('click', async (event) => {
         event.preventDefault();
 
-        let totalAmount = getTotalCartCost(); // This should return the amount as 20.00, for example
+        let totalAmount = getTotalCostWithShipping(); // This should return the amount as 20.00, for example
 
         // Convert the total amount to the smallest currency unit (e.g., cents)
         totalAmount = Math.round(totalAmount * 100);
@@ -930,3 +930,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+function getTotalCostWithShipping() {
+    const countrySelect = document.getElementById('country-select');
+    const selectedCountry = countrySelect.value;
+
+    // Log the selected country
+    console.log("Selected Country:", selectedCountry);
+
+    // Set shipping cost to zero if no country is selected
+    let shippingCost = 0; // Default shipping cost
+    if (selectedCountry && selectedCountry !== "Select a country...") {
+        shippingCost = shippingRates[selectedCountry] || shippingRates["Other"]; // Get shipping cost for the selected country
+    }
+
+    // Log the shipping cost
+    console.log("Shipping Cost:", shippingCost);
+
+    const subtotal = parseFloat(getTotalCartCost()) || 0;  // Ensure subtotal is treated as a number
+
+    // Log the subtotal
+    console.log("Subtotal:", subtotal.toFixed(2));
+
+    const total = subtotal + shippingCost;  // Calculate total cost
+
+    // Log the total
+    console.log("Total Cost:", total.toFixed(2));
+
+    // Update the shipping and total amounts in the HTML
+    document.getElementById('shipping-amount').textContent = `$${shippingCost.toFixed(2)}`;
+    document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
+
+    // Return the total cost including shipping
+    return total;
+}
