@@ -355,18 +355,36 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*------------------------------------------------------------------
-[ Mobile View Adjustments ] */
-@media (max-width: 600px) {
+[ Mobile View Adjustments for Big Phones (400px - 600px) ]
+------------------------------------------------------------------*/
+@media (max-width: 600px) and (min-width: 400px) {
   .logo-container {
-      padding: 6px 12px; /* Reduce padding for mobile */
+      padding: 6px 12px; /* Reduce padding for big phones */
   }
 
   .logo-img {
-      max-height: 32px; /* Shrink logo image size for mobile */
+      max-height: 32px; /* Shrink logo image size for big phones */
   }
 
   .logo-text {
-      font-size: 26px; /* Reduce font size for mobile */
+      font-size: 26px; /* Reduce font size for big phones */
+  }
+}
+
+/*------------------------------------------------------------------
+[ Mobile View Adjustments for Small Phones (< 400px) ]
+------------------------------------------------------------------*/
+@media (max-width: 399px) {
+  .logo-container {
+      padding: 4px 8px; /* Further reduce padding for smaller phones */
+  }
+
+  .logo-img {
+      max-height: 24px; /* Shrink logo image size further for small phones */
+  }
+
+  .logo-text {
+      font-size: 20px; /* Reduce font size further for small phones */
   }
 }
 
