@@ -358,15 +358,15 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Mobile View Adjustments ] */
 @media (max-width: 600px) {
   .logo-container {
-      padding: 5px 10px; /* Reduce padding for mobile */
+      padding: 8px 12px; /* Reduce padding for mobile */
   }
 
   .logo-img {
-      max-height: 30px; /* Shrink logo image size for mobile */
+      max-height: 42px; /* Shrink logo image size for mobile */
   }
 
   .logo-text {
-      font-size: 24px; /* Reduce font size for mobile */
+      font-size: 36px; /* Reduce font size for mobile */
   }
 }
 
