@@ -884,6 +884,19 @@ document.addEventListener('DOMContentLoaded', updateTotals);
 const stripePublicKey = 'pk_live_51Q4OeLJTZouawikopf9FHiiRcaDqmfuFdW2zNnlYfQuLVMX1wLzKwv2OxXWenyIYwpR3WuhWqEnF9XNpcoPHSvMo00D7HNU3sa';
 const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
 
+
+const countryCodeMap = {
+    'France': 'FR',
+    'Luxembourg': 'LU',
+    'Spain': 'ES',
+    'Belgium': 'BE',
+    'Portugal': 'PT',
+    'Italy': 'IT'
+};
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const checkoutButton = document.getElementById('checkout-button');
     const countrySelect = document.getElementById('country-select'); // Add reference to the country select box
