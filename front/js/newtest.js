@@ -91,7 +91,7 @@ if (productContainer) {
                                 ${product.name}
                             </a>
                             <span class="stext-105 cl3">
-                                $${product.price.toFixed(2)}
+                                €${product.price.toFixed(2)}
                             </span>
                         </div>
 
