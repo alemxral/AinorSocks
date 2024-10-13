@@ -64,6 +64,9 @@ const products = [
 const productContainer = document.getElementById('product-container');
 
 
+
+
+
 // Check if productContainer exists in the DOM
 if (productContainer) {
     console.log("Product container found:", productContainer);
@@ -296,6 +299,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+    // Check if cookies have been accepted
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+    if (!cookiesAccepted) {
+        // Show the cookie banner if cookies have not been accepted
+        cookieBanner.style.display = 'block';
+    }
+
+    // Add event listener to the accept button
+    acceptCookiesBtn.addEventListener('click', () => {
+        // Store the user's acceptance in local storage
+        localStorage.setItem('cookiesAccepted', 'true');
+        // Hide the cookie banner
+        cookieBanner.style.display = 'none';
+    });
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Event listener for "Add to Cart" button
