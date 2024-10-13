@@ -862,11 +862,11 @@ function updateTotals() {
     console.log("Total Cost:", total.toFixed(2));
     console.log("fINISH");
     // Update the shipping and total amounts in the HTML
-    document.getElementById('shipping-amount').textContent = `$${shippingCost.toFixed(2)}`;
+    document.getElementById('shipping-amount').textContent = `€${shippingCost.toFixed(2)}`;
     document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
 }
 
-
+document.getElementById('country-select').addEventListener('change', updateTotals);
 
 // Add event listener for when the "Update Totals" button is clicked
 document.getElementById('update-totals-btn').addEventListener('click', () => {
@@ -890,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutButton.addEventListener('click', async (event) => {
         event.preventDefault();
 
-        let totalAmount = getTotalCostWithShipping(); // This should return the amount as 20.00, for example
+        let totalAmount =  calculateTotalWithShipping(); // This should return the amount as 20.00, for example
 
         // Convert the total amount to the smallest currency unit (e.g., cents)
         totalAmount = Math.round(totalAmount * 100);
@@ -933,36 +933,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function getTotalCostWithShipping() {
+function calculateTotalWithShipping() {
     const countrySelect = document.getElementById('country-select');
     const selectedCountry = countrySelect.value;
 
-    // Log the selected country
-    console.log("Selected Country:", selectedCountry);
-
-    // Set shipping cost to zero if no country is selected
-    let shippingCost = 0; // Default shipping cost
-    if (selectedCountry && selectedCountry !== "Select a country...") {
-        shippingCost = shippingRates[selectedCountry] || shippingRates["Other"]; // Get shipping cost for the selected country
+    // Check if a valid country is selected
+    if (!selectedCountry || selectedCountry === "Select a country...") {
+        return "Shipping cost is not available.";
     }
 
-    // Log the shipping cost
-    console.log("Shipping Cost:", shippingCost);
+    // Get shipping cost based on selected country, or default to "Other"
+    const shippingCost = shippingRates[selectedCountry] || shippingRates["Other"];
+    
+    // Get subtotal (total cart cost) and make sure it's treated as a number
+    const subtotal = parseFloat(getTotalCartCost()) || 0;  
 
-    const subtotal = parseFloat(getTotalCartCost()) || 0;  // Ensure subtotal is treated as a number
+    // Calculate total cost
+    const total = subtotal + shippingCost;
 
-    // Log the subtotal
-    console.log("Subtotal:", subtotal.toFixed(2));
-
-    const total = subtotal + shippingCost;  // Calculate total cost
-
-    // Log the total
-    console.log("Total Cost:", total.toFixed(2));
-
-    // Update the shipping and total amounts in the HTML
-    document.getElementById('shipping-amount').textContent = `$${shippingCost.toFixed(2)}`;
-    document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
-
-    // Return the total cost including shipping
-    return total;
+    // Return the total as a formatted string
+    return total.toFixed(2);
 }
+

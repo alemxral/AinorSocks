@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
                 price_data: {
                     currency: 'eur',
                     product_data: {
-                        name: 'Your Product Name', // Modify as needed
+                        name: 'Your Order', // Modify as needed
                     },
                     unit_amount: amount, // Ensure amount is being passed correctly
                 },
