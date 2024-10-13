@@ -345,8 +345,23 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   font-size: 38px; /* Desktop font size */
   color: #ffd000; /* Text color */
   font-weight: bold; /* Make text bold */
-  font-family: 'Arial', sans-serif; /* Choose a font family */
+  font-family: 'Fredoka One', cursive; /* Joyful font */
   white-space: nowrap; /* Prevent text from wrapping */
+  display: inline-block; /* Allow transformation effects */
+  animation: bounce 1s infinite; /* Add bounce animation */
+}
+
+/* Animation for Joyful Effect */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); /* Original position */
+  }
+  40% {
+      transform: translateY(-10px); /* Move up */
+  }
+  60% {
+      transform: translateY(-5px); /* Move slightly up */
+  }
 }
 
 /* Hover effect */
