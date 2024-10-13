@@ -18,8 +18,9 @@ module.exports = async (req, res) => {
         console.log('Selected country:', country);
         console.log('Cart items:', cart);
 
-        // Serialize cart items into a string for metadata
-        const cartItems = cart.map(item => `Product ID: ${item.id}, Qty: ${item.amount}, Size: ${item.size}, Price: €${item.price}`).join('; ');
+       // Serialize cart items into a string for metadata
+            const cartItems = cart.map(item => `Product ID: ${item.id}, Qty: ${item.amount}, Size: ${item.size}, Color: ${item.color}, Price: €${item.price}`).join('; ');
+
 
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
@@ -35,7 +36,7 @@ module.exports = async (req, res) => {
                 quantity: 1,
             }],
             success_url: 'https://miemiesocks.vercel.app/success.html',
-            cancel_url: 'https://miemiesocks.vercel.app/shopping-cart.html',
+            cancel_url: 'https://miemiesocks.vercel.app/shoping-cart.html',
             
             // Lock shipping address and pass selected country
             shipping_address_collection: {
