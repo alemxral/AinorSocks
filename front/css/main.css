@@ -318,48 +318,41 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 
-
 /*------------------------------------------------------------------
-[ Logo ]*/
+[ Logo ] */
 .logo {
-
-  
-    background-color: #000000; /* Dark background for better contrast */
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  height: 65%;
+  text-decoration: none;
   margin-right: 55px;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  background-color: #000000; /* Black box for both logo and text */
+  padding: 8px 12px; /* Padding inside the black box */
+  border-radius: 5px; /* Optional: rounded corners */
+}
 
-
+.logo-img {
+  height: 100%; /* Fit image height to match text */
+  width: auto; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict the image to a max height */
+  margin-right: 10px; /* Space between image and text */
+  color: #ffd000; 
+}
 
 .logo-text {
   font-size: 38px; /* Adjust font size */
   color: #ffd000; /* Text color */
   font-weight: bold; /* Make text bold */
   font-family: 'Arial', sans-serif; /* Choose a font family */
-  background-color: #000000; /* Dark background for better contrast */
-  padding-left: 5px;
-  padding-right: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-wrap: wrap; 
-
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
-
-
-
-/* Optional: Add hover effect */
+/* Hover effect */
 .logo:hover .logo-text {
-  color: #ffffff; /* Change color on hover */
+  color: #ffffff; /* Change text color on hover */
 }
-
 
 
 /*------------------------------------------------------------------
@@ -2121,6 +2114,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .block2-btn {
   position: absolute;
+  background-color:#ffd000;
   bottom: -50px;
   left: 50%;
   -webkit-transform: translateX(-50%);
