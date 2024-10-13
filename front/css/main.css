@@ -345,7 +345,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   font-size: 38px; /* Desktop font size */
   color: #ffd000; /* Text color */
   font-weight: bold; /* Make text bold */
-  font-family: 'Fredoka One'; /* Joyful font */
+  font-family: 'Fredoka One', cursive, sans-serif; 
   white-space: nowrap; /* Prevent text from wrapping */
   display: inline-block; /* Allow transformation effects */
   animation: bounce 1s infinite; /* Add bounce animation */
@@ -383,8 +383,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
     .logo-text {
         font-size: 26px; /* Reduce font size for big phones */
-        font-weight: bold; /* Make text bold */
-        font-family: 'Fredoka One'; /* Joyful font */
+     
 
     }
 
@@ -408,8 +407,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
     .logo-text {
         font-size: 20px; /* Reduce font size further for small phones */
-        font-weight: bold; /* Make text bold */
-        font-family: 'Fredoka One'; /* Joyful font */
+      
     }
 
     /* Adjusting the right margin for the logo */
