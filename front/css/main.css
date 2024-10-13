@@ -362,11 +362,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   }
 
   .logo-img {
-      max-height: 35px; /* Shrink logo image size for mobile */
+      max-height: 32px; /* Shrink logo image size for mobile */
   }
 
   .logo-text {
-      font-size: 29px; /* Reduce font size for mobile */
+      font-size: 26px; /* Reduce font size for mobile */
   }
 }
 
