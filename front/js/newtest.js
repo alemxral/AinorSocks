@@ -1,55 +1,55 @@
 
-const products = [
-    {
-        id: 1,
-        name: "Socks Alejandro",
-        description: "Comfortable cotton socks",
-        price: 10.00,
-        image: "images/product-01.jpg",
-        image: "images/product-01.jpg",
-        image1: "images/product-01.jpg",
-        image2: "images/post-1.jpg",
-        image3: "images/product-01.jpg",
-        color: "unique",
-        detailPage: "product-detail.html",
-        colors : ["Red", "Blux", "Green"], // Example color options
-        sizes : ["S", "M", "L"],
-        detailPage: "product-detail.html"
+// const products = [
+//     {
+//         id: 1,
+//         name: "Socks Alejandro",
+//         description: "Comfortable cotton socks",
+//         price: 10.00,
+//         image: "images/product-01.jpg",
+//         image: "images/product-01.jpg",
+//         image1: "images/product-01.jpg",
+//         image2: "images/post-1.jpg",
+//         image3: "images/product-01.jpg",
+//         color: "unique",
+//         detailPage: "product-detail.html",
+//         colors : ["Red", "Blux", "Green"], // Example color options
+//         sizes : ["S", "M", "L"],
+//         detailPage: "product-detail.html"
 
-    },
-    {
-        id: 2,
-        name: "Socks B",
-        description: "Comfortable cotton socks",
-        price: 18.00,
-        image: "images/product-01.jpg",
-        image: "images/product-01.jpg",
-        image1: "images/product-01.jpg",
-        image2: "images/post-1.jpg",
-        image3: "images/product-01.jpg",
-        color: "unique",
-        detailPage: "product-detail.html",
-        colors : ["Red", "Blux", "Green"], // Example color options
-        sizes : ["S", "M", "L"],
-        detailPage: "product-detail.html"
-    },
-    {
-        id: 3,
-        name: "Socks C",
-        description: "Comfortable cotton socks",
-        price: 14.00,
-        image: "images/product-01.jpg",
-        image: "images/product-01.jpg",
-        image1: "images/product-01.jpg",
-        image2: "images/post-1.jpg",
-        image3: "images/product-01.jpg",
-        color: "unique",
-        detailPage: "product-detail.html",
-        colors : ["Red", "Blux", "Green"], // Example color options
-        sizes : ["S", "M", "L"],
-        detailPage: "product-detail.html"
-    },
-];
+//     },
+//     {
+//         id: 2,
+//         name: "Socks B",
+//         description: "Comfortable cotton socks",
+//         price: 18.00,
+//         image: "images/product-01.jpg",
+//         image: "images/product-01.jpg",
+//         image1: "images/product-01.jpg",
+//         image2: "images/post-1.jpg",
+//         image3: "images/product-01.jpg",
+//         color: "unique",
+//         detailPage: "product-detail.html",
+//         colors : ["Red", "Blux", "Green"], // Example color options
+//         sizes : ["S", "M", "L"],
+//         detailPage: "product-detail.html"
+//     },
+//     {
+//         id: 3,
+//         name: "Socks C",
+//         description: "Comfortable cotton socks",
+//         price: 14.00,
+//         image: "images/product-01.jpg",
+//         image: "images/product-01.jpg",
+//         image1: "images/product-01.jpg",
+//         image2: "images/post-1.jpg",
+//         image3: "images/product-01.jpg",
+//         color: "unique",
+//         detailPage: "product-detail.html",
+//         colors : ["Red", "Blux", "Green"], // Example color options
+//         sizes : ["S", "M", "L"],
+//         detailPage: "product-detail.html"
+//     },
+// ];
 
 
 
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Update modal content
                     try {
                         document.querySelector(".js-name-detail").textContent = product.name;
-                        document.querySelector(".mtext-106.cl2").textContent = `$${product.price.toFixed(2)}`;
+                        document.querySelector(".mtext-106.cl2").textContent = `€${product.price.toFixed(2)}`;
                         document.querySelector(".stext-102.cl3").textContent = product.description;
 
                         const bottomElement = document.querySelector('.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail');

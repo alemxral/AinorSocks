@@ -349,6 +349,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   white-space: nowrap; /* Prevent text from wrapping */
   display: inline-block; /* Allow transformation effects */
   animation: bounce 1s infinite; /* Add bounce animation */
+  animation: bounce 1s ease-in-out 0s 5; /* 1s duration, no delay, bounce 3 times */
 }
 
 /* Animation for Joyful Effect */
