@@ -343,7 +343,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .logo-text {
   font-size: 38px; /* Desktop font size */
-  color: #ffd000; /* Text color */
+  color: #ffffff; /* Text color */
   font-weight: bold; /* Make text bold */
   font-family: 'Fredoka One', cursive, sans-serif; 
   white-space: nowrap; /* Prevent text from wrapping */
@@ -366,7 +366,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /* Hover effect */
 .logo:hover .logo-text {
-  color: #ffffff; /* Change text color on hover */
+  color: #ffd000; /* Change text color on hover */
 }
 
 /*------------------------------------------------------------------
