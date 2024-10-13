@@ -1,13 +1,4 @@
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    updateCartNotification();
-  });
-
-
 const products = [
     {
         id: 1,
@@ -59,6 +50,15 @@ const products = [
         detailPage: "product-detail.html"
     },
 ];
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartNotification();
+  });
+
+
+
 
 // Select the container where products will be inserted
 const productContainer = document.getElementById('product-container');
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                                 <div class="slick3 gallery-lb">
-                                    <div class="item-slick3" data-thumb="images/product-detail-01.jpg" number="1">
+                                    <div class="item-slick3" data-thumb="images/thumb.png" number="1">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image1}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                                 <div class="slick3 gallery-lb">
-                                    <div class="item-slick3" data-thumb="images/product-detail-01.jpg" number="1">
+                                    <div class="item-slick3" data-thumb="images/thumb.png" number="1">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image1}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="item-slick3" data-thumb="images/product-detail-02.jpg" number="2">
+                                    <div class="item-slick3" data-thumb="images/thumb.png" number="2">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image2}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                                 <div class="slick3 gallery-lb">
-                                    <div class="item-slick3" data-thumb="images/product-detail-01.jpg" number="1">
+                                    <div class="item-slick3" data-thumb="images/thumb.png" number="1">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image1}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="item-slick3" data-thumb="images/product-detail-02.jpg" number="2">
+                                    <div class="item-slick3" data-thumb="images/thumb.png" number="2">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image2}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="item-slick3" data-thumb="images/product-detail-03.jpg" number="3">
+                                    <div class="item-slick3" data-thumb="images/thumb.png" number="3">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image3}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image3}">
@@ -449,16 +449,16 @@ function getTotalProductsInCart() {
     return totalAmount;
 }
 
-// Function to log all product IDs in the cart to the console
-function logAllProductIdsInCart() {
-    const cart = getCart();
-    console.log("Products in the cart:");
+// // Function to log all product IDs in the cart to the console
+// function logAllProductIdsInCart() {
+//     const cart = getCart();
+//     console.log("Products in the cart:");
 
-    // Log the ID of each product
-    cart.forEach(product => {
-        console.log("Product ID:", product.id,"amount:",product.amount);
-    });
-}
+//     // Log the ID of each product
+//     cart.forEach(product => {
+//         console.log("Product ID:", product.id,"amount:",product.amount);
+//     });
+// }
 
 // Function to update the cart notification (i.e., number of items in cart)
 function updateCartNotification() {
