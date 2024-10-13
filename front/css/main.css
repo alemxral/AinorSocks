@@ -363,7 +363,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
 
     .logo-img {
-        max-height: 38px; /* Shrink logo image size for big phones */
+        max-height: 45px; /* Shrink logo image size for big phones */
     }
 
     .logo-text {
@@ -372,7 +372,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
     /* Adjusting the right margin for the logo */
     .logo {
-        margin-right: 50px; /* Reduce margin-right for big phones */
+        margin-right: 46px; /* Reduce margin-right for big phones */
     }
 }
 
@@ -385,7 +385,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
 
     .logo-img {
-        max-height: 24px; /* Shrink logo image size further for small phones */
+        max-height: 34px; /* Shrink logo image size further for small phones */
     }
 
     .logo-text {
@@ -394,7 +394,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
     /* Adjusting the right margin for the logo */
     .logo {
-        margin-right: 45px; /* Further reduce margin-right for small phones */
+        margin-right: 35px; /* Further reduce margin-right for small phones */
     }
 }
 /*------------------------------------------------------------------
