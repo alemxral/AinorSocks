@@ -329,20 +329,20 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   display: flex;
   align-items: center;
   background-color: #000000; /* Black box for both logo and text */
-  padding: 8px 12px; /* Padding inside the black box */
+  padding: 10px 15px; /* Padding inside the black box */
   border-radius: 5px; /* Optional: rounded corners */
+  box-sizing: border-box; /* Ensure padding is part of the element's width */
 }
 
 .logo-img {
-  height: 100%; /* Fit image height to match text */
-  width: auto; /* Maintain aspect ratio */
-  max-height: 50px; /* Restrict the image to a max height */
+  height: 100%;
+  width: auto;
+  max-height: 50px; /* Restrict the image to a max height for desktop */
   margin-right: 10px; /* Space between image and text */
-  color: #ffd000; 
 }
 
 .logo-text {
-  font-size: 38px; /* Adjust font size */
+  font-size: 38px; /* Desktop font size */
   color: #ffd000; /* Text color */
   font-weight: bold; /* Make text bold */
   font-family: 'Arial', sans-serif; /* Choose a font family */
@@ -352,6 +352,22 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /* Hover effect */
 .logo:hover .logo-text {
   color: #ffffff; /* Change text color on hover */
+}
+
+/*------------------------------------------------------------------
+[ Mobile View Adjustments ] */
+@media (max-width: 600px) {
+  .logo-container {
+      padding: 5px 10px; /* Reduce padding for mobile */
+  }
+
+  .logo-img {
+      max-height: 30px; /* Shrink logo image size for mobile */
+  }
+
+  .logo-text {
+      font-size: 24px; /* Reduce font size for mobile */
+  }
 }
 
 
