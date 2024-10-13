@@ -358,44 +358,44 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Mobile View Adjustments for Big Phones (400px - 600px) ]
 ------------------------------------------------------------------*/
 @media (max-width: 600px) and (min-width: 400px) {
-  .logo-container {
-      padding: 6px 12px; /* Reduce padding for big phones */
-  }
+    .logo-container {
+        padding: 7px 12px; /* Reduce padding for big phones */
+    }
 
-  .logo-img {
-      max-height: 42px; /* Shrink logo image size for big phones */
-  }
+    .logo-img {
+        max-height: 38px; /* Shrink logo image size for big phones */
+    }
 
-  .logo-text {
-      font-size: 36px; /* Reduce font size for big phones */
-  }
+    .logo-text {
+        font-size: 26px; /* Reduce font size for big phones */
+    }
 
-  /* Adjusting the right margin for the logo */
-  .logo {
-      margin-right: 45px; /* Reduce margin-right for big phones */
-  }
+    /* Adjusting the right margin for the logo */
+    .logo {
+        margin-right: 50px; /* Reduce margin-right for big phones */
+    }
 }
 
 /*------------------------------------------------------------------
 [ Mobile View Adjustments for Small Phones (< 400px) ]
 ------------------------------------------------------------------*/
 @media (max-width: 399px) {
-  .logo-container {
-      padding: 4px 8px; /* Further reduce padding for smaller phones */
-  }
+    .logo-container {
+        padding: 4px 8px; /* Further reduce padding for smaller phones */
+    }
 
-  .logo-img {
-      max-height: 24px; /* Shrink logo image size further for small phones */
-  }
+    .logo-img {
+        max-height: 24px; /* Shrink logo image size further for small phones */
+    }
 
-  .logo-text {
-      font-size: 20px; /* Reduce font size further for small phones */
-  }
+    .logo-text {
+        font-size: 20px; /* Reduce font size further for small phones */
+    }
 
-  /* Adjusting the right margin for the logo */
-  .logo {
-      margin-right: 45px; /* Further reduce margin-right for small phones */
-  }
+    /* Adjusting the right margin for the logo */
+    .logo {
+        margin-right: 45px; /* Further reduce margin-right for small phones */
+    }
 }
 /*------------------------------------------------------------------
 [ Menu ]*/
