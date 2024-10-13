@@ -383,6 +383,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
     .logo-text {
         font-size: 26px; /* Reduce font size for big phones */
+        font-weight: bold; /* Make text bold */
+        font-family: 'Fredoka One'; /* Joyful font */
+
     }
 
     /* Adjusting the right margin for the logo */
@@ -405,6 +408,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
     .logo-text {
         font-size: 20px; /* Reduce font size further for small phones */
+        font-weight: bold; /* Make text bold */
+        font-family: 'Fredoka One'; /* Joyful font */
     }
 
     /* Adjusting the right margin for the logo */
