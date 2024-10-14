@@ -2,7 +2,7 @@
 const products = [
     {
         id: 1,
-        name: "STAR WARS™ 6 PACK GIFT UNISEX SET - Chaussettes - white",
+        name: " 6 PACK GIFT UNISEX SET - Chaussettes - white",
         description: "Comfortable cotton socks",
         price: 10.00,
         image: "images/product-01.jpg",
