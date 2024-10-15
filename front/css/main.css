@@ -181,7 +181,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .btn-back-to-top:hover {
   opacity: 1;
-  background-color: #ffd000;
+  background-color: #f5f5dc;
 }
 
 @media (max-width: 575px) {
@@ -206,13 +206,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-  color: #ffd000;
-  background-color: #ffd000;
+  color: #f5f5dc;
+  background-color: #f5f5dc;
 }
 
 .header-v2 .container-menu-desktop {
   height: 84px;
-  background-color: #ffd000;
+  background-color: #f5f5dc;
 }
 
 .header-v3 .container-menu-desktop {
@@ -256,7 +256,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .right-top-bar a:hover {
-  color: #ffd000;
+  color: #f5f5dc;
 }
 
 
@@ -286,7 +286,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -moz-transition: height 0.3s, background-color 0.3s;
   transition: height 0.3s, background-color 0.3s;
   width: 100%;
-  background-color:  #ffd000;
+  background-color:  #f5f5dc;
 }
 
 .header-v2 .wrap-menu-desktop {
@@ -314,7 +314,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  background-color: #ffd000;
+  background-color: #f5f5dc;
 }
 
 
@@ -367,7 +367,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /* Hover effect */
 .logo:hover .logo-text {
-  color: #ffd000; /* Change text color on hover */
+  color: #f5f5dc; /* Change text color on hover */
 }
 
 /*------------------------------------------------------------------
