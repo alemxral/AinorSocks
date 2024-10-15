@@ -47,6 +47,19 @@ const products = [
         colors: ["Red", "Blux", "Green"],
         sizes: ["S", "M", "L"]
     }
+    {
+        id: 4,
+        name: "Autumn and Winter Coarse Line Stockings Children Korean Polished Color Ideas Yarn Cashmere Thickened and Warm Wool",
+        description: "Comfortable cotton socks",
+        price: 6.99,
+        image: "front/images/PL3.jpg",
+        image1: "front/images/PGL3.jpg",
+        image2: "front/images/PG3.jpg",
+        color: "unique",
+        detailPage: "product-detail.html",
+        colors: ["Red", "Blux", "Green"],
+        sizes: ["S", "M", "L"]
+    }
 ];
 
 
