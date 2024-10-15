@@ -5,7 +5,7 @@ const products = [
         name: " 6 PACK GIFT UNISEX SET - Chaussettes - white",
         description: "Comfortable cotton socks",
         price: 10.00,
-        image: "images/product-01.jpg",
+        image: "front/images/O1CN015U8a3u1xdwFEFKa3h_!!2206448856467-0-cib.jpg",
         image1: "images/product-01.jpg",
         image2: "images/post-1.jpg",
         image3: "images/product-01.jpg",
