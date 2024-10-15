@@ -46,7 +46,7 @@ const products = [
         detailPage: "product-detail.html",
         colors: ["Red", "Blux", "Green"],
         sizes: ["S", "M", "L"]
-    }
+    },
     {
         id: 4,
         name: "Autumn and Winter Coarse Line Stockings Children Korean Polished Color Ideas Yarn Cashmere Thickened and Warm Wool",
