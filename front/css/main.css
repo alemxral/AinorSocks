@@ -209,6 +209,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #f5f5dc;
   background-color: #f5f5dc;
 }
+//更改表头图片
+  background-image: url('front/images/header2.jpg'); /* 这里替换为你的图片路径 */
+  background-size: cover; /* 确保图片覆盖整个表头 */
+  background-position: center; /* 图片居中显示 */
+  background-repeat: no-repeat; /* 防止图片重复 */
+}
 
 .header-v2 .container-menu-desktop {
   height: 84px;
