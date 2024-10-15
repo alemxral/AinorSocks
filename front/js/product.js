@@ -142,7 +142,7 @@ const products = [
         id: 10,
         name: "Cute Cartoon Cubs Embroidered Warm Socks Kids Korean Version Trend Two Bars Socks",
         description: "Comfortable cotton socks",
-        price: 6.99,
+        price: 12.99,
         image: "front/images/GP bear 2.jpg",
         image1: "front/images/GP bear 1.jpg",
         image2: "front/images/GP bear 3.jpg",
