@@ -9,7 +9,7 @@ const products = [
         image1: "front/images/O1CN01cuAwxa1xdwFEFLeaC_!!2206448856467-0-cib.jpg",
         image2: "front/images/O1CN015U8a3u1xdwFEFKa3h_!!2206448856467-0-cib.jpg",
         image3: "front/images/O1CN01u1ijh61xdwFAXPaqZ_!!2206448856467-0-cib.jpg",
-        color: "1","2","3","4",
+        color: "1",
         detailPage: "product-detail.html",
         colors: ["Red", "Blux", "Green"],
         sizes: ["S", "M", "L"]
