@@ -31,7 +31,7 @@ const products = [
         sizes: ["S", "M", "L"]
     },
     {
-        id: 3,
+        id: 7,
         name: "PACK 5 Autumn/Winter Coffee Central Socks Women's Stripes Women's Socks",
         description: "Comfortable cotton socks",
         price: 29.99,
@@ -48,7 +48,7 @@ const products = [
         sizes: ["S", "M", "L"]
     },
     {
-        id: 4,
+        id: 9,
         name: "Autumn and Winter Coarse Line Stockings Children Korean Polished Color Ideas Yarn Cashmere Thickened and Warm Wool",
         description: "Comfortable cotton socks",
         price: 6.99,
@@ -90,7 +90,7 @@ const products = [
         sizes: ["S", "M", "L"]
     },
     {
-        id: 7,
+        id: 3,
         name: "Cotton socks bow",
         description: "Comfortable cotton socks",
         price: 6.99,
@@ -120,7 +120,7 @@ const products = [
         sizes: ["S", "M", "L"]
     },
     {
-        id: 9,
+        id: 4,
         name: "Stripe AB embroidered puppy socks children double-stitch cotton medium stockings European goods niche wear stacks of stockings",
         description: "Comfortable cotton socks",
         price: 6.99,
