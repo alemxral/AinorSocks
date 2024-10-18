@@ -9,6 +9,8 @@ const products = [
         image1: "front/images/O1CN01cuAwxa1xdwFEFLeaC_!!2206448856467-0-cib.jpg",
         image2: "front/images/O1CN015U8a3u1xdwFEFKa3h_!!2206448856467-0-cib.jpg",
         image3: "front/images/O1CN01u1ijh61xdwFAXPaqZ_!!2206448856467-0-cib.jpg",
+        category:"women",
+        //url:https://detail.1688.com/offer/726422540673.html?_t=1729276832164&spm=a2615.7691456.co_0_0_wangpu_score_0_0_0_0_0_0_0000_1.0
         color: "1",
         detailPage: "product-detail.html",
         colors: ["Red", "Blux", "Green"],
