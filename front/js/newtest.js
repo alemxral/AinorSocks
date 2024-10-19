@@ -1052,9 +1052,11 @@ function calculateTotalWithShipping() {
 
 
 
+
+
 try {
-    // Frontend JavaScript code
-    document.addEventListener('DOMContentLoaded', updateTotals);
+
+
 
     // Replace with your actual publishable key
     const stripePublicKey = 'pk_test_51Q4OeLJTZouawikokFOqPr5sUR1tobyu2HyfFvaANX5e9fCgBrHdUy1aXyUDhjvwrghVtAAzkArPl5rekiq5JZMi00M03GkXFz';
@@ -1069,12 +1071,8 @@ try {
         'Italy': 'IT',
         'China': 'CI'
     };
-} catch (error) {
-    // Silent catch; no console output
-}
 
 
-try {
 
 
     document.addEventListener('DOMContentLoaded', () => {
