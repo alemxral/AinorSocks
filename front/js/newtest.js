@@ -1186,7 +1186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Try to display the total amount
             if (purchaseInfo.amount) {
                 const total = purchaseInfo.amount;
-                document.getElementById('total-amount').innerText = `€${total.toFixed(2)}`; // Ensure 2 decimal places
+                document.getElementById('total-amount').innerText = `€${total}`; // Ensure 2 decimal places
                 console.log("Total amount displayed:", total);
             } else {
                 // Hide the total amount block if data is missing
