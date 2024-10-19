@@ -2300,6 +2300,14 @@ input.num-product::-webkit-inner-spin-button {
   color: black !important;
 }
 
+button.flex-c-m.stext-101.js-addcart-detail {
+  color: black; /* Set font color to black */
+}
+
+button.flex-c-m.stext-101.js-addcart-detail:hover {
+  color: white; /* Font color changes to white on hover */
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
