@@ -2323,6 +2323,7 @@ input.num-product::-webkit-inner-spin-button {
   font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.466667;
+  
 }
 
 .stext-105 {
@@ -3231,7 +3232,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: #ffffff;}
+.hov-cl1:hover {color: #000000;}
 .hov-bg1:hover {background-color: #f5f5dc;}
 
 /*---------------------------------------------*/
