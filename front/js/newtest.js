@@ -863,22 +863,31 @@ function logAllProductIdsInCart() {
     });
 }
 
-// Add event listener to the "Update Cart" button
-const updateCartButton = document.querySelector('.flex-c-m.stext-101.cl2.size-119.bg8.bor13.hov-btn3.p-lr-15.trans-04.pointer.m-tb-10');
 
-if (updateCartButton) {
-    updateCartButton.addEventListener('click', () => {
-        console.log("Update Cart button clicked");
-        getUpdatedCartAmounts(); // Call the function to update the cart amounts
-        updateSubtotal(); 
-        generateCartList();
-        updateCartNotification();
+try{    
+
+    // Add event listener to the "Update Cart" button
+    const updateCartButton = document.querySelector('.flex-c-m.stext-101.cl2.size-119.bg8.bor13.hov-btn3.p-lr-15.trans-04.pointer.m-tb-10');
+
+    if (updateCartButton) {
+        updateCartButton.addEventListener('click', () => {
+            console.log("Update Cart button clicked");
+            getUpdatedCartAmounts(); // Call the function to update the cart amounts
+            updateSubtotal(); 
+            generateCartList();
+            updateCartNotification();
 
 
-    });
-} else {
-    console.error("Update Cart button not found!");
+        });
+    } else {
+        console.log("Update Cart button not found!");
+    }
+
+} catch (error) {
+    // Silencing error by doing nothing
 }
+
+
 
 // Dummy shipping costs based on country
 const shippingRates = {
@@ -948,27 +957,32 @@ function handleUpdate() {
     updateTotals(); // Uncomment this if you have an updateTotals function
 }
 
-
 $(document).ready(function() {
     try {
-        // Initialize Select2
-        $('#country-select').select2({ dropdownAutoWidth: true });
+        const countrySelect = $('#country-select');
 
-        // Listen for the change event from Select2
-        $('#country-select').on('change', function(e) {
-            // Call the updateTotals function directly after the change
-            updateTotals(); // Call your function directly here
-        });
+        // Check if the countrySelect element exists
+        if (countrySelect.length) {
+            // Initialize Select2
+            countrySelect.select2({ dropdownAutoWidth: true });
 
-        // Add a native event listener to the select element
-        document.getElementById("country-select").addEventListener('change', function(event) {
-            // Call the updateTotals function directly when the change event occurs
-            updateTotals(); // Call your function directly here
-        });
+            // Listen for the change event from Select2
+            countrySelect.on('change', function(e) {
+                // Call the updateTotals function directly after the change
+                updateTotals(); // Call your function directly here
+            });
+
+            // Add a native event listener to the select element
+            document.getElementById("country-select").addEventListener('change', function(event) {
+                // Call the updateTotals function directly when the change event occurs
+                updateTotals(); // Call your function directly here
+            });
+        }
     } catch (error) {
         // Silencing error by doing nothing
     }
 });
+
 
 
 
