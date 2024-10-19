@@ -936,20 +936,29 @@ function handleUpdate() {
 
 
 $(document).ready(function() {
-    // Initialize Select2
-    $('#country-select').select2({ dropdownAutoWidth: true });
+    // Check if we are on the shopping-cart page
+    if (window.location.pathname.endsWith('shopping-cart.html')) {
+        console.log("On the shopping-cart page.");
 
-    // Listen for the change event from Select2
-    $('#country-select').on('change', function(e) {
-        // Call the updateTotals function directly after the change
-        updateTotals(); // Call your function directly here
-    });
+        // Initialize Select2
+        $('#country-select').select2({ dropdownAutoWidth: true });
 
-    // Add a native event listener to the select element
-    document.getElementById("country-select").addEventListener('change', function(event) {
-        // Call the updateTotals function directly when the change event occurs
-        updateTotals(); // Call your function directly here
-    });
+        // Listen for the change event from Select2
+        $('#country-select').on('change', function(e) {
+            // Call the updateTotals function directly after the change
+            updateTotals(); // Call your function directly here
+            console.log("Select2 change event triggered.");
+        });
+
+        // Add a native event listener to the select element
+        document.getElementById("country-select").addEventListener('change', function(event) {
+            // Call the updateTotals function directly when the change event occurs
+            updateTotals(); // Call your function directly here
+            console.log("Native change event triggered.");
+        });
+    } else {
+        console.log("Not on the shopping-cart page. Skipping Select2 initialization.");
+    }
 });
 
 
