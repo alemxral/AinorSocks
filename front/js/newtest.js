@@ -61,69 +61,83 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Select the container where products will be inserted
+
+
+try {
 const productContainer = document.getElementById('product-container');
 
 
 
 
 
-// Check if productContainer exists in the DOM
-if (productContainer) {
-    console.log("Product container found:", productContainer);
+        // Check if productContainer exists in the DOM
+        if (productContainer) {
+            console.log("Product container found:", productContainer);
 
 
-    // Loop through each product and generate the HTML
-    products.forEach(product => {
-        console.log("Processing product:", product.name);
+            // Loop through each product and generate the HTML
+            products.forEach(product => {
+                console.log("Processing product:", product.name);
 
-        const productHTML = `
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-                <div class="block2">
-                    <div class="block2-pic hov-img0">
-                        <img src="${product.image}" alt="IMG-PRODUCT">
-                        
-                        <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
-                           data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
-                            Quick View
-                        </a>
-                    </div>
-                    
-                    <div class="block2-txt flex-w flex-t p-t-14">
-                        <div class="block2-txt-child1 flex-col-l ">
-                            <!-- {product.detailPage} --> 
-                            <a #href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                ${product.name}
-                            </a>
-                            <span class="stext-105 cl3">
-                                €${product.price.toFixed(2)}
-                            </span>
+                const productHTML = `
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                                <img src="${product.image}" alt="IMG-PRODUCT">
+                                
+                                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
+                                data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+                                    Quick View
+                                </a>
+                            </div>
+                            
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <!-- {product.detailPage} --> 
+                                    <a #href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        ${product.name}
+                                    </a>
+                                    <span class="stext-105 cl3">
+                                        €${product.price.toFixed(2)}
+                                    </span>
+                                </div>
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="block2-txt-child2 flex-r p-t-3">
-                            <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                              
-                            </a>
-                        </div>
                     </div>
-                </div>
-            </div>
-        `;
+                `;
+                
+                // Insert the product HTML into the container
+                productContainer.innerHTML += productHTML;
+
+                // <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                // <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+
+
+            });
+
         
-        // Insert the product HTML into the container
-        productContainer.innerHTML += productHTML;
+        } else {
+            // Display error message if container is not found
+            console.error("Product container not found!");
+        
+        }
 
-          // <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-        // <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-
-
-    });
-
-   
-} else {
-    // Display error message if container is not found
-    console.error("Product container not found!");
-  
+} catch (error) {
+    // Silencing error by doing nothing
 }
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Event listener for "Quick View" button
@@ -936,10 +950,7 @@ function handleUpdate() {
 
 
 $(document).ready(function() {
-    // Check if we are on the shopping-cart page
-    if (window.location.pathname.endsWith('shopping-cart.html')) {
-        console.log("On the shopping-cart page.");
-
+    try {
         // Initialize Select2
         $('#country-select').select2({ dropdownAutoWidth: true });
 
@@ -947,17 +958,15 @@ $(document).ready(function() {
         $('#country-select').on('change', function(e) {
             // Call the updateTotals function directly after the change
             updateTotals(); // Call your function directly here
-            console.log("Select2 change event triggered.");
         });
 
         // Add a native event listener to the select element
         document.getElementById("country-select").addEventListener('change', function(event) {
             // Call the updateTotals function directly when the change event occurs
             updateTotals(); // Call your function directly here
-            console.log("Native change event triggered.");
         });
-    } else {
-        console.log("Not on the shopping-cart page. Skipping Select2 initialization.");
+    } catch (error) {
+        // Silencing error by doing nothing
     }
 });
 
