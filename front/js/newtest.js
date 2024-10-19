@@ -55,6 +55,19 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     updateCartNotification();
+
+    try {
+
+        updateTotals() ;
+        
+    } catch (error) {
+        
+    }
+
+    
+
+
+
   });
 
 
