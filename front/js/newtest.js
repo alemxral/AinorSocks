@@ -1162,10 +1162,6 @@ try {
 }
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Check if the current page is success.html
     if (window.location.pathname.endsWith('success.html')) {
@@ -1190,7 +1186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Try to display the total amount
             if (purchaseInfo.amount) {
                 const total = purchaseInfo.amount;
-                document.getElementById('total-amount').innerText = `€${total}`;
+                document.getElementById('total-amount').innerText = `€${total.toFixed(2)}`; // Ensure 2 decimal places
                 console.log("Total amount displayed:", total);
             } else {
                 // Hide the total amount block if data is missing
@@ -1204,9 +1200,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 purchasedItemsContainer.innerHTML = ''; // Clear previous content, if any
                 purchaseInfo.cart.forEach(item => {
                     const itemElement = document.createElement('p');
-                    itemElement.textContent = `${item.quantity} x ${item.name}`;
+                    // Change item.quantity and item.name to item.amount and item.price
+                    itemElement.textContent = `${item.amount} x Color: ${item.color}, Size: ${item.size}, Price: €${(item.price * item.amount).toFixed(2)}`;
                     purchasedItemsContainer.appendChild(itemElement);
-                    console.log(`Item added to purchase summary: ${item.quantity} x ${item.name}`);
+                    console.log(`Item added to purchase summary: ${item.amount} x ${item.color} (Size: ${item.size})`);
                 });
             } else {
                 // Hide the purchased items block if data is missing
@@ -1225,7 +1222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Clear the cart after successful purchase
-            // clearCart();
+            // clearCart(); // Uncomment if you want to clear the cart
             updateCartNotification();
             console.log("Cart cleared and notification updated.");
 
