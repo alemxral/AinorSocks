@@ -1062,6 +1062,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -ms-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
 }
 
+.header-cart-buttons .flex-c-m.stext-101 {
+  color: white; /* Set font color to white */
+}
+
+
 .header-cart::after {
   content: "";
   display: block;
@@ -1168,7 +1173,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .header-cart-buttons a {
 
-  color: #ffffff;
+  color: #000000;
  
 }
 
@@ -2303,7 +2308,7 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 15px;
   line-height: 1.466667;
   text-transform: uppercase;
-
+  
 }
 
 .stext-102 {
@@ -2817,12 +2822,13 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 
+
 /*==================================================================
    BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND 
 ==================================================================*/
 .bg-none {background-color: transparent;}
 .bg0 {background-color: #fff;}
-.bg1 {background-color: #f5f5dc;}
+.bg1 {background-color: #dddd9f;}
 .bg2 {background-color: #e6e6e6;}
 .bg3 {background-color: #222;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
