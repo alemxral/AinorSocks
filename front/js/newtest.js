@@ -583,7 +583,7 @@ function generateCartList() {
                 </a>
 
                 <span class="header-cart-item-info">
-                   ${item.size} - ${item.color} - Price: ${item.amount} x $${product.price.toFixed(2)}
+                   ${item.size} - ${item.color} - Price: ${item.amount} x €${product.price.toFixed(2)}
                 </span>
             </div>
         `;

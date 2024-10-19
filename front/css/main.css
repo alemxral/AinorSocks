@@ -3387,6 +3387,87 @@ button.flex-c-m.stext-101.js-addcart-detail:hover {
 
 
 
+/*==================================================================
+  returns styles
+==================================================================*/
+
+
+.delivery-returns {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-returns h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.delivery-returns h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.delivery-returns p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.delivery-returns ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.delivery-returns ul li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.delivery-returns address {
+  font-style: normal;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.delivery-returns address br {
+  display: block;
+  content: "";
+}
+
+.delivery-returns a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.delivery-returns a:hover {
+  text-decoration: underline;
+}
+
+.delivery-returns .note {
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
 
 
 /*==================================================================
