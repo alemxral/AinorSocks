@@ -504,17 +504,6 @@ function clearCart() {
 
 
 
-// Check if the current page is success.html
-if (window.location.pathname.endsWith('success.html')) {
-    // Update subtotal and total amounts using the existing functions
-  
-    const total = calculateTotalWithShipping();
-
-  
-    document.getElementById('total-amount').innerText = `€${total.toFixed(2)}`;
-
-    clearCart(); // Execute the clearCart function
-}
 
 
 
@@ -1037,7 +1026,6 @@ const countryCodeMap = {
 };
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const checkoutButton = document.getElementById('checkout-button');
     const countrySelect = document.getElementById('country-select');
@@ -1063,6 +1051,13 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please select a valid shipping country.');
             return;
         }
+
+        // Store purchase details in localStorage before checkout
+        localStorage.setItem('purchaseInfo', JSON.stringify({
+            amount: totalAmount / 100, // Store in the correct currency unit
+            country: selectedCountryName,
+            cart: cart
+        }));
 
         try {
             const response = await fetch('/api/create-checkout-session', {
@@ -1090,3 +1085,99 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// Check if the current page is success.html
+if (window.location.pathname.endsWith('success.html')) {
+    console.log("Success page loaded.");
+
+    try {
+        // Attempt to retrieve the purchase info from localStorage
+        let purchaseInfo = JSON.parse(localStorage.getItem('purchaseInfo'));
+        console.log("Retrieved purchase info from localStorage:", purchaseInfo);
+
+        // Fallback to fetching data from cart functions if localStorage info is missing
+        if (!purchaseInfo) {
+            console.log("No purchase info found in localStorage. Using fallback methods.");
+            try {
+                purchaseInfo = {
+                    cart: getCart(), // Get cart items
+                    amount: getTotalCartCost(), // Get subtotal
+                    country: localStorage.getItem('shippingCountry') || '' // Optional: retrieve stored country info
+                };
+                console.log("Fallback purchase info:", purchaseInfo);
+            } catch (error) {
+                console.error("Error retrieving fallback cart info:", error);
+            }
+        }
+
+        // Try to display the total amount
+        try {
+            if (purchaseInfo.amount) {
+                const total = purchaseInfo.amount;
+                document.getElementById('total-amount').innerText = `€${total.toFixed(2)}`;
+                console.log("Total amount displayed:", total);
+            } else {
+                // Hide the total amount block if data is missing
+                document.getElementById('total-amount').parentElement.style.display = 'none';
+                console.log("No total amount found. Hiding total block.");
+            }
+        } catch (error) {
+            console.error("Error displaying total amount:", error);
+        }
+
+        // Try to display purchased items
+        try {
+            if (purchaseInfo.cart && purchaseInfo.cart.length > 0) {
+                const purchasedItemsContainer = document.getElementById('purchased-items');
+                purchasedItemsContainer.innerHTML = ''; // Clear previous content, if any
+                purchaseInfo.cart.forEach(item => {
+                    const itemElement = document.createElement('p');
+                    itemElement.textContent = `${item.quantity} x ${item.name}`;
+                    purchasedItemsContainer.appendChild(itemElement);
+                    console.log(`Item added to purchase summary: ${item.quantity} x ${item.name}`);
+                });
+            } else {
+                // Hide the purchased items block if data is missing
+                document.getElementById('purchased-items').parentElement.style.display = 'none';
+                console.log("No purchased items found. Hiding purchased items block.");
+            }
+        } catch (error) {
+            console.error("Error displaying purchased items:", error);
+        }
+
+        // Try to display shipping country
+        try {
+            if (purchaseInfo.country) {
+                document.getElementById('shipping-country').innerText = purchaseInfo.country;
+                console.log("Shipping country displayed:", purchaseInfo.country);
+            } else {
+                // Hide the shipping country block if data is missing
+                document.getElementById('shipping-country').parentElement.style.display = 'none';
+                console.log("No shipping country found. Hiding shipping country block.");
+            }
+        } catch (error) {
+            console.error("Error displaying shipping country:", error);
+        }
+
+        // Clear the cart after successful purchase
+        try {
+            clearCart();
+            updateCartNotification();
+            console.log("Cart cleared and notification updated.");
+        } catch (error) {
+            console.error("Error clearing cart or updating notification:", error);
+        }
+
+        // Optionally, clear localStorage after processing
+        try {
+            localStorage.removeItem('purchaseInfo');
+            localStorage.removeItem('shippingCountry');
+            console.log("Purchase info and shipping country removed from localStorage.");
+        } catch (error) {
+            console.error("Error clearing localStorage:", error);
+        }
+
+    } catch (error) {
+        console.error("Error during success page execution:", error);
+    }
+}
