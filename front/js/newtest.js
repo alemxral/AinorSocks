@@ -1033,7 +1033,7 @@ const countryCodeMap = {
     'Belgium': 'BE',
     'Portugal': 'PT',
     'Italy': 'IT',
-    'China': 'CN'
+    'China': 'CI'
 };
 
 
