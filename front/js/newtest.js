@@ -881,7 +881,7 @@ if (updateCartButton) {
 const shippingRates = {
     "France": 5,
     "Luxembourg": 7,
-    "Spain": 0,
+    "Spain": 0.05,
     "Belgium": 8,
     "Portugal": 10,
     "Italy": 9,
