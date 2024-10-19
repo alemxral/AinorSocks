@@ -2277,7 +2277,7 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
-.cl0 {color: #fff;}
+.cl0 {color: #ffffff;}
 .cl1 {color: #f5f5dc;}
 .cl2 {color: #333;}
 .cl3 {color: #666;}
@@ -2291,6 +2291,11 @@ input.num-product::-webkit-inner-spin-button {
 .cl11 {color: #f9ba48;}
 .cl12 {color: #ccc;}
 
+.p-t-18 .cl0 {
+  color: black !important;
+}
+
+
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
 .stext-101 {
@@ -2298,13 +2303,14 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 15px;
   line-height: 1.466667;
   text-transform: uppercase;
-  color: #000;
+
 }
 
 .stext-102 {
   font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.7;
+ 
 }
 
 .stext-103 {
@@ -3265,13 +3271,13 @@ input.num-product::-webkit-inner-spin-button {
 .hov-btn2:hover {
   border-color: #fff;
   background-color: #fff;
-  color: #f5f5dc;
+  color: #dddd9f;
 }
 
 /*---------------------------------------------*/
 .hov-btn3:hover {
-  border-color: #f5f5dc;
-  background-color: #f5f5dc;
+  border-color: #dddd9f;;
+  background-color: #dddd9f;;
   color: #fff;
 }
 

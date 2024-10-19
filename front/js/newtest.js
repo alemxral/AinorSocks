@@ -718,7 +718,12 @@ function attachEventListeners() {
                 const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
                 totalElement.textContent = `€${(productPrice * input.value).toFixed(2)}`;
                 
+                getUpdatedCartAmounts(); // Call the function to update the cart amounts
+                updateSubtotal(); 
+                generateCartList();
+                updateCartNotification();
                 updateSubtotal(); // Update the subtotal whenever quantity changes
+                updateTotals() ;
             }
         });
     });
@@ -736,7 +741,13 @@ function attachEventListeners() {
             const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
             totalElement.textContent = `€${(productPrice * input.value).toFixed(2)}`;
 
+
+            getUpdatedCartAmounts(); // Call the function to update the cart amounts
+            updateSubtotal(); 
+            generateCartList();
+            updateCartNotification();
             updateSubtotal(); // Update the subtotal whenever quantity changes
+            updateTotals() ;
         });
     });
 }
@@ -909,7 +920,69 @@ function updateTotals() {
     document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
 }
 
-document.getElementById('country-select').addEventListener('change', updateTotals);
+// Debounce function to limit the frequency of function calls
+function debounce(func, delay) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+}
+
+// Function to handle updates and log changes
+function handleUpdate() {
+    // Log the current selected country
+    console.log("Selected country:", countrySelect.value);
+
+    // Log the current state input value
+    console.log("State input value:", stateInput.value);
+
+    // Log the current postcode input value
+    console.log("Postcode input value:", postcodeInput.value);
+
+    // Call your function to update totals here if needed
+    updateTotals(); // Uncomment this if you have an updateTotals function
+}
+
+
+$(document).ready(function() {
+    // Initialize Select2
+    $('#country-select').select2({ dropdownAutoWidth: true });
+
+    // Listen for the change event from Select2
+    $('#country-select').on('change', function(e) {
+        // Call the updateTotals function directly after the change
+        updateTotals(); // Call your function directly here
+    });
+
+    // Add a native event listener to the select element
+    document.getElementById("country-select").addEventListener('change', function(event) {
+        // Call the updateTotals function directly when the change event occurs
+        updateTotals(); // Call your function directly here
+    });
+});
+
+
+
+
+// Get the dropdown and input elements
+const countrySelect = document.getElementById('country-select');
+const stateInput = document.querySelector('input[name="state"]');
+const postcodeInput = document.querySelector('input[name="postcode"]');
+
+
+
+countrySelect.addEventListener('change', handleUpdate);
+
+
+
+// Add event listener for when the state input changes
+stateInput.addEventListener('input', handleUpdate);
+
+// Add event listener for when the postcode input changes
+postcodeInput.addEventListener('input', handleUpdate);
+
 
 // Add event listener for when the "Update Totals" button is clicked
 document.getElementById('update-totals-btn').addEventListener('click', () => {
