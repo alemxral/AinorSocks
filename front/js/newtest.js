@@ -885,7 +885,7 @@ const shippingRates = {
     "Belgium": 8,
     "Portugal": 10,
     "Italy": 9,
-  
+    "China": 0.2,
 };
 
 // Function to calculate the total based on selected country
@@ -1032,7 +1032,8 @@ const countryCodeMap = {
     'Spain': 'ES',
     'Belgium': 'BE',
     'Portugal': 'PT',
-    'Italy': 'IT'
+    'Italy': 'IT',
+    'China': 'CN'
 };
 
 
