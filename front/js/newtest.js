@@ -972,30 +972,43 @@ $(document).ready(function() {
 
 
 
+try {
+    // Get the dropdown and input elements
+    const countrySelect = document.getElementById('country-select');
+    const stateInput = document.querySelector('input[name="state"]');
+    const postcodeInput = document.querySelector('input[name="postcode"]');
 
-// Get the dropdown and input elements
-const countrySelect = document.getElementById('country-select');
-const stateInput = document.querySelector('input[name="state"]');
-const postcodeInput = document.querySelector('input[name="postcode"]');
+    // Add event listeners with error handling
+    if (countrySelect) {
+        countrySelect.addEventListener('change', handleUpdate);
+    }
+
+    if (stateInput) {
+        stateInput.addEventListener('input', handleUpdate);
+    }
+
+    if (postcodeInput) {
+        postcodeInput.addEventListener('input', handleUpdate);
+    }
+} catch (error) {
+    // Silent catch; no console output
+}
 
 
 
-countrySelect.addEventListener('change', handleUpdate);
-
-
-
-// Add event listener for when the state input changes
-stateInput.addEventListener('input', handleUpdate);
-
-// Add event listener for when the postcode input changes
-postcodeInput.addEventListener('input', handleUpdate);
-
-
-// Add event listener for when the "Update Totals" button is clicked
-document.getElementById('update-totals-btn').addEventListener('click', () => {
-    console.log("Update Totals button clicked.");
-    updateTotals(); // Call the function directly here
-});
+try {
+    // Add event listener for when the "Update Totals" button is clicked
+    const updateTotalsButton = document.getElementById('update-totals-btn');
+    
+    if (updateTotalsButton) {
+        updateTotalsButton.addEventListener('click', () => {
+            // Silent execution; no console output
+            updateTotals(); // Call the function directly here
+        });
+    }
+} catch (error) {
+    // Silent catch; no console output
+}
 
 
 
@@ -1025,126 +1038,142 @@ function calculateTotalWithShipping() {
 
 
 
-// Frontend JavaScript code
-document.addEventListener('DOMContentLoaded', updateTotals);
+try {
+    // Frontend JavaScript code
+    document.addEventListener('DOMContentLoaded', updateTotals);
 
-// Replace with your actual publishable key
-const stripePublicKey = 'pk_test_51Q4OeLJTZouawikokFOqPr5sUR1tobyu2HyfFvaANX5e9fCgBrHdUy1aXyUDhjvwrghVtAAzkArPl5rekiq5JZMi00M03GkXFz';
-const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
+    // Replace with your actual publishable key
+    const stripePublicKey = 'pk_test_51Q4OeLJTZouawikokFOqPr5sUR1tobyu2HyfFvaANX5e9fCgBrHdUy1aXyUDhjvwrghVtAAzkArPl5rekiq5JZMi00M03GkXFz';
+    const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
+
+    const countryCodeMap = {
+        'France': 'FR',
+        'Luxembourg': 'LU',
+        'Spain': 'ES',
+        'Belgium': 'BE',
+        'Portugal': 'PT',
+        'Italy': 'IT',
+        'China': 'CI'
+    };
+} catch (error) {
+    // Silent catch; no console output
+}
 
 
-const countryCodeMap = {
-    'France': 'FR',
-    'Luxembourg': 'LU',
-    'Spain': 'ES',
-    'Belgium': 'BE',
-    'Portugal': 'PT',
-    'Italy': 'IT',
-    'China': 'CI'
-};
+try {
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkoutButton = document.getElementById('checkout-button');
+        const countrySelect = document.getElementById('country-select');
+
+        try {
+
+        checkoutButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+
+            let totalAmount = calculateTotalWithShipping(); // Calculate the total amount
+
+            // Convert the total amount to the smallest currency unit (e.g., cents)
+            totalAmount = Math.round(totalAmount * 100);
+
+            // Get the selected country name
+            const selectedCountryName = countrySelect.value;
+
+            // Check if the country has a valid country code
+            const selectedCountryCode = countryCodeMap[selectedCountryName];
+
+            // Get the cart items
+            const cart = getCart(); 
+
+            if (!selectedCountryCode) {
+                alert('Please select a valid shipping country.');
+                return;
+            }
+
+            // Store purchase details in localStorage before checkout
+            localStorage.setItem('purchaseInfo', JSON.stringify({
+                amount: totalAmount / 100, // Store in the correct currency unit
+                country: selectedCountryName,
+                cart: cart
+            }));
+
+            try {
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        amount: totalAmount, 
+                        country: selectedCountryCode, // Pass the country code instead of name
+                        cart: cart 
+                    }),
+                });
+
+                const session = await response.json();
+                if (session.url) {
+                    window.location.href = session.url;
+                } else {
+                    alert('Error occurred during checkout.');
+                }
+            } catch (error) {
+                console.error('Error during checkout:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        } catch (error) {
+            // Silent catch; no console output
+        }
+
+
+
+
+    });
+
+} catch (error) {
+    // Silent catch; no console output
+}
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const checkoutButton = document.getElementById('checkout-button');
-    const countrySelect = document.getElementById('country-select');
-
-    checkoutButton.addEventListener('click', async (event) => {
-        event.preventDefault();
-
-        let totalAmount = calculateTotalWithShipping(); // Calculate the total amount
-
-        // Convert the total amount to the smallest currency unit (e.g., cents)
-        totalAmount = Math.round(totalAmount * 100);
-
-        // Get the selected country name
-        const selectedCountryName = countrySelect.value;
-
-        // Check if the country has a valid country code
-        const selectedCountryCode = countryCodeMap[selectedCountryName];
-
-        // Get the cart items
-        const cart = getCart(); 
-
-        if (!selectedCountryCode) {
-            alert('Please select a valid shipping country.');
-            return;
-        }
-
-        // Store purchase details in localStorage before checkout
-        localStorage.setItem('purchaseInfo', JSON.stringify({
-            amount: totalAmount / 100, // Store in the correct currency unit
-            country: selectedCountryName,
-            cart: cart
-        }));
+    // Check if the current page is success.html
+    if (window.location.pathname.endsWith('success.html')) {
+        console.log("Success page loaded.");
 
         try {
-            const response = await fetch('/api/create-checkout-session', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    amount: totalAmount, 
-                    country: selectedCountryCode, // Pass the country code instead of name
-                    cart: cart 
-                }),
-            });
+            // Attempt to retrieve the purchase info from localStorage
+            let purchaseInfo = JSON.parse(localStorage.getItem('purchaseInfo'));
+            console.log("Retrieved purchase info from localStorage:", purchaseInfo);
 
-            const session = await response.json();
-            if (session.url) {
-                window.location.href = session.url;
-            } else {
-                alert('Error occurred during checkout.');
-            }
-        } catch (error) {
-            console.error('Error during checkout:', error);
-            alert('An error occurred. Please try again.');
-        }
-    });
-});
-
-
-// Check if the current page is success.html
-if (window.location.pathname.endsWith('success.html')) {
-    console.log("Success page loaded.");
-
-    try {
-        // Attempt to retrieve the purchase info from localStorage
-        let purchaseInfo = JSON.parse(localStorage.getItem('purchaseInfo'));
-        console.log("Retrieved purchase info from localStorage:", purchaseInfo);
-
-        // Fallback to fetching data from cart functions if localStorage info is missing
-        if (!purchaseInfo) {
-            console.log("No purchase info found in localStorage. Using fallback methods.");
-            try {
+            // Fallback to fetching data from cart functions if localStorage info is missing
+            if (!purchaseInfo) {
+                console.log("No purchase info found in localStorage. Using fallback methods.");
                 purchaseInfo = {
                     cart: getCart(), // Get cart items
                     amount: getTotalCartCost(), // Get subtotal
                     country: localStorage.getItem('shippingCountry') || '' // Optional: retrieve stored country info
                 };
                 console.log("Fallback purchase info:", purchaseInfo);
-            } catch (error) {
-                console.error("Error retrieving fallback cart info:", error);
             }
-        }
 
-        // Try to display the total amount
-        try {
+            // Try to display the total amount
             if (purchaseInfo.amount) {
                 const total = purchaseInfo.amount;
-                document.getElementById('total-amount').innerText = `€${total.toFixed(2)}`;
+                document.getElementById('total-amount').innerText = `€${total}`;
                 console.log("Total amount displayed:", total);
             } else {
                 // Hide the total amount block if data is missing
                 document.getElementById('total-amount').parentElement.style.display = 'none';
                 console.log("No total amount found. Hiding total block.");
             }
-        } catch (error) {
-            console.error("Error displaying total amount:", error);
-        }
 
-        // Try to display purchased items
-        try {
+            // Try to display purchased items
             if (purchaseInfo.cart && purchaseInfo.cart.length > 0) {
                 const purchasedItemsContainer = document.getElementById('purchased-items');
                 purchasedItemsContainer.innerHTML = ''; // Clear previous content, if any
@@ -1159,12 +1188,8 @@ if (window.location.pathname.endsWith('success.html')) {
                 document.getElementById('purchased-items').parentElement.style.display = 'none';
                 console.log("No purchased items found. Hiding purchased items block.");
             }
-        } catch (error) {
-            console.error("Error displaying purchased items:", error);
-        }
 
-        // Try to display shipping country
-        try {
+            // Try to display shipping country
             if (purchaseInfo.country) {
                 document.getElementById('shipping-country').innerText = purchaseInfo.country;
                 console.log("Shipping country displayed:", purchaseInfo.country);
@@ -1173,29 +1198,21 @@ if (window.location.pathname.endsWith('success.html')) {
                 document.getElementById('shipping-country').parentElement.style.display = 'none';
                 console.log("No shipping country found. Hiding shipping country block.");
             }
-        } catch (error) {
-            console.error("Error displaying shipping country:", error);
-        }
 
-        // Clear the cart after successful purchase
-        try {
-            clearCart();
+            // Clear the cart after successful purchase
+            // clearCart();
             updateCartNotification();
             console.log("Cart cleared and notification updated.");
-        } catch (error) {
-            console.error("Error clearing cart or updating notification:", error);
-        }
 
-        // Optionally, clear localStorage after processing
-        try {
+            // Optionally, clear localStorage after processing
             localStorage.removeItem('purchaseInfo');
             localStorage.removeItem('shippingCountry');
             console.log("Purchase info and shipping country removed from localStorage.");
-        } catch (error) {
-            console.error("Error clearing localStorage:", error);
-        }
 
-    } catch (error) {
-        console.error("Error during success page execution:", error);
+        } catch (error) {
+            console.error("Error during success page execution:", error);
+        }
+    } else {
+        console.log("Not on the success page.");
     }
-}
+});
