@@ -694,7 +694,6 @@ function removeItemFromCart(rowId) {
     updateSubtotal(); 
     updateCartNotification();
 
-
 }
 
 
