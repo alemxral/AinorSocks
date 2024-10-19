@@ -1022,7 +1022,7 @@ function calculateTotalWithShipping() {
 document.addEventListener('DOMContentLoaded', updateTotals);
 
 // Replace with your actual publishable key
-const stripePublicKey = 'pk_live_51Q4OeLJTZouawikopf9FHiiRcaDqmfuFdW2zNnlYfQuLVMX1wLzKwv2OxXWenyIYwpR3WuhWqEnF9XNpcoPHSvMo00D7HNU3sa';
+const stripePublicKey = 'pk_test_51Q4OeLJTZouawikokFOqPr5sUR1tobyu2HyfFvaANX5e9fCgBrHdUy1aXyUDhjvwrghVtAAzkArPl5rekiq5JZMi00M03GkXFz';
 const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
 
 
