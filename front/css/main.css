@@ -175,7 +175,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .symbol-btn-back-to-top {
   font-size: 25px;
-  color: white;
+  color: rgb(0, 0, 0);
   line-height: 1em;
 }
 
@@ -209,12 +209,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #f5f5dc;
   background-color: #f5f5dc;
 }
-//更改表头图片
-  background-image: "front/images/header2.jpg",  /* 这里替换为你的图片路径 */
-  background-size: cover; /* 确保图片覆盖整个表头 */
-  background-position: center; /* 图片居中显示 */
-  background-repeat: no-repeat; /* 防止图片重复 */
-}
+
 
 .header-v2 .container-menu-desktop {
   height: 84px;
@@ -341,6 +336,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .logo-img {
+  background-color: #000000;
   height: 100%;
   width: auto;
   max-height: 50px; /* Restrict the image to a max height for desktop */
@@ -371,10 +367,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   }
 }
 
+
+
+
 /* Hover effect */
 .logo:hover .logo-text {
   color: #f5f5dc; /* Change text color on hover */
 }
+
 
 /*------------------------------------------------------------------
 [ Mobile View Adjustments for Big Phones (400px - 600px) ]
@@ -855,7 +855,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .main-menu-m > li > a {
   font-family: Poppins-Medium;
   font-size: 14px;
-  color: white;
+  color: rgb(0, 0, 0);
   line-height: 2.8;
   padding: 8px 20px 8px 20px;
 }
@@ -1166,6 +1166,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.3;
 }
 
+.header-cart-buttons a {
+
+  color: #ffffff;
+ 
+}
+
+
 /*---------------------------------------------*/
 @media (max-width: 575px) {
   .header-cart {
@@ -1324,6 +1331,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .wrap-slick1 {
   position: relative;
 }
+
+.layer-slick1 a {
+  color: black;
+}
+
 
 .item-slick1 {
   height: calc(100vh - 40px);
@@ -1496,6 +1508,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin-right: -15px;
   margin-left: -15px;
 }
+.layer-slick2 a {
+  color: black;
+}
 
 /* ------------------------------------ */
 .arrow-slick2 {
@@ -1543,6 +1558,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Slick3 ]*/
 .wrap-slick3 {
   position: relative;
+}
+
+.layer-slick3 a {
+  color: black;
 }
 
 /*---------------------------------------------*/
@@ -2279,6 +2298,7 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 15px;
   line-height: 1.466667;
   text-transform: uppercase;
+  color: #000;
 }
 
 .stext-102 {
