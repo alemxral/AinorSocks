@@ -1219,7 +1219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Clear the cart after successful purchase
-            // clearCart(); // Uncomment if you want to clear the cart
+             clearCart(); // Uncomment if you want to clear the cart
             updateCartNotification();
             console.log("Cart cleared and notification updated.");
 
