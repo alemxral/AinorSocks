@@ -2053,6 +2053,12 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
+
+.no-link-style {
+  color: inherit; /* Use the color of the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
 .table-shopping-cart {
   border-collapse: collapse;
   width: 100%;
