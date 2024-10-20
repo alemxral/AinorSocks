@@ -93,37 +93,35 @@ const productContainer = document.getElementById('product-container');
                 console.log("Processing product:", product.name);
 
                 const productHTML = `
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-                        <div class="block2">
-                            <div class="block2-pic hov-img0">
-                                <img src="${product.image}" alt="IMG-PRODUCT">
-                                
-                                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
-                                data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
-                                    Quick View
-                                </a>
-                            </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="${product.image}" alt="IMG-PRODUCT">
                             
-                            <div class="block2-txt flex-w flex-t p-t-14">
-                                <div class="block2-txt-child1 flex-col-l ">
-                                    <!-- {product.detailPage} --> 
-                                    <a #href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                        ${product.name}
-                                    </a>
-                                    <span class="stext-105 cl3">
-                                        €${product.price.toFixed(2)}
-                                    </span>
-                                </div>
-
-                                <div class="block2-txt-child2 flex-r p-t-3">
-                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    
-                                    </a>
-                                </div>
+                            <a href="product-detail.html?productId=${product.id}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
+                            data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+                                Quick View
+                            </a>
+                        </div>
+                        
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html?productId=${product.id}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    ${product.name}
+                                </a>
+                                <span class="stext-105 cl3">
+                                    €${product.price.toFixed(2)}
+                                </span>
+                            </div>
+            
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2"></a>
                             </div>
                         </div>
                     </div>
-                `;
+                </div>
+            `;
+            
                 
                 // Insert the product HTML into the container
                 productContainer.innerHTML += productHTML;
@@ -1236,5 +1234,93 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } else {
         console.log("Not on the success page.");
+    }
+});
+
+
+
+// Function to get a product by ID
+function getProductById(productId) {
+    return products.find(product => product.id === productId);
+}
+
+
+// Function to get product ID from the URL
+function getProductIdFromUrl() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('productId');
+    } catch (error) {
+        console.error('Error getting product ID from URL:', error);
+        return null; // Fallback in case of error
+    }
+}
+
+// Assuming this function is defined elsewhere
+// function getProductById(id) {
+//     // Fetch the product based on the id (e.g., from an array or API)
+//     return productObject;
+// }
+
+function populateProductDetails(product) {
+    try {
+        // Update product name
+        document.getElementById('product-name').textContent = product.name || 'Product Name Unavailable';
+
+        // Update product price
+        document.getElementById('product-price').textContent = product.price 
+            ? `€${product.price.toFixed(2)}` 
+            : 'Price Unavailable';
+
+        // Update product description
+        document.getElementById('product-description').textContent = product.description || 'Description Unavailable';
+
+        // Update SKU
+        document.getElementById('product-sku').textContent = `SKU: ${product.sku || 'N/A'}`;
+
+        // Update categories
+        document.getElementById('product-categories').textContent = `Categories: ${product.categories?.join(', ') || 'Uncategorized'}`;
+
+        // Update images (assuming product.images is an array of image URLs)
+        const imagesContainer = document.getElementById('product-images');
+        imagesContainer.innerHTML = ''; // Clear any existing images
+
+        product.images?.forEach((imageUrl, index) => {
+            const imageHtml = `
+                <div class="item-slick3" data-thumb="${imageUrl}">
+                    <div class="wrap-pic-w pos-relative">
+                        <img src="${imageUrl}" alt="${product.name}">
+                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${imageUrl}">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            imagesContainer.innerHTML += imageHtml;
+        });
+
+    } catch (error) {
+        console.error('Error populating product details:', error);
+        // Fail gracefully without breaking the UI
+    }
+}
+
+// On page load, retrieve the product ID from the URL and populate the details
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        const productId = getProductIdFromUrl();
+        if (productId) {
+            const product = getProductById(productId); // Get product by ID
+            if (product) {
+                populateProductDetails(product);
+            } else {
+                console.error('Product not found');
+            }
+        } else {
+            console.error('Product ID not found in URL');
+        }
+    } catch (error) {
+        console.error('Error during page initialization:', error);
+        // Fail gracefully if something goes wrong
     }
 });
