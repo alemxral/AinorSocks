@@ -652,28 +652,32 @@ function generateCartTable() {
         tableRow.id = rowId; // Assign a unique ID to the row based on its index
 
         tableRow.innerHTML = `
-            <td class="column-1">
-                <div class="how-itemcart1" ondblclick="removeItemFromCart('${rowId}')">
-                    <img src="${product.image}" alt="IMG">
-                </div>
-            </td>
-            <td class="column-2">${product.name}</td>
-            <td class="column-3">€${product.price.toFixed(2)}</td>
-            <td class="column-3">${item.size}</td>
-            <td class="column-3">${item.color}</td>
-            <td class="column-5">
-                <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                    <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                        <i class="fs-16 zmdi zmdi-minus"></i>
+                <td class="column-1">
+                    <div class="how-itemcart1" ondblclick="removeItemFromCart('${rowId}')">
+                        <img src="${product.image}" alt="IMG">
                     </div>
-                    <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product-${product.id}" value="${item.amount}">
-                    <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                        <i class="fs-16 zmdi zmdi-plus"></i>
+                </td>
+                <td class="column-2">
+                  <a href="product-detail.html?productId=${product.id}" class="product-name no-link-style">${product.name}</a>
+                </td>
+                </td>
+                <td class="column-3">€${product.price.toFixed(2)}</td>
+                <td class="column-3">${item.size}</td>
+                <td class="column-3">${item.color}</td>
+                <td class="column-5">
+                    <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                            <i class="fs-16 zmdi zmdi-minus"></i>
+                        </div>
+                        <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product-${product.id}" value="${item.amount}">
+                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                            <i class="fs-16 zmdi zmdi-plus"></i>
+                        </div>
                     </div>
-                </div>
-            </td>
-            <td class="column-6" id="total-${rowId}" data-price="${product.price}">€${(product.price * item.amount).toFixed(2)}</td>
-        `;
+                </td>
+                <td class="column-6" id="total-${rowId}" data-price="${product.price}">€${(product.price * item.amount).toFixed(2)}</td>
+            `;
+
 
         cartTable.insertAdjacentElement('beforeend', tableRow);
     });
