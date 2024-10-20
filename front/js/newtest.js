@@ -1,1342 +1,1329 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Home</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->	
-	<link rel="icon" type="image/x-icon" href="images/icons/favicon.ico"/>
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<!--===============================================================================================-->	
-		<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<!--===============================================================================================-->	
-		<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-	
-		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	
-	<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="css/util.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!--===============================================================================================-->
-	</head>
-<body class="animsition">
-	
-			<!-- Header -->
-		<header>
-				<!-- Header desktop -->
-				<div class="container-menu-desktop">
-					<!-- Topbar -->
-					<div class="top-bar">
-						<div class="content-topbar flex-sb-m h-full container">
-							<!-- <div class="left-top-bar">
-								Free shipping for standard order over $100 
-							</div> -->
-		
-							<div class="right-top-bar flex-w h-full">
-								<a href="#" class="flex-c-m trans-04 p-lr-25">
-									Help & FAQs
-								</a>
-		
-								<!-- <a href="#" class="flex-c-m trans-04 p-lr-25">
-									My Account
-								</a> -->
-		
-								<a href="#" class="flex-c-m trans-04 p-lr-25">
-									EN
-								</a>
-		
-								<a href="#" class="flex-c-m trans-04 p-lr-25">
-								EUR
-								</a>
-							</div>
-						</div>
-					</div>
-		
-					<div class="wrap-menu-desktop">
-						<nav class="limiter-menu-desktop container">
-							
-										<!-- Logo desktop -->
-							<a href="#" class="logo">
-								<div class="logo-container">
-									<img src="images/icons/android-chrome-192x192.png" 
-										srcset="images/icons/android-chrome-192x192.png 192w, 
-												images/icons/android-chrome-512x512.png 512w"
-										alt="MieMie Socks Logo" class="logo-img">
-									<span class="logo-text">MieMie Socks</span>
-								</div>
-							</a>
-		
-		
-							<!-- Menu desktop -->
-							<div class="menu-desktop">
-								<ul class="main-menu">
-									<li class="active-menu">
-										<a href="index.html">Home</a>
-										<!-- <ul class="sub-menu">
-											<li><a href="index.html">Homepage 1</a></li>
-											<li><a href="home-02.html">Homepage 2</a></li>
-											<li><a href="home-03.html">Homepage 3</a></li>
-										</ul> -->
-									</li>
-		
-									<li>
-										<a href="product.html">Shop</a>
-									</li>
-		
-									<!-- <li class="label1" data-label1="hot">
-										<a href="shoping-cart.html">Features</a>
-									</li> -->
-		
-									<!-- <li>
-										<a href="blog.html">Blog</a>
-									</li> -->
-		
-									<li>
-										<a href="about.html">About</a>
-									</li>
-		
-									<li>
-										<a href="contact.html">Contact</a>
-									</li>
-								</ul>
-							</div>	
-		
-							<!-- Icon header -->
-							<div class="wrap-icon-header flex-w flex-r-m">
-								<!-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-									<i class="zmdi zmdi-search"></i>
-								</div> -->
-		
-								<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2" id="laptop-basket-icon">
-									<i class="zmdi zmdi-shopping-cart"></i>
-								</div>
-		
-								<!-- <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-									<i class="zmdi zmdi-favorite-outline"></i>
-								</a> -->
-							</div>
-						</nav>
-					</div>	
-				</div>
-		
-				<!-- Header Mobile -->
-				
-				<div class="wrap-header-mobile" >
-					<!-- Logo moblie -->		
-					
-										<!-- Logo desktop -->
-										<a href="#" class="logo">
-											<div class="logo-container">
-												<img src="images/icons/android-chrome-192x192.png" 
-													srcset="images/icons/android-chrome-192x192.png 192w, 
-															images/icons/android-chrome-512x512.png 512w"
-													alt="MieMie Socks Logo" class="logo-img">
-												<span class="logo-text">MieMie Socks</span>
-											</div>
-										</a>
-		
-					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-						<!-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div> -->
-		
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="3" id="basket-icon">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>				
-		
-						<!-- <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a> -->
-					</div>
-		
-					<!-- Button show menu -->
-					<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-						<span class="hamburger-box">
-							<span class="hamburger-inner"></span>
-						</span>
-					</div>
-				</div>
-				
-		
-				<!-- Menu Mobile -->
-				<div class="menu-mobile">
-					<ul class="topbar-mobile">
-						<!-- <li>
-							<div class="left-top-bar">
-								Free shipping for standard order over $100
-							</div>
-						</li> -->
-		
-						<li>
-							<div class="right-top-bar flex-w h-full">
-								<a href="#" class="flex-c-m p-lr-10 trans-04">
-									Help & FAQs
-								</a>
-		
-								<!-- <a href="#" class="flex-c-m p-lr-10 trans-04">
-									My Account
-								</a> -->
-		
-								<a href="#" class="flex-c-m p-lr-10 trans-04">
-									EN
-								</a>
-		
-								<a href="#" class="flex-c-m p-lr-10 trans-04">
-								EUR
-								</a>
-							</div>
-						</li>
-					</ul>
-		
-					<ul class="main-menu-m">
-						<li>
-							<a href="index.html">Home</a>
-							<!-- <ul class="sub-menu-m">
-								<li><a href="index.html">Homepage 1</a></li>
-								<li><a href="home-02.html">Homepage 2</a></li>
-								<li><a href="home-03.html">Homepage 3</a></li>
-							</ul> -->
-							<!-- <span class="arrow-main-menu-m">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-							</span> -->
-						</li>
-		
-						<li>
-							<a href="product.html">Shop</a>
-						</li>
-		
-						<!-- <li>
-							<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
-						</li> -->
-		
-						<!-- <li>
-							<a href="blog.html">Blog</a>
-						</li> -->
-		
-						<li>
-							<a href="about.html">About</a>
-						</li>
-		
-						<li>
-							<a href="contact.html">Contact</a>
-						</li>
-					</ul>
-				</div>
-		
-				<!-- Modal Search -->
-				<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-					<div class="container-search-header">
-						<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-							<img src="images/icons/icon-close2.png" alt="CLOSE">
-						</button>
-		
-						<form class="wrap-search-header flex-w p-l-15">
-							<button class="flex-c-m trans-04">
-								<i class="zmdi zmdi-search"></i>
-							</button>
-							<input class="plh3" type="text" name="search" placeholder="Search...">
-						</form>
-					</div>
-				</div>
-		</header>
-	
-		<!-- Cart -->
-		<div class="wrap-header-cart js-panel-cart">
-			<div class="s-full js-hide-cart"></div>
-	
-			<div class="header-cart flex-col-l p-l-65 p-r-25">
-				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2">
-						Your Cart
-					</span>
-	
-					<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-						<i class="zmdi zmdi-close"></i>
-					</div>
-				</div>
-				
-				<div class="header-cart-content flex-w js-pscroll">
-					<ul class="header-cart-wrapitem w-full">
-							<!-- Cart items -->
-					</ul>
-					
-					<div class="w-full">
-						<div class="header-cart-total w-full p-tb-40">
-							<!-- Total -->
-						</div>
-	
-						<div class="header-cart-buttons flex-w w-full">
-							<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-								View Cart
-							</a>
-	  
-							<!-- <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-								Check Out
-							</a> -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-	<!-- breadcrumb -->
-	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
-				Home
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
-
-			<a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
-				Men
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
-
-			<span class="stext-109 cl4">
-				Lightweight Jacket
-			</span>
-		</div>
-	</div>
-		
-
-	<!-- Product Detail -->
-	<section class="sec-product-detail bg0 p-t-65 p-b-60">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-7 p-b-30">
-					<div class="p-l-25 p-r-30 p-lr-0-lg">
-						<div class="wrap-slick3 flex-sb flex-w">
-							<div class="wrap-slick3-dots"></div>
-							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-
-							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
-									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
-
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-											<i class="fa fa-expand"></i>
-										</a>
-									</div>
-								</div>
-
-								<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
-									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
-											<i class="fa fa-expand"></i>
-										</a>
-									</div>
-								</div>
-
-								<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
-									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
-
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
-											<i class="fa fa-expand"></i>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-					
-				<div class="col-md-6 col-lg-5 p-b-30">
-					<div class="p-r-50 p-t-5 p-lr-0-lg">
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14" id="product-name">
-							<!-- Product Name -->
-						</h4>
-
-						<span class="mtext-106 cl2" id="product-price">
-							<!-- Product Price -->
-						</span>
-
-						<p class="stext-102 cl3 p-t-23" id="product-description">
-							 <!-- Product Description -->
-						</p>
-						
-						<!--  -->
-						<div class="p-t-33">
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-203 flex-c-m respon6">
-									Size
-								</div>
-
-								<div class="size-204 respon6-next">
-									<div class="rs1-select2 bor8 bg0">
-										<select class="js-select2" name="time">
-											<option>Choose an option</option>
-											<option>Size S</option>
-											<option>Size M</option>
-											<option>Size L</option>
-											<option>Size XL</option>
-										</select>
-										<div class="dropDownSelect2"></div>
-									</div>
-								</div>
-							</div>
-
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-203 flex-c-m respon6">
-									Color
-								</div>
-
-								<div class="size-204 respon6-next">
-									<div class="rs1-select2 bor8 bg0">
-										<select class="js-select2" name="time">
-											<option>Choose an option</option>
-											<option>Red</option>
-											<option>Blue</option>
-											<option>White</option>
-											<option>Grey</option>
-										</select>
-										<div class="dropDownSelect2"></div>
-									</div>
-								</div>
-							</div>
-
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-204 flex-w flex-m respon6-next">
-									<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-											<i class="fs-16 zmdi zmdi-minus"></i>
-										</div>
-
-										<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-										<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-											<i class="fs-16 zmdi zmdi-plus"></i>
-										</div>
-									</div>
-
-									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-										Add to cart
-									</button>
-								</div>
-							</div>	
-						</div>
-
-						<!--  -->
-						<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-							<div class="flex-m bor9 p-r-10 m-r-11">
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-									<i class="zmdi zmdi-favorite"></i>
-								</a>
-							</div>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-								<i class="fa fa-facebook"></i>
-							</a>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-								<i class="fa fa-twitter"></i>
-							</a>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-								<i class="fa fa-google-plus"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="bor10 m-t-50 p-t-43 p-b-40">
-				<!-- Tab01 -->
-				<div class="tab01">
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li class="nav-item p-b-10">
-							<a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
-						</li>
-
-						<li class="nav-item p-b-10">
-							<a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional information</a>
-						</li>
-
-						<li class="nav-item p-b-10">
-							<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
-						</li>
-					</ul>
-
-					<!-- Tab panes -->
-					<div class="tab-content p-t-43">
-						<!-- - -->
-						<div class="tab-pane fade show active" id="description" role="tabpanel">
-							<div class="how-pos2 p-lr-15-md">
-								<p class="stext-102 cl6">
-									Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.
-								</p>
-							</div>
-						</div>
-
-						<!-- - -->
-						<div class="tab-pane fade" id="information" role="tabpanel">
-							<div class="row">
-								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-									<ul class="p-lr-28 p-lr-15-sm">
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Weight
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												0.79 kg
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Dimensions
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												110 x 33 x 100 cm
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Materials
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												60% cotton
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Color
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												Black, Blue, Grey, Green, Red, White
-											</span>
-										</li>
-
-										<li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Size
-											</span>
-
-											<span class="stext-102 cl6 size-206">
-												XL, L, M, S
-											</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- - -->
-						<div class="tab-pane fade" id="reviews" role="tabpanel">
-							<div class="row">
-								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-									<div class="p-b-30 m-lr-15-sm">
-										<!-- Review -->
-										<div class="flex-w flex-t p-b-68">
-											<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-												<img src="images/avatar-01.jpg" alt="AVATAR">
-											</div>
-
-											<div class="size-207">
-												<div class="flex-w flex-sb-m p-b-17">
-													<span class="mtext-107 cl2 p-r-20">
-														Ariana Grande
-													</span>
-
-													<span class="fs-18 cl11">
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star-half"></i>
-													</span>
-												</div>
-
-												<p class="stext-102 cl6">
-													Quod autem in homine praestantissimum atque optimum est, id deseruit. Apud ceteros autem philosophos
-												</p>
-											</div>
-										</div>
-										
-										<!-- Add review -->
-										<form class="w-full">
-											<h5 class="mtext-108 cl2 p-b-7">
-												Add a review
-											</h5>
-
-											<p class="stext-102 cl6">
-												Your email address will not be published. Required fields are marked *
-											</p>
-
-											<div class="flex-w flex-m p-t-50 p-b-23">
-												<span class="stext-102 cl3 m-r-16">
-													Your Rating
-												</span>
-
-												<span class="wrap-rating fs-18 cl11 pointer">
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<i class="item-rating pointer zmdi zmdi-star-outline"></i>
-													<input class="dis-none" type="number" name="rating">
-												</span>
-											</div>
-
-											<div class="row p-b-25">
-												<div class="col-12 p-b-5">
-													<label class="stext-102 cl3" for="review">Your review</label>
-													<textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review" name="review"></textarea>
-												</div>
-
-												<div class="col-sm-6 p-b-5">
-													<label class="stext-102 cl3" for="name">Name</label>
-													<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name" type="text" name="name">
-												</div>
-
-												<div class="col-sm-6 p-b-5">
-													<label class="stext-102 cl3" for="email">Email</label>
-													<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email" type="text" name="email">
-												</div>
-											</div>
-
-											<button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-												Submit
-											</button>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
-			<span class="stext-107 cl6 p-lr-25">
-				SKU: JAK-01
-			</span>
-
-			<span class="stext-107 cl6 p-lr-25">
-				Categories: Jacket, Men
-			</span>
-		</div>
-	</section>
-
-
-	<!-- Related Products -->
-	<section class="sec-relate-product bg0 p-t-45 p-b-105">
-		<div class="container">
-			<div class="p-b-45">
-				<h3 class="ltext-106 cl5 txt-center">
-					Related Products
-				</h3>
-			</div>
-
-			<!-- Slide2 -->
-			<div class="wrap-slick2">
-				<div class="slick2">
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-01.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Esprit Ruffle Shirt
-									</a>
-
-									<span class="stext-105 cl3">
-										$16.64
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-02.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Herschel supply
-									</a>
-
-									<span class="stext-105 cl3">
-										$35.31
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-03.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Only Check Trouser
-									</a>
-
-									<span class="stext-105 cl3">
-										$25.50
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-04.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Classic Trench Coat
-									</a>
-
-									<span class="stext-105 cl3">
-										$75.00
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-05.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Front Pocket Jumper
-									</a>
-
-									<span class="stext-105 cl3">
-										$34.75
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-06.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Vintage Inspired Classic 
-									</a>
-
-									<span class="stext-105 cl3">
-										$93.20
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-07.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Shirt in Stretch Cotton
-									</a>
-
-									<span class="stext-105 cl3">
-										$52.66
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="images/product-08.jpg" alt="IMG-PRODUCT">
-
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
-
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Pieces Metallic Printed
-									</a>
-
-									<span class="stext-105 cl3">
-										$18.96
-									</span>
-								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-		
-
-	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
-
-					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
-					</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-							<div class="focus-input1 trans-04"></div>
-						</div>
-
-						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="p-t-40">
-				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
-					</a>
-				</div>
-
-				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-				</p>
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
-
-	<!-- Modal1 -->
-	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-		<div class="overlay-modal1 js-hide-modal1"></div>
-
-		<div class="container">
-			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
-					<img src="images/icons/icon-close.png" alt="CLOSE">
-				</button>
-
-				<div class="row">
-					<div class="col-md-6 col-lg-7 p-b-30">
-						<div class="p-l-25 p-r-30 p-lr-0-lg">
-							<div class="wrap-slick3 flex-sb flex-w">
-								<div class="wrap-slick3-dots"></div>
-								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-
-								<div class="slick3 gallery-lb">
-									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-
-									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-
-									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-5 p-b-30">
-						<div class="p-r-50 p-t-5 p-lr-0-lg">
-							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-								Lightweight Jacket
-							</h4>
-
-							<span class="mtext-106 cl2">
-								$58.79
-							</span>
-
-							<p class="stext-102 cl3 p-t-23">
-								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-							</p>
-							
-							<!--  -->
-							<div class="p-t-33">
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-203 flex-c-m respon6">
-										Size
-									</div>
-
-									<div class="size-204 respon6-next">
-										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Size S</option>
-												<option>Size M</option>
-												<option>Size L</option>
-												<option>Size XL</option>
-											</select>
-											<div class="dropDownSelect2"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-203 flex-c-m respon6">
-										Color
-									</div>
-
-									<div class="size-204 respon6-next">
-										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Red</option>
-												<option>Blue</option>
-												<option>White</option>
-												<option>Grey</option>
-											</select>
-											<div class="dropDownSelect2"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-204 flex-w flex-m respon6-next">
-										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-
-										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-											Add to cart
-										</button>
-									</div>
-								</div>	
-							</div>
-
-							<!--  -->
-							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-								<div class="flex-m bor9 p-r-10 m-r-11">
-									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-										<i class="zmdi zmdi-favorite"></i>
-									</a>
-								</div>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-									<i class="fa fa-facebook"></i>
-								</a>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-									<i class="fa fa-twitter"></i>
-								</a>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-									<i class="fa fa-google-plus"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".js-select2").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
-	<script>
-        $('.parallax100').parallax100();
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-	<script>
-		$('.gallery-lb').each(function() { // the containers for all your galleries
-			$(this).magnificPopup({
-		        delegate: 'a', // the selector for gallery item
-		        type: 'image',
-		        gallery: {
-		        	enabled:true
-		        },
-		        mainClass: 'mfp-fade'
-		    });
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-	
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			$(this).css('position','relative');
-			$(this).css('overflow','hidden');
-			var ps = new PerfectScrollbar(this, {
-				wheelSpeed: 1,
-				scrollingThreshold: 1000,
-				wheelPropagation: false,
-			});
-
-			$(window).on('resize', function(){
-				ps.update();
-			})
-		});
-	</script>
-<!--===============================================================================================-->
-<script src="js/product.js"></script>
-<script src="js/newtest.js"></script>	
-<script src="js/main.js"></script>
-
-
-</body>
-</html>
+
+// const products = [
+//     {
+//         id: 1,
+//         name: "Socks Alejandro",
+//         description: "Comfortable cotton socks",
+//         price: 10.00,
+//         image: "images/product-01.jpg",
+//         image: "images/product-01.jpg",
+//         image1: "images/product-01.jpg",
+//         image2: "images/post-1.jpg",
+//         image3: "images/product-01.jpg",
+//         color: "unique",
+//         detailPage: "product-detail.html",
+//         colors : ["Red", "Blux", "Green"], // Example color options
+//         sizes : ["S", "M", "L"],
+//         detailPage: "product-detail.html"
+
+//     },
+//     {
+//         id: 2,
+//         name: "Socks B",
+//         description: "Comfortable cotton socks",
+//         price: 18.00,
+//         image: "images/product-01.jpg",
+//         image: "images/product-01.jpg",
+//         image1: "images/product-01.jpg",
+//         image2: "images/post-1.jpg",
+//         image3: "images/product-01.jpg",
+//         color: "unique",
+//         detailPage: "product-detail.html",
+//         colors : ["Red", "Blux", "Green"], // Example color options
+//         sizes : ["S", "M", "L"],
+//         detailPage: "product-detail.html"
+//     },
+//     {
+//         id: 3,
+//         name: "Socks C",
+//         description: "Comfortable cotton socks",
+//         price: 14.00,
+//         image: "images/product-01.jpg",
+//         image: "images/product-01.jpg",
+//         image1: "images/product-01.jpg",
+//         image2: "images/post-1.jpg",
+//         image3: "images/product-01.jpg",
+//         color: "unique",
+//         detailPage: "product-detail.html",
+//         colors : ["Red", "Blux", "Green"], // Example color options
+//         sizes : ["S", "M", "L"],
+//         detailPage: "product-detail.html"
+//     },
+// ];
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartNotification();
+
+    try {
+
+        updateTotals() ;
+        
+    } catch (error) {
+        
+    }
+
+    
+
+
+
+  });
+
+
+
+
+// Select the container where products will be inserted
+
+
+try {
+const productContainer = document.getElementById('product-container');
+
+
+
+
+
+        // Check if productContainer exists in the DOM
+        if (productContainer) {
+            console.log("Product container found:", productContainer);
+
+
+            // Loop through each product and generate the HTML
+            products.forEach(product => {
+                console.log("Processing product:", product.name);
+
+                const productHTML = `
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="${product.image}" alt="IMG-PRODUCT">
+                            
+                            <a href="product-detail.html?productId=${product.id}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
+                            data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+                                Quick View
+                            </a>
+                        </div>
+                        
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="product-detail.html?productId=${product.id}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    ${product.name}
+                                </a>
+                                <span class="stext-105 cl3">
+                                    €${product.price.toFixed(2)}
+                                </span>
+                            </div>
+            
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+                
+                // Insert the product HTML into the container
+                productContainer.innerHTML += productHTML;
+
+                // <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                // <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+
+
+            });
+
+        
+        } else {
+            // Display error message if container is not found
+            console.error("Product container not found!");
+        
+        }
+
+} catch (error) {
+    // Silencing error by doing nothing
+}
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listener for "Quick View" button
+    document.querySelectorAll('.js-show-modal1').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+
+            // Wrap the main logic in a try-catch block to handle errors
+            try {
+                // Get product ID from the clicked button's data attributes
+                const productId = this.getAttribute('data-id');
+                const product = products.find(p => p.id == productId); // Find the product in the array
+
+                if (product) {
+                    // Update modal content
+                    try {
+                        document.querySelector(".js-name-detail").textContent = product.name;
+                        document.querySelector(".mtext-106.cl2").textContent = `€${product.price.toFixed(2)}`;
+                        document.querySelector(".stext-102.cl3").textContent = product.description;
+
+                        const bottomElement = document.querySelector('.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail');
+
+                        if (bottomElement) {
+                          bottomElement.setAttribute('data-id', productId); // Example: setting a data attribute
+                          const checkId = bottomElement.getAttribute('data-id');
+                          console.log('Product ID:', checkId);
+                        } else {
+                          console.error('Bottom element not found');
+                        }
+
+
+
+
+                    } catch (err) {
+                        console.error("Error updating modal content: ", err);
+                    }
+
+
+                    
+
+                    // Update color options
+                    try {
+                        const colorSelect = document.querySelector("#colorSelect");
+                        const colors = product.colors || []; // Defaults to an empty array if undefined
+                        colorSelect.innerHTML = colors.map(color => `<option>${color}</option>`).join('');
+                    } catch (err) {
+                        console.error("Error updating color options: ", err);
+                    }
+
+                    // Update size options
+                    try {
+                        const sizeSelect = document.querySelector("#sizeSelect");
+                        const sizes = product.sizes || []; // Defaults to an empty array if undefined
+                        sizeSelect.innerHTML = sizes.map(size => `<option>Size ${size}</option>`).join('');
+                    } catch (err) {
+                        console.error("Error updating size options: ", err);
+                    }
+
+                    // Update images in the modal
+                    try {
+                        // Define images array
+                        const images = [product.image1, product.image2, product.image3]; // Images array
+                        
+                        // Filter valid images before processing
+                        const validImages = images.filter(image => image && /\.(jpg|jpeg|png)$/i.test(image));
+                        const validImageCount = validImages.length; // Count of valid images
+                       
+
+                        const slick3Container = document.querySelector(".wrap-slick3.flex-sb.flex-w"); // Corrected selector
+                        slick3Container.innerHTML = ''; // Clear existing image elements
+
+                        if (validImageCount === 0) {
+                            slick3Container.innerHTML = ''; // Clear content if no valid images
+                        } else if (validImageCount === 1) {
+                            slick3Container.innerHTML = `
+                                <div class="wrap-slick3-dots"></div>
+                                <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+                                <div class="slick3 gallery-lb">
+                                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="${product.image1}" alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                        } else if (validImageCount === 2) {
+                            slick3Container.innerHTML = `
+                                <div class="wrap-slick3-dots"></div>
+                                <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+                                <div class="slick3 gallery-lb">
+                                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="${product.image1}" alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item-slick3" data-thumb="${product.image2}" number="2">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="${product.image2}" alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                        } else if (validImageCount === 3) {
+                            slick3Container.innerHTML = `
+                                <div class="wrap-slick3-dots"></div>
+                                <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+                                <div class="slick3 gallery-lb">
+                                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="${product.image1}" alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item-slick3" data-thumb="${product.image2}" number="2">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="${product.image2}" alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item-slick3" data-thumb="${product.image3}" number="3">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="${product.image3}" alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image3}">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                        }
+
+                        $('.wrap-slick3').each(function(){
+                            $(this).find('.slick3').slick({
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                fade: true,
+                                infinite: true,
+                                autoplay: false,
+                                autoplaySpeed: 6000,
+                
+                                arrows: true,
+                                appendArrows: $(this).find('.wrap-slick3-arrows'),
+                                prevArrow:'<button class="arrow-slick3 prev-slick3"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                                nextArrow:'<button class="arrow-slick3 next-slick3"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+                
+                                dots: true,
+                                appendDots: $(this).find('.wrap-slick3-dots'),
+                                dotsClass:'slick3-dots',
+                                customPaging: function(slick, index) {
+                                    var portrait = $(slick.$slides[index]).data('thumb');
+                                    return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
+                                },  
+                            });
+                        });
+
+                        console.log("Number of valid images:", validImageCount);
+                    } catch (err) {
+                        console.error("Error updating images: ", err);
+                    }
+                }
+            } catch (err) {
+                console.error("Error in main event handler: ", err);
+            }
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+    // Check if cookies have been accepted
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+
+    if (!cookiesAccepted) {
+        // Show the cookie banner if cookies have not been accepted
+        cookieBanner.style.display = 'block';
+    }
+
+    // Add event listener to the accept button
+    acceptCookiesBtn.addEventListener('click', () => {
+        // Store the user's acceptance in local storage
+        localStorage.setItem('cookiesAccepted', 'true');
+        // Hide the cookie banner
+        cookieBanner.style.display = 'none';
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listener for "Add to Cart" button
+    document.querySelectorAll('.js-addcart-detail').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default button action
+
+            // Get product ID from button's data attributes
+            const productId = this.getAttribute('data-id');
+            console.log("Product ID taken from the bottom :", productId);
+
+             const product = products.find(p => p.id == productId); // Find the product in the array
+             console.log("Product object was found by ID:", product);
+
+
+            if (!product) {
+                console.error("Product not found");
+                return; // Exit if product not found
+            }
+
+            const productprice = `${product.price.toFixed(2)}`;
+            console.log("Product price:", productprice);
+           
+
+            // Get selected color
+            const colorSelect = document.getElementById('colorSelect');
+            const selectedColor = colorSelect ? colorSelect.value : '';
+
+            // Get selected size
+            const sizeSelect = document.getElementById('sizeSelect');
+            const selectedSize = sizeSelect ? sizeSelect.value : '';
+
+            // Get selected amount
+            const amountInput = document.querySelector('.num-product');
+            const selectedAmount = amountInput ? parseInt(amountInput.value) : 1;
+
+            // Reuse the addToCart function to handle adding the product to the cart
+            addToCart(productId, selectedColor, selectedSize, selectedAmount,productprice);
+
+            // After adding, log the updated cart and total products
+            console.log("Total number of products in the cart:", getTotalProductsInCart());
+            console.log("Log Products:", logAllProductIdsInCart());
+            
+            console.log("Display cart",displayCart());
+            console.log("Total cart cost:", getTotalCartCost());
+        
+
+   
+           
+        });
+    });
+});
+
+
+
+
+// Get current cart from localStorage or initialize it if not present
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Function to get the cart from localStorage (to be reused)
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+// Function to save the cart to localStorage (to be reused)
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Add product to cart logic
+function addToCart(productId, selectedColor, selectedSize, selectedAmount,productprice) {
+    let cart = getCart(); // Reuse the getCart function
+
+    // Check if product already exists in the cart
+    const existingProductIndex = cart.findIndex(item => item.id === productId && item.color === selectedColor && item.size === selectedSize);
+    console.log("Existing product index:", existingProductIndex);
+
+    if (existingProductIndex > -1) {
+        // Update quantity of existing product in the cart
+        cart[existingProductIndex].amount += selectedAmount;
+        console.log("Amount of products for the given ID:", cart[existingProductIndex].amount);
+    } else {
+
+        // Create the new product object, including the price
+        const cartItem = {
+            id: productId,
+            color: selectedColor,
+            size: selectedSize,
+            amount: selectedAmount,
+            price: productprice // Ensure price is included as a number
+        };
+
+        // Add new product to the cart
+        cart.push(cartItem);
+    }
+
+    // Save the updated cart to localStorage
+    saveCart(cart);
+    updateCartNotification();
+}
+
+
+// Function to display the cart in a variable table format
+function displayCart() {
+    const cart = getCart();
+    console.log("Current Cart:");
+    
+    // Log each item in the cart in a table-like format
+    cart.forEach(item => {
+        console.log(`Product ID: ${item.id}, Color: ${item.color}, Size: ${item.size}, Amount: ${item.amount}, Price: ${item.price}`);
+    });
+
+}
+
+// Function to get the total number of products in the cart
+function getTotalProductsInCart() {
+    const cart = getCart();
+    let totalAmount = 0;
+
+    // Sum up the amounts of all products
+    cart.forEach(product => {
+        totalAmount += product.amount;
+    });
+
+    return totalAmount;
+}
+
+// // Function to log all product IDs in the cart to the console
+// function logAllProductIdsInCart() {
+//     const cart = getCart();
+//     console.log("Products in the cart:");
+
+//     // Log the ID of each product
+//     cart.forEach(product => {
+//         console.log("Product ID:", product.id,"amount:",product.amount);
+//     });
+// }
+
+// Function to update the cart notification (i.e., number of items in cart)
+function updateCartNotification() {
+    // Get total number of products in the cart
+    const totalProducts = getTotalProductsInCart();
+
+    // Find the basket icon element by ID
+    const basketIcon = document.getElementById('basket-icon');
+    const laptopbasketIcon = document.getElementById('laptop-basket-icon');
+    // Update the data-notify attribute with the total number of products
+    basketIcon.setAttribute('data-notify', totalProducts);
+    laptopbasketIcon.setAttribute('data-notify', totalProducts);
+
+}
+
+// Function to get the total cost of all products in the cart
+function getTotalCartCost() {
+    const cart = getCart();
+    
+    // Initialize totalCost as 0
+    let totalCost = 0; 
+
+    // Calculate the total cost by summing the price * amount for each product
+    cart.forEach(product => {
+        totalCost += product.price * product.amount; // Update totalCost
+    });
+
+    console.log("Total cost of the cart:", totalCost); 
+
+    return totalCost.toFixed(2); // Return totalCost formatted to 2 decimal places
+}
+
+
+
+// Clear cart function (as defined above)
+function clearCart() {
+    localStorage.removeItem('cart');
+    cart = [];
+    updateCartNotification();
+    console.log("Cart has been cleared.");
+}
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listener to the basket icon
+    const basketIcon = document.getElementById('basket-icon');
+    
+    if (basketIcon) {
+        basketIcon.addEventListener('click', function() {
+            // Generate the cart list when the basket icon is clicked
+            generateCartList();
+
+        });
+    } else {
+        console.error('Basket icon not found');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listener to the basket icon
+    const basketIcon = document.getElementById('laptop-basket-icon');
+    
+    if (basketIcon) {
+        basketIcon.addEventListener('click', function() {
+            // Generate the cart list when the basket icon is clicked
+            generateCartList();
+
+        });
+    } else {
+        console.error('Basket icon not found');
+    }
+});
+
+// Function to generate the cart list
+function generateCartList() {
+    const cartItems = getCart(); // Assuming getCart() returns an array of product objects
+    const cartListElement = document.querySelector('.header-cart-wrapitem'); // Select the UL element
+
+    // Clear any existing items in the list
+    cartListElement.innerHTML = ''; // Clear existing list items
+
+    // Loop through the cart items and create list items
+    cartItems.forEach(item => {
+        // Find the product in the array
+        const product = products.find(p => p.id == item.id);
+        console.log("Product object was found by ID:", product);
+
+        if (!product) {
+            console.error("Product not found");
+            return; // Exit if product not found
+        }
+
+        const listItem = document.createElement('li');
+        listItem.className = 'header-cart-item flex-w flex-t m-b-12';
+
+        listItem.innerHTML = `
+            <div class="header-cart-item-img">
+                <img src="${product.image}" alt="IMG">
+            </div>
+
+            <div class="header-cart-item-txt p-t-8">
+                <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                    ${product.name}
+                </a>
+
+                <span class="header-cart-item-info">
+                   ${item.size} - ${item.color} - Price: ${item.amount} x €${product.price.toFixed(2)}
+                </span>
+            </div>
+        `;
+
+        // Insert the list item into the cart list
+        cartListElement.insertAdjacentElement('beforeend', listItem);
+    });
+
+    // Calculate the total cost and create a total element
+  // Calculate the total cost
+  const totalCost = getTotalCartCost(); // Get the total cost from the function
+
+  const headerCartTotalElement = document.querySelector('.header-cart-total.w-full.p-tb-40');
+
+  if (headerCartTotalElement) {
+    // Option 1: Modify existing content
+    headerCartTotalElement.textContent = `Total: €${totalCost}`;}
+
+   
+
+}
+
+// Update your generateCartTable function to include the double-click listener
+function generateCartTable() {
+    const cartItems = getCart(); // Assuming getCart() returns an array of product objects
+    const cartTable = document.querySelector('.table-shopping-cart'); // Select the table element
+
+    // Clear any existing rows in the table, except for the header
+    cartTable.innerHTML = `
+        <tr class="table_head">
+            <th class="column-1">Product</th>
+            <th class="column-2"></th>
+            <th class="column-3">Price</th>
+            <th class="column-3">Size</th>
+            <th class="column-3">Color</th>
+            <th class="column-5">Quantity</th>
+            <th class="column-6">Total</th>
+        </tr>
+    `;
+
+    // Loop through the cart items and create table rows
+    cartItems.forEach((item, index) => {
+        const product = products.find(p => p.id == item.id);
+
+        if (!product) {
+            console.error("Product not found");
+            return;
+        }
+
+        const tableRow = document.createElement('tr');
+        const rowId = `row-${index}`; // Unique ID based on row number
+        tableRow.id = rowId; // Assign a unique ID to the row based on its index
+
+        tableRow.innerHTML = `
+            <td class="column-1">
+                <div class="how-itemcart1" ondblclick="removeItemFromCart('${rowId}')">
+                    <img src="${product.image}" alt="IMG">
+                </div>
+            </td>
+            <td class="column-2">${product.name}</td>
+            <td class="column-3">€${product.price.toFixed(2)}</td>
+            <td class="column-3">${item.size}</td>
+            <td class="column-3">${item.color}</td>
+            <td class="column-5">
+                <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                    <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                        <i class="fs-16 zmdi zmdi-minus"></i>
+                    </div>
+                    <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product-${product.id}" value="${item.amount}">
+                    <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                        <i class="fs-16 zmdi zmdi-plus"></i>
+                    </div>
+                </div>
+            </td>
+            <td class="column-6" id="total-${rowId}" data-price="${product.price}">€${(product.price * item.amount).toFixed(2)}</td>
+        `;
+
+        cartTable.insertAdjacentElement('beforeend', tableRow);
+    });
+
+    // Re-attach the event listeners for the increment and decrement buttons
+    attachEventListeners();
+
+    // Update the total cost
+    const totalCost = getTotalCartCost();
+    const cartTotalElement = document.querySelector('.cart-total');
+
+    if (cartTotalElement) {
+        cartTotalElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+    }
+}
+
+// Function to remove item from the cart based on row ID
+function removeItemFromCart(rowId) {
+    const cart = getCart(); // Get the current cart
+    const rowIndex = parseInt(rowId.split('-')[1]); // Extract the index from the row ID
+
+    console.log(`Removing item from cart at row index: ${rowIndex}`);
+
+    // Remove the item from the cart
+    cart.splice(rowIndex, 1);
+
+    // Save the updated cart back to storage
+    saveCart(cart);
+    
+    // Regenerate the cart table to reflect the changes
+    generateCartTable();
+    logAllProductIdsInCart();
+    updateSubtotal(); 
+    updateCartNotification();
+
+}
+
+
+
+function attachEventListeners() { 
+    // Select all the increment and decrement buttons
+    const btnNumProductDown = document.querySelectorAll('.btn-num-product-down');
+    const btnNumProductUp = document.querySelectorAll('.btn-num-product-up');
+
+    btnNumProductDown.forEach(button => {
+        button.addEventListener('click', function() {
+            const input = button.nextElementSibling; // Get the input next to this button
+            const rowId = button.closest('tr').id; // Get the unique row ID
+            const totalElement = document.querySelector(`#total-${rowId}`); // Find the total element for this row
+            
+            let value = parseInt(input.value);
+            if (value > 1) {
+                input.value = value - 1;
+
+                // Update the product total price
+                const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
+                totalElement.textContent = `€${(productPrice * input.value).toFixed(2)}`;
+                
+                getUpdatedCartAmounts(); // Call the function to update the cart amounts
+                updateSubtotal(); 
+                generateCartList();
+                updateCartNotification();
+                updateSubtotal(); // Update the subtotal whenever quantity changes
+                updateTotals() ;
+            }
+        });
+    });
+
+    btnNumProductUp.forEach(button => {
+        button.addEventListener('click', function() {
+            const input = button.previousElementSibling; // Get the input before this button
+            const rowId = button.closest('tr').id; // Get the unique row ID
+            const totalElement = document.querySelector(`#total-${rowId}`); // Find the total element for this row
+            
+            let value = parseInt(input.value);
+            input.value = value + 1;
+
+            // Update the product total price
+            const productPrice = parseFloat(totalElement.dataset.price); // Get the price from data attribute
+            totalElement.textContent = `€${(productPrice * input.value).toFixed(2)}`;
+
+
+            getUpdatedCartAmounts(); // Call the function to update the cart amounts
+            updateSubtotal(); 
+            generateCartList();
+            updateCartNotification();
+            updateSubtotal(); // Update the subtotal whenever quantity changes
+            updateTotals() ;
+        });
+    });
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    generateCartTable();
+    updateSubtotal();
+});
+
+
+
+// Function to update the subtotal in the cart
+function updateSubtotal() {
+    const subtotalElement = document.querySelector('#subtotal-amount'); // Select the element showing the subtotal
+    const subtotal = getTotalCartCost(); // Get the updated total cost from the function
+
+    // Update the content of the subtotal element
+    subtotalElement.textContent = `€${subtotal}`;
+}
+
+
+// Function to handle cart updates
+function handleUpdateCartClick() {
+    console.log("Update Cart button clicked");
+
+    // Get the updated cart items from the UI
+    const updatedCartItems = getUpdatedCartItems(); 
+    console.log("Updated cart items from UI:", updatedCartItems);
+
+    // Get the current cart items from localStorage or state
+    let currentCart = getCart(); // Assuming getCart() retrieves the cart from local storage or state
+    console.log("Current cart items from storage:", currentCart);
+
+    // Update the quantities in the current cart based on the updated cart
+    updatedCartItems.forEach((updatedItem, index) => {
+        if (currentCart[index].id === updatedItem.id && currentCart[index].size === updatedItem.size) {
+            console.log(`Updating item with ID ${updatedItem.id} and size ${updatedItem.size} to new amount: ${updatedItem.amount}`);
+            currentCart[index].amount = updatedItem.amount; // Update the amount of the corresponding item
+        } else {
+            console.log(`No match found for item with ID ${updatedItem.id} and size ${updatedItem.size}`);
+        }
+    });
+
+    // Save the updated cart back to localStorage
+    console.log("Saving updated cart to localStorage:", currentCart);
+    saveCart(currentCart);
+
+    // Optionally, you can call a function to update the display/UI with the new cart data
+    updateCartNotification();
+    console.log("Cart notification updated");
+
+    // Log updated product IDs and quantities
+    logAllProductIdsInCart();
+
+    updateSubtotal(); 
+    generateCartList();
+    updateCartNotification();
+
+   
+
+
+
+
+}
+
+function getUpdatedCartAmounts() {
+    const cart = getCart(); // Get the current cart from localStorage or any storage
+    const cartTableRows = document.querySelectorAll('tr[id^="row-"]'); // Select rows that have an ID starting with "row-"
+
+    console.log("Number of cart rows found:", cartTableRows.length);
+
+    // Update the amount of items in the cart based on the table rows
+    cartTableRows.forEach((row) => {
+        const rowId = row.id; // Get the unique row ID, e.g., "row-0", "row-1"
+        const productId = row.querySelector('.num-product').name.split('-')[2]; // Extract product ID from input name
+        const size = row.querySelectorAll('td')[3].textContent.trim(); // Extract size from the 4th column
+        const color = row.querySelectorAll('td')[4].textContent.trim(); // Extract color from the 5th column
+        const newAmount = parseInt(row.querySelector('.num-product').value); // Get the updated amount from input
+
+        console.log(`Row ${rowId}: Updating product ID ${productId} with size ${size} and color ${color} to new amount: ${newAmount}`);
+
+        // Find the corresponding item in the cart and update its amount
+        const cartItem = cart.find(item => item.id === productId && item.size === size && item.color === color);
+
+        if (cartItem) {
+            cartItem.amount = newAmount; // Update the amount
+            console.log(`Updated cart item:`, cartItem);
+        } else {
+            console.error(`Item with ID ${productId}, size ${size}, and color ${color} not found in the cart!`);
+        }
+    });
+
+    saveCart(cart); // Save the updated cart back to storage
+    console.log("Cart updated successfully");
+}
+
+
+
+// Function to log all product IDs and quantities in the cart (for debugging purposes)
+function logAllProductIdsInCart() {
+    const cart = getCart(); // Retrieve the current cart items
+    console.log("Logging current cart items:");
+
+    cart.forEach(item => {
+        console.log(`Product ID: ${item.id}, Quantity: ${item.amount}, Size: ${item.size}, Price: €${item.price}`);
+    });
+}
+
+
+try{    
+
+    // Add event listener to the "Update Cart" button
+    const updateCartButton = document.querySelector('.flex-c-m.stext-101.cl2.size-119.bg8.bor13.hov-btn3.p-lr-15.trans-04.pointer.m-tb-10');
+
+    if (updateCartButton) {
+        updateCartButton.addEventListener('click', () => {
+            console.log("Update Cart button clicked");
+            getUpdatedCartAmounts(); // Call the function to update the cart amounts
+            updateSubtotal(); 
+            generateCartList();
+            updateCartNotification();
+
+
+        });
+    } else {
+        console.log("Update Cart button not found!");
+    }
+
+} catch (error) {
+    // Silencing error by doing nothing
+}
+
+
+
+// Dummy shipping costs based on country
+const shippingRates = {
+    "France": 5,
+    "Luxembourg": 7,
+    "Spain": 0.01,
+    "Belgium": 8,
+    "Portugal": 10,
+    "Italy": 9,
+    "China": 0.2,
+};
+
+// Function to calculate the total based on selected country
+function updateTotals() {
+    const countrySelect = document.getElementById('country-select');
+    const selectedCountry = countrySelect.value;
+
+    // Log the selected country
+    console.log("Selected Country:", selectedCountry);
+
+    // Set shipping cost to zero if no country is selected
+    let shippingCost = 0; // Default shipping cost
+    if (selectedCountry && selectedCountry !== "Select a country...") {
+        shippingCost = shippingRates[selectedCountry] || shippingRates["Other"]; // Get shipping cost for the selected country
+    }
+
+    // Log the shipping cost
+    console.log("Shipping Cost:", shippingCost);
+
+    const subtotal = parseFloat(getTotalCartCost()) || 0;  // Ensure subtotal is treated as a number
+
+    // Log the subtotal
+    console.log("Subtotal:", subtotal.toFixed(2));
+
+    const total = subtotal + shippingCost;  // Calculate total cost
+
+    // Log the total
+    console.log("Total Cost:", total.toFixed(2));
+    console.log("fINISH");
+    // Update the shipping and total amounts in the HTML
+    document.getElementById('shipping-amount').textContent = `€${shippingCost.toFixed(2)}`;
+    document.getElementById('total-amount').textContent = `€${total.toFixed(2)}`;
+}
+
+// Debounce function to limit the frequency of function calls
+function debounce(func, delay) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+}
+
+// Function to handle updates and log changes
+function handleUpdate() {
+    // Log the current selected country
+    console.log("Selected country:", countrySelect.value);
+
+    // Log the current state input value
+    console.log("State input value:", stateInput.value);
+
+    // Log the current postcode input value
+    console.log("Postcode input value:", postcodeInput.value);
+
+    // Call your function to update totals here if needed
+    updateTotals(); // Uncomment this if you have an updateTotals function
+}
+
+$(document).ready(function() {
+    try {
+        const countrySelect = $('#country-select');
+
+        // Check if the countrySelect element exists
+        if (countrySelect.length) {
+            // Initialize Select2
+            countrySelect.select2({ dropdownAutoWidth: true });
+
+            // Listen for the change event from Select2
+            countrySelect.on('change', function(e) {
+                // Call the updateTotals function directly after the change
+                updateTotals(); // Call your function directly here
+            });
+
+            // Add a native event listener to the select element
+            document.getElementById("country-select").addEventListener('change', function(event) {
+                // Call the updateTotals function directly when the change event occurs
+                updateTotals(); // Call your function directly here
+            });
+        }
+    } catch (error) {
+        // Silencing error by doing nothing
+    }
+});
+
+
+
+
+try {
+    // Get the dropdown and input elements
+    const countrySelect = document.getElementById('country-select');
+    const stateInput = document.querySelector('input[name="state"]');
+    const postcodeInput = document.querySelector('input[name="postcode"]');
+
+    // Add event listeners with error handling
+    if (countrySelect) {
+        countrySelect.addEventListener('change', handleUpdate);
+    }
+
+    if (stateInput) {
+        stateInput.addEventListener('input', handleUpdate);
+    }
+
+    if (postcodeInput) {
+        postcodeInput.addEventListener('input', handleUpdate);
+    }
+} catch (error) {
+    // Silent catch; no console output
+}
+
+
+
+try {
+    // Add event listener for when the "Update Totals" button is clicked
+    const updateTotalsButton = document.getElementById('update-totals-btn');
+    
+    if (updateTotalsButton) {
+        updateTotalsButton.addEventListener('click', () => {
+            // Silent execution; no console output
+            updateTotals(); // Call the function directly here
+        });
+    }
+} catch (error) {
+    // Silent catch; no console output
+}
+
+
+
+function calculateTotalWithShipping() {
+    const countrySelect = document.getElementById('country-select');
+    const selectedCountry = countrySelect.value;
+
+    // Check if a valid country is selected
+    if (!selectedCountry || selectedCountry === "Select a country...") {
+        return "Shipping cost is not available.";
+    }
+
+    // Get shipping cost based on selected country, or default to "Other"
+    const shippingCost = shippingRates[selectedCountry] || shippingRates["Other"];
+    
+    // Get subtotal (total cart cost) and make sure it's treated as a number
+    const subtotal = parseFloat(getTotalCartCost()) || 0;  
+
+    // Calculate total cost
+    const total = subtotal + shippingCost;
+
+    // Return the total as a formatted string
+    return total.toFixed(2);
+}
+
+
+
+
+
+
+
+try {
+
+
+
+    // Replace with your actual publishable key
+    const stripePublicKey = 'pk_test_51Q4OeLJTZouawikokFOqPr5sUR1tobyu2HyfFvaANX5e9fCgBrHdUy1aXyUDhjvwrghVtAAzkArPl5rekiq5JZMi00M03GkXFz';
+    const stripe = Stripe(stripePublicKey); // Initialize Stripe with the public key
+
+    const countryCodeMap = {
+        'France': 'FR',
+        'Luxembourg': 'LU',
+        'Spain': 'ES',
+        'Belgium': 'BE',
+        'Portugal': 'PT',
+        'Italy': 'IT',
+        'China': 'CI'
+    };
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkoutButton = document.getElementById('checkout-button');
+        const countrySelect = document.getElementById('country-select');
+
+        try {
+
+        checkoutButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+
+            let totalAmount = calculateTotalWithShipping(); // Calculate the total amount
+
+            // Convert the total amount to the smallest currency unit (e.g., cents)
+            totalAmount = Math.round(totalAmount * 100);
+
+            // Get the selected country name
+            const selectedCountryName = countrySelect.value;
+
+            // Check if the country has a valid country code
+            const selectedCountryCode = countryCodeMap[selectedCountryName];
+
+            // Get the cart items
+            const cart = getCart(); 
+
+            if (!selectedCountryCode) {
+                alert('Please select a valid shipping country.');
+                return;
+            }
+
+            // Store purchase details in localStorage before checkout
+            localStorage.setItem('purchaseInfo', JSON.stringify({
+                amount: totalAmount / 100, // Store in the correct currency unit
+                country: selectedCountryName,
+                cart: cart
+            }));
+
+            try {
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        amount: totalAmount, 
+                        country: selectedCountryCode, // Pass the country code instead of name
+                        cart: cart 
+                    }),
+                });
+
+                const session = await response.json();
+                if (session.url) {
+                    window.location.href = session.url;
+                } else {
+                    alert('Error occurred during checkout.');
+                }
+            } catch (error) {
+                console.error('Error during checkout:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        } catch (error) {
+            // Silent catch; no console output
+        }
+
+
+
+
+    });
+
+} catch (error) {
+    // Silent catch; no console output
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if the current page is success.html
+    if (window.location.pathname.endsWith('success.html')) {
+        console.log("Success page loaded.");
+
+        try {
+            // Attempt to retrieve the purchase info from localStorage
+            let purchaseInfo = JSON.parse(localStorage.getItem('purchaseInfo'));
+            console.log("Retrieved purchase info from localStorage:", purchaseInfo);
+
+            // Fallback to fetching data from cart functions if localStorage info is missing
+            if (!purchaseInfo) {
+                console.log("No purchase info found in localStorage. Using fallback methods.");
+                purchaseInfo = {
+                    cart: getCart(), // Get cart items
+                    amount: getTotalCartCost(), // Get subtotal
+                    country: localStorage.getItem('shippingCountry') || '' // Optional: retrieve stored country info
+                };
+                console.log("Fallback purchase info:", purchaseInfo);
+            }
+
+            // Try to display the total amount
+            if (purchaseInfo.amount) {
+                const total = purchaseInfo.amount;
+                document.getElementById('total-amount').innerText = `€${total}`; // Ensure 2 decimal places
+                console.log("Total amount displayed:", total);
+            } else {
+                // Hide the total amount block if data is missing
+                document.getElementById('total-amount').parentElement.style.display = 'none';
+                console.log("No total amount found. Hiding total block.");
+            }
+
+            // Try to display purchased items
+            if (purchaseInfo.cart && purchaseInfo.cart.length > 0) {
+                const purchasedItemsContainer = document.getElementById('purchased-items');
+                purchasedItemsContainer.innerHTML = ''; // Clear previous content, if any
+                purchaseInfo.cart.forEach(item => {
+                    const itemElement = document.createElement('p');
+                    // Change item.quantity and item.name to item.amount and item.price
+                    itemElement.textContent = `${item.name}:,${item.amount} x Color: ${item.color}, Size: ${item.size}, Price: €${(item.price * item.amount).toFixed(2)}`;
+                    purchasedItemsContainer.appendChild(itemElement);
+                    console.log(`Item added to purchase summary: ${item.name}:, ${item.amount} x ${item.color} (Size: ${item.size})`);
+                });
+            } else {
+                // Hide the purchased items block if data is missing
+                document.getElementById('purchased-items').parentElement.style.display = 'none';
+                console.log("No purchased items found. Hiding purchased items block.");
+            }
+
+            // Try to display shipping country
+            if (purchaseInfo.country) {
+                document.getElementById('shipping-country').innerText = purchaseInfo.country;
+                console.log("Shipping country displayed:", purchaseInfo.country);
+            } else {
+                // Hide the shipping country block if data is missing
+                document.getElementById('shipping-country').parentElement.style.display = 'none';
+                console.log("No shipping country found. Hiding shipping country block.");
+            }
+
+            // Clear the cart after successful purchase
+            // clearCart(); // Uncomment if you want to clear the cart
+            updateCartNotification();
+            console.log("Cart cleared and notification updated.");
+
+            // Optionally, clear localStorage after processing
+            localStorage.removeItem('purchaseInfo');
+            localStorage.removeItem('shippingCountry');
+            console.log("Purchase info and shipping country removed from localStorage.");
+
+        } catch (error) {
+            console.error("Error during success page execution:", error);
+        }
+    } else {
+        console.log("Not on the success page.");
+    }
+});
+
+
+
+// Function to get a product by ID
+function getProductById(productId) {
+    // Convert productId to a number for comparison
+    const idToCompare = Number(productId);
+    return products.find(product => product.id === idToCompare);
+}
+
+
+
+// Function to get product ID from the URL
+function getProductIdFromUrl() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('productId');
+    } catch (error) {
+        console.error('Error getting product ID from URL:', error);
+        return null; // Fallback in case of error
+    }
+}
+
+// Assuming this function is defined elsewhere
+// function getProductById(id) {
+//     // Fetch the product based on the id (e.g., from an array or API)
+//     return productObject;
+// }
+
+function populateProductDetails(product) {
+    try {
+        // Update product name
+        document.getElementById('product-name').textContent = product.name || 'Product Name Unavailable';
+
+        // Update product price
+        document.getElementById('product-price').textContent = product.price 
+            ? `€${product.price}` 
+            : 'Price Unavailable';
+
+        // Update product description
+        document.getElementById('product-description').textContent = product.description || 'Description Unavailable';
+
+        // Update SKU
+        document.getElementById('product-sku').textContent = `SKU: ${product.sku || 'N/A'}`;
+
+        // Update categories
+        document.getElementById('product-categories').textContent = `Categories: ${product.categories?.join(', ') || 'Uncategorized'}`;
+
+        // Update images (assuming product.images is an array of image URLs)
+        const imagesContainer = document.getElementById('product-images');
+        imagesContainer.innerHTML = ''; // Clear any existing images
+
+        product.images?.forEach((imageUrl, index) => {
+            const imageHtml = `
+                <div class="item-slick3" data-thumb="${imageUrl}">
+                    <div class="wrap-pic-w pos-relative">
+                        <img src="${imageUrl}" alt="${product.name}">
+                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${imageUrl}">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            imagesContainer.innerHTML += imageHtml;
+        });
+
+    } catch (error) {
+        console.error('Error populating product details:', error);
+        // Fail gracefully without breaking the UI
+    }
+}
+
+// On page load, retrieve the product ID from the URL and populate the details
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        const productId = getProductIdFromUrl();
+        if (productId) {
+            const product = getProductById(productId); // Get product by ID
+            if (product) {
+                populateProductDetails(product);
+            } else {
+                console.error('Product not found');
+            }
+        } else {
+            console.error('Product ID not found in URL');
+        }
+    } catch (error) {
+        console.error('Error during page initialization:', error);
+        // Fail gracefully if something goes wrong
+    }
+});
