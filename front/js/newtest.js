@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                                 <div class="slick3 gallery-lb">
-                                    <div class="item-slick3" data-thumb="images/thumb.png" number="1">
+                                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image1}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                                 <div class="slick3 gallery-lb">
-                                    <div class="item-slick3" data-thumb="images/thumb.png" number="1">
+                                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image1}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="item-slick3" data-thumb="images/thumb.png" number="2">
+                                    <div class="item-slick3" data-thumb="${product.image2}" number="2">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image2}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="wrap-slick3-dots"></div>
                                 <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                                 <div class="slick3 gallery-lb">
-                                    <div class="item-slick3" data-thumb="images/thumb.png" number="1">
+                                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image1}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="item-slick3" data-thumb="images/thumb.png" number="2">
+                                    <div class="item-slick3" data-thumb="${product.image2}" number="2">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image2}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="item-slick3" data-thumb="images/thumb.png" number="3">
+                                    <div class="item-slick3" data-thumb="${product.image3}" number="3">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="${product.image3}" alt="IMG-PRODUCT">
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image3}">
@@ -1201,9 +1201,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 purchaseInfo.cart.forEach(item => {
                     const itemElement = document.createElement('p');
                     // Change item.quantity and item.name to item.amount and item.price
-                    itemElement.textContent = `${item.amount} x Color: ${item.color}, Size: ${item.size}, Price: €${(item.price * item.amount).toFixed(2)}`;
+                    itemElement.textContent = `${item.name}:,${item.amount} x Color: ${item.color}, Size: ${item.size}, Price: €${(item.price * item.amount).toFixed(2)}`;
                     purchasedItemsContainer.appendChild(itemElement);
-                    console.log(`Item added to purchase summary: ${item.amount} x ${item.color} (Size: ${item.size})`);
+                    console.log(`Item added to purchase summary: ${item.name}:, ${item.amount} x ${item.color} (Size: ${item.size})`);
                 });
             } else {
                 // Hide the purchased items block if data is missing
