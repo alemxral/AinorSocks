@@ -1259,12 +1259,126 @@ function getProductIdFromUrl() {
     }
 }
 
-// Assuming this function is defined elsewhere
-// function getProductById(id) {
-//     // Fetch the product based on the id (e.g., from an array or API)
-//     return productObject;
-// }
+// Function to update images in the modal
+function updateProductImages(product) {
+    
+    // Update images in the modal
+    try {
+        // Define images array
+        const images = [product.image1, product.image2, product.image3]; // Images array
+        
+        // Filter valid images before processing
+        const validImages = images.filter(image => image && /\.(jpg|jpeg|png)$/i.test(image));
+        const validImageCount = validImages.length; // Count of valid images
+       
 
+        const slick3Container = document.querySelector(".wrap-slick3.flex-sb.flex-w"); // Corrected selector
+        slick3Container.innerHTML = ''; // Clear existing image elements
+
+        if (validImageCount === 0) {
+            slick3Container.innerHTML = ''; // Clear content if no valid images
+        } else if (validImageCount === 1) {
+            slick3Container.innerHTML = `
+                <div class="wrap-slick3-dots"></div>
+                <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+                <div class="slick3 gallery-lb">
+                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
+                        <div class="wrap-pic-w pos-relative">
+                            <img src="${product.image1}" alt="IMG-PRODUCT">
+                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+        } else if (validImageCount === 2) {
+            slick3Container.innerHTML = `
+                <div class="wrap-slick3-dots"></div>
+                <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+                <div class="slick3 gallery-lb">
+                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
+                        <div class="wrap-pic-w pos-relative">
+                            <img src="${product.image1}" alt="IMG-PRODUCT">
+                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item-slick3" data-thumb="${product.image2}" number="2">
+                        <div class="wrap-pic-w pos-relative">
+                            <img src="${product.image2}" alt="IMG-PRODUCT">
+                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+        } else if (validImageCount === 3) {
+            slick3Container.innerHTML = `
+                <div class="wrap-slick3-dots"></div>
+                <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+                <div class="slick3 gallery-lb">
+                    <div class="item-slick3" data-thumb="${product.image1}" number="1">
+                        <div class="wrap-pic-w pos-relative">
+                            <img src="${product.image1}" alt="IMG-PRODUCT">
+                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image1}">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item-slick3" data-thumb="${product.image2}" number="2">
+                        <div class="wrap-pic-w pos-relative">
+                            <img src="${product.image2}" alt="IMG-PRODUCT">
+                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image2}">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item-slick3" data-thumb="${product.image3}" number="3">
+                        <div class="wrap-pic-w pos-relative">
+                            <img src="${product.image3}" alt="IMG-PRODUCT">
+                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${product.image3}">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        $('.wrap-slick3').each(function(){
+            $(this).find('.slick3').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 6000,
+
+                arrows: true,
+                appendArrows: $(this).find('.wrap-slick3-arrows'),
+                prevArrow:'<button class="arrow-slick3 prev-slick3"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                nextArrow:'<button class="arrow-slick3 next-slick3"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+
+                dots: true,
+                appendDots: $(this).find('.wrap-slick3-dots'),
+                dotsClass:'slick3-dots',
+                customPaging: function(slick, index) {
+                    var portrait = $(slick.$slides[index]).data('thumb');
+                    return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
+                },  
+            });
+        });
+
+        console.log("Number of valid images:", validImageCount);
+    } catch (err) {
+        console.error("Error updating images: ", err);
+    }
+   
+}
+
+
+
+// Example usage with product details
 function populateProductDetails(product) {
     try {
         // Update product name
@@ -1279,32 +1393,16 @@ function populateProductDetails(product) {
         document.getElementById('product-description').textContent = product.description || 'Description Unavailable';
 
         // Update SKU
-        document.getElementById('product-sku').textContent = `SKU: ${product.sku || 'N/A'}`;
+        // document.getElementById('product-sku').textContent = `SKU: ${product.sku || 'N/A'}`;
 
         // Update categories
-        document.getElementById('product-categories').textContent = `Categories: ${product.categories?.join(', ') || 'Uncategorized'}`;
+        // document.getElementById('product-categories').textContent = `Categories: ${product.categories?.join(', ') || 'Uncategorized'}`;
 
-        // Update images (assuming product.images is an array of image URLs)
-        const imagesContainer = document.getElementById('product-images');
-        imagesContainer.innerHTML = ''; // Clear any existing images
-
-        product.images?.forEach((imageUrl, index) => {
-            const imageHtml = `
-                <div class="item-slick3" data-thumb="${imageUrl}">
-                    <div class="wrap-pic-w pos-relative">
-                        <img src="${imageUrl}" alt="${product.name}">
-                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${imageUrl}">
-                            <i class="fa fa-expand"></i>
-                        </a>
-                    </div>
-                </div>
-            `;
-            imagesContainer.innerHTML += imageHtml;
-        });
+        // Update images
+        updateProductImages(product);
 
     } catch (error) {
         console.error('Error populating product details:', error);
-        // Fail gracefully without breaking the UI
     }
 }
 
