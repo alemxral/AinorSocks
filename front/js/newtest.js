@@ -1259,9 +1259,15 @@ function getProductIdFromUrl() {
     }
 }
 
+// Assuming this function is defined elsewhere
+// function getProductById(id) {
+//     // Fetch the product based on the id (e.g., from an array or API)
+//     return productObject;
+// }
+// Function to update images in the modal
 // Function to update images in the modal
 function updateProductImages(product) {
-    
+
     // Update images in the modal
     try {
         // Define images array
@@ -1377,6 +1383,133 @@ function updateProductImages(product) {
 }
 
 
+function updateColors(product) {
+    // Update color options
+    try {
+        const colorSelect = document.querySelector("#colorSelect");
+        if (!colorSelect) {
+            console.error("Color select element not found.");
+            return;
+        }
+
+        const colors = product.colors || []; // Defaults to an empty array if undefined
+        colorSelect.innerHTML = ''; // Clear existing options
+
+        if (colors.length === 0) {
+            console.warn("No colors available for the product."); // Warn if there are no colors
+            colorSelect.innerHTML = '<option disabled>No colors available</option>'; // Add a disabled option
+            return;
+        }
+
+        // Populate color options
+        colorSelect.innerHTML = colors.map(color => `<option value="${color}">${color}</option>`).join('');
+        console.log("Color options updated:", colors); // Log updated colors
+    } catch (err) {
+        console.error("Error updating color options: ", err);
+    }
+}
+
+
+function updateSizes(product) {
+    // Update size options
+    try {
+        const sizeSelect = document.querySelector("#sizeSelect");
+        if (!sizeSelect) {
+            console.error("Size select element not found.");
+            return;
+        }
+
+        const sizes = product.sizes || []; // Defaults to an empty array if undefined
+        sizeSelect.innerHTML = ''; // Clear existing options
+
+        if (sizes.length === 0) {
+            console.warn("No sizes available for the product."); // Warn if there are no sizes
+            sizeSelect.innerHTML = '<option disabled>No sizes available</option>'; // Add a disabled option
+            return;
+        }
+
+        // Populate size options
+        sizeSelect.innerHTML = sizes.map(size => `<option>Size ${size}</option>`).join('');
+        console.log("Size options updated:", sizes); // Log updated sizes
+    } catch (err) {
+        console.error("Error updating size options: ", err);
+    }
+}
+
+
+function updateProductInfo(product) {
+    try {
+        // Update description
+        const descriptionTab = document.querySelector("#description .how-pos2");
+        if (descriptionTab) {
+            descriptionTab.innerHTML = `<p class="stext-102 cl6">${product.description || ''}</p>`;
+        }
+
+        // Update information tab
+        const informationTab = document.querySelector("#information .p-lr-28");
+        if (informationTab) {
+            let infoHtml = ''; // Initialize an empty string to build the information list
+            
+            // Add weight if available
+            if (product.weight) {
+                infoHtml += `
+                    <li class="flex-w flex-t p-b-7">
+                        <span class="stext-102 cl3 size-205">Weight</span>
+                        <span class="stext-102 cl6 size-206">${product.weight}</span>
+                    </li>`;
+            }
+
+            // Add dimensions if available
+            if (product.dimensions) {
+                infoHtml += `
+                    <li class="flex-w flex-t p-b-7">
+                        <span class="stext-102 cl3 size-205">Dimensions</span>
+                        <span class="stext-102 cl6 size-206">${product.dimensions}</span>
+                    </li>`;
+            }
+
+            // Add materials if available
+            if (product.materials) {
+                infoHtml += `
+                    <li class="flex-w flex-t p-b-7">
+                        <span class="stext-102 cl3 size-205">Materials</span>
+                        <span class="stext-102 cl6 size-206">${product.materials}</span>
+                    </li>`;
+            }
+
+            // Add colors if available
+            if (product.colors && product.colors.length > 0) {
+                infoHtml += `
+                    <li class="flex-w flex-t p-b-7">
+                        <span class="stext-102 cl3 size-205">Color</span>
+                        <span class="stext-102 cl6 size-206">${product.colors.join(', ')}</span>
+                    </li>`;
+            }
+
+            // Add sizes if available
+            if (product.sizes && product.sizes.length > 0) {
+                infoHtml += `
+                    <li class="flex-w flex-t p-b-7">
+                        <span class="stext-102 cl3 size-205">Size</span>
+                        <span class="stext-102 cl6 size-206">${product.sizes.join(', ')}</span>
+                    </li>`;
+            }
+
+            // Update the information tab only if there is information to display
+            if (infoHtml) {
+                informationTab.innerHTML = infoHtml;
+            }
+        }
+        
+        console.log("Product information updated successfully:", product);
+    } catch (err) {
+        console.error("Error updating product information: ", err);
+    }
+}
+
+
+
+
 
 // Example usage with product details
 function populateProductDetails(product) {
@@ -1400,6 +1533,11 @@ function populateProductDetails(product) {
 
         // Update images
         updateProductImages(product);
+
+        updateColors(product);
+
+        updateSizes(product);
+        updateProductInfo(product);
 
     } catch (error) {
         console.error('Error populating product details:', error);
