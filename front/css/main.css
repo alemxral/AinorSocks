@@ -1040,6 +1040,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
+.no-link-style {
+  color: inherit; /* Use the color of the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+
+
 .header-cart {
   position: fixed;
   z-index: 1100;
@@ -2053,18 +2060,18 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-
-.no-link-style {
-  color: inherit; /* Use the color of the parent element */
-  text-decoration: none; /* Remove underline */
-}
-
 .table-shopping-cart {
   border-collapse: collapse;
   width: 100%;
   min-width: 680px;
 
 }
+
+
+
+
+
+
 
 .table-shopping-cart tr {
   border-top: 1px solid #e6e6e6;
@@ -2139,6 +2146,18 @@ input.num-product::-webkit-inner-spin-button {
   color: #555;
   line-height: 1.6;
 }
+
+#shopping-cart-container {
+  display: flex;
+  margin-top: 20px; /* Adds some space between "Items purchased" and the table */
+  width: 100%; /* Ensures the table takes up full width */
+  overflow-x: auto; /* Enables horizontal scrolling if content overflows */
+}
+
+#items-purchased-container {
+  padding-top: 20px; /* Adds top padding to the "Items Purchased" section */
+}
+
 
 
 
