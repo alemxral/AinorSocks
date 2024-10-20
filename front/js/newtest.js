@@ -1241,8 +1241,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Function to get a product by ID
 function getProductById(productId) {
-    return products.find(product => product.id === productId);
+    // Convert productId to a number for comparison
+    const idToCompare = Number(productId);
+    return products.find(product => product.id === idToCompare);
 }
+
 
 
 // Function to get product ID from the URL
