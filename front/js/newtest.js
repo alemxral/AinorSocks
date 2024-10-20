@@ -1198,15 +1198,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Try to display purchased items
             if (purchaseInfo.cart && purchaseInfo.cart.length > 0) {
-                const purchasedItemsContainer = document.getElementById('purchased-items');
-                purchasedItemsContainer.innerHTML = ''; // Clear previous content, if any
-                purchaseInfo.cart.forEach(item => {
-                    const itemElement = document.createElement('p');
-                    // Change item.quantity and item.name to item.amount and item.price
-                    itemElement.textContent = `${item.name}:,${item.amount} x Color: ${item.color}, Size: ${item.size}, Price: €${(item.price * item.amount).toFixed(2)}`;
-                    purchasedItemsContainer.appendChild(itemElement);
-                    console.log(`Item added to purchase summary: ${item.name}:, ${item.amount} x ${item.color} (Size: ${item.size})`);
-                });
+               
+                generateCartTableSuccess() ;
+
+
             } else {
                 // Hide the purchased items block if data is missing
                 document.getElementById('purchased-items').parentElement.style.display = 'none';
@@ -1567,3 +1562,64 @@ window.addEventListener('DOMContentLoaded', () => {
         // Fail gracefully if something goes wrong
     }
 });
+
+
+
+
+
+// Update your generateCartTable function to include the double-click listener
+function generateCartTableSuccess() {
+    const cartItems = getCart(); // Assuming getCart() returns an array of product objects
+    const cartTable = document.querySelector('.table-shopping-cart'); // Select the table element
+
+    // Clear any existing rows in the table, except for the header
+    cartTable.innerHTML = `
+        <tr class="table_head">
+            <th class="column-1">Product</th>
+            <th class="column-2"></th>
+            <th class="column-3">Price</th>
+            <th class="column-3">Size</th>
+            <th class="column-3">Color</th>
+            <th class="column-5">Quantity</th>
+            <th class="column-6">Total</th>
+        </tr>
+    `;
+
+    // Loop through the cart items and create table rows
+    cartItems.forEach((item, index) => {
+        const product = products.find(p => p.id == item.id);
+
+        if (!product) {
+            console.error("Product not found");
+            return;
+        }
+
+        const tableRow = document.createElement('tr');
+        const rowId = `row-${index}`; // Unique ID based on row number
+        tableRow.id = rowId; // Assign a unique ID to the row based on its index
+
+        tableRow.innerHTML = `
+                <td class="column-1">
+                    <div class="how-itemcart1" ondblclick="removeItemFromCart('${rowId}')">
+                        <img src="${product.image}" alt="IMG">
+                    </div>
+                </td>
+                <td class="column-2">
+                  <a href="product-detail.html?productId=${product.id}" class="product-name no-link-style">${product.name}</a>
+                </td>
+                </td>
+                <td class="column-3">€${product.price.toFixed(2)}</td>
+                <td class="column-3">${item.size}</td>
+                <td class="column-3">${item.color}</td>
+                <td class="column-5">
+                ${item.amount}
+                </td>
+                <td class="column-6" id="total-${rowId}" data-price="${product.price}">€${(product.price * item.amount).toFixed(2)}</td>
+            `;
+
+
+        cartTable.insertAdjacentElement('beforeend', tableRow);
+    });
+
+   
+}
